@@ -20,6 +20,7 @@ namespace SozialWeb.Controllers
 
         public AccountController()
         {
+            // YOLO 
         }
 
         public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager )
