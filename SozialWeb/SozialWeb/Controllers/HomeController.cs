@@ -20,6 +20,7 @@ namespace SozialWeb.Controllers
 
             return View();
         }
+        //test 
 
         public ActionResult Contact()
         {
