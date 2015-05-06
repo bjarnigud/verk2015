@@ -7,10 +7,10 @@ namespace SozialWeb.Models
 {
     public class Comment
     {
-        int ID {get; set;}
-        string Text { get; set;}
-        int U_ID { get; set; }
-        int P_ID { get; set; }
-        bool Like { get; set; }
+        public int ID { get; set; }
+        public string Text { get; set; }
+        public int U_ID { get; set; }
+        public int P_ID { get; set; }
+        public bool Like { get; set; }
     }
 }
