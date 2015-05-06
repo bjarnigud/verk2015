@@ -85,6 +85,11 @@ namespace SozialWeb.Models
         public string Email { get; set; }
 
         [Required]
+        [Display(Name = "Birthday")]
+        public int Birthday { get; set; }
+        
+
+        [Required]
         [Display(Name = "Gender")]
         public bool Gender { get; set; }
 

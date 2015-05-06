@@ -142,7 +142,7 @@ namespace SozialWeb.Controllers
         {
             return View();
         }
-
+    
         //
         // POST: /Account/Register
         [HttpPost]
