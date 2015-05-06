@@ -12,16 +12,14 @@ namespace SozialWeb.Controllers
         {
             return View();
         }
-        // test 123 test lalalalalalla lalalla
-
+ 
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
 
             return View();
         }
-        //test 
-
+      
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
