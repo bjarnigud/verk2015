@@ -240,12 +240,6 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Profile\Index.cshtml" />
-<<<<<<< HEAD
-    <Content Include="Views\FriendsList\Index.cshtml" />
-    <Content Include="Views\Search\Index.cshtml" />
-=======
-    <Content Include="Views\Groups\Index.cshtml" />
->>>>>>> 4287735ff881c15243e197dd9b4c840395472ae3
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
