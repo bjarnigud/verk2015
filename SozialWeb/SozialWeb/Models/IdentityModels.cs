@@ -30,5 +30,9 @@ namespace SozialWeb.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<SozialWeb.Models.Post> Posts { get; set; }
+
+        public System.Data.Entity.DbSet<SozialWeb.Models.Comment> Comments { get; set; }
     }
 }
