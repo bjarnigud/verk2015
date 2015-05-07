@@ -10,7 +10,7 @@ namespace SozialWeb.DAL
 {
     public class SozialWebContext : DbContext
     {
-         public SchoolContext() : base("SozialWebContext")
+         public SozialWebContext() : base("SozialWebContext")
         {
         }
         
@@ -24,6 +24,5 @@ namespace SozialWeb.DAL
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
         }
-    }
     }
 }
