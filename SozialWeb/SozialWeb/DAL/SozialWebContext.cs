@@ -9,9 +9,9 @@ using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace SozialWeb.DAL
 {
-    public class SozialWebContext : DbContext
+    public class SozialWebContext //: DbContext
     {
-        public SozialWebContext()
+      /*  public SozialWebContext()
             : base("DefaultConnection")
         {
 
@@ -27,6 +27,6 @@ namespace SozialWeb.DAL
         {
             return new ApplicationDbContext();
         }
-
+        */
     }
 }
