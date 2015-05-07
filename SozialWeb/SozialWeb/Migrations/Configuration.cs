@@ -10,6 +10,7 @@ namespace SozialWeb.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
+            ContextKey = "SozialWeb.Models.ApplicationDbContext";
         }
 
         protected override void Seed(SozialWeb.DAL.SozialWebContext context)
