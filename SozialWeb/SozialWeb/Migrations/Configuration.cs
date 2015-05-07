@@ -5,15 +5,14 @@ namespace SozialWeb.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<SozialWeb.Models.ApplicationDbContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<SozialWeb.DAL.SozialWebContext>
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
-            ContextKey = "SozialWeb.Models.ApplicationDbContext";
+            AutomaticMigrationsEnabled = true;
         }
 
-        protected override void Seed(SozialWeb.Models.ApplicationDbContext context)
+        protected override void Seed(SozialWeb.DAL.SozialWebContext context)
         {
             //  This method will be called after migrating to the latest version.
 

@@ -7,6 +7,6 @@ namespace SozialWeb.Models
 {
     public class GroupPost
     {
-        public int G_ID { get; set; }
+        public int GroupPostID { get; set; }
     }
 }

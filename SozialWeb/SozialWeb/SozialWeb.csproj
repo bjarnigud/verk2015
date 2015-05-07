@@ -168,14 +168,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201505070036565_InitialCreate.cs" />
-    <Compile Include="Migrations\201505070036565_InitialCreate.Designer.cs">
-      <DependentUpon>201505070036565_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201505070045226_VERK2015_H47.cs" />
-    <Compile Include="Migrations\201505070045226_VERK2015_H47.Designer.cs">
-      <DependentUpon>201505070045226_VERK2015_H47.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Comment.cs" />
@@ -254,14 +246,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201505070036565_InitialCreate.resx">
-      <DependentUpon>201505070036565_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201505070045226_VERK2015_H47.resx">
-      <DependentUpon>201505070045226_VERK2015_H47.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
