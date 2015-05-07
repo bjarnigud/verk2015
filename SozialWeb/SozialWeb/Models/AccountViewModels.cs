@@ -91,7 +91,7 @@ namespace SozialWeb.Models
 
         [Required]
         [Display(Name = "Gender")]
-        public bool Gender { get; set; }
+        public string Gender { get; set; }
 
  
 
