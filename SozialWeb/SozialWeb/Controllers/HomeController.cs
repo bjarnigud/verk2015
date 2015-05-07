@@ -16,6 +16,7 @@ namespace SozialWeb.Controllers
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
+            //Yolo fyrir bernie
 
             return View();
         }
