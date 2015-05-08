@@ -9,7 +9,7 @@ namespace SozialWeb.Controllers
     public class ProfileController : Controller
     {
         // GET: Profile
-        public ActionResult Index()
+        public ActionResult ProfileView()
         {
             return View();
         }

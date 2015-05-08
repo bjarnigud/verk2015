@@ -9,7 +9,7 @@ namespace SozialWeb.Controllers
     public class SearchController : Controller
     {
         // GET: Search
-        public ActionResult Index()
+        public ActionResult SearchView()
         {
             return View();
         }

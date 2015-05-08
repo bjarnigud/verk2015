@@ -9,7 +9,7 @@ namespace SozialWeb.Controllers
     public class FriendsListController : Controller
     {
         // GET: FriendsList
-        public ActionResult Index()
+        public ActionResult FriendsListView()
         {
             return View();
         }

@@ -9,7 +9,7 @@ namespace SozialWeb.Controllers
     public class GroupsController : Controller
     {
         // GET: Groups
-        public ActionResult Index()
+        public ActionResult GroupsView()
         {
             return View();
         }
