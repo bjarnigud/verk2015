@@ -23,5 +23,10 @@ namespace SozialWeb.Service
 
             return allUserList;
         }
+
+        public void addFriend(string user1, string user2)
+        {
+
+        }
     }
 }

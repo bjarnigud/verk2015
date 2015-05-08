@@ -34,6 +34,34 @@ namespace SozialWeb.Service
         public void addFriend(string user1, string user2)
         {
             ApplicationDbContext db = new ApplicationDbContext();
+            ApplicationUser firstUser = new ApplicationUser();
+            ApplicationUser secondUser = new ApplicationUser();
+
+            firstUser = db.Users.Where(u => u.Id == user1).SingleOrDefault();
+            secondUser = db.Users.Where(u => u.Id == user2).SingleOrDefault();
+            var friendConnection = new FriendList
+            {
+                friend1 = firstUser,
+                friend2 = secondUser
+
+            };
+
+            db.FriendLists.Add(friendConnection);
+            db.SaveChanges();
+            /* for reference
+            var user = db.Users.Where(u => u.Id == userId).SingleOrDefault();
+            if (user != null)
+            {
+                var post = new Post
+                {
+                    text = status,
+                    author = user
+                };
+
+                db.Posts.Add(post);
+                db.SaveChanges();
+            }
+             * */ 
         }
     }
 }
