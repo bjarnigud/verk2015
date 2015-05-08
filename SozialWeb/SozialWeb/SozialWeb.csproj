@@ -242,10 +242,10 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Profile\ProfileView.cshtml" />
     <Content Include="Views\Groups\GroupsView.cshtml" />
+    <Content Include="Views\FriendsList\FriendsListTestView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\FriendsList\" />
     <Folder Include="Views\Search\" />
     <Folder Include="Views\Test\" />
   </ItemGroup>
