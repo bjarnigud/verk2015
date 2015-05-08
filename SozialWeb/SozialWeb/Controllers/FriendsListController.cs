@@ -20,11 +20,17 @@ namespace SozialWeb.Controllers
         {
             
             var userId = User.Identity.GetUserId();
-            List<ApplicationUser> friends = new List<ApplicationUser>();
             ApplicationDbContext db = new ApplicationDbContext();
+            /*
+            var friendsList = from user in db.Users
+                              join friend in db.FriendLists on user.Id equals friend.friend1.Id into something
+                              where userId equals user.Id
+                              select new { Cate = something };
+          
+            */
+            var friendsList = from user in db.Users
+                              select user;
 
-            var friendsList = from n in db.Users
-                                  select n;
             var variabel = "HELLO";
             return View(friendsList);
         }
