@@ -5,8 +5,9 @@ using System.Web;
 
 namespace SozialWeb.Models
 {
-    public class GroupPost : Post
+    public class GroupPost 
     {
-        public Group groupID { get; set; }
+        //public Group groupID { get; set; }
+        public int groupID { get; set; }
     }
 }

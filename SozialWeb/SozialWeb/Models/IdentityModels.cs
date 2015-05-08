@@ -36,7 +36,7 @@ namespace SozialWeb.Models
 
         public DbSet<Comment> Comments { get; set; }
         public DbSet<Group> Groups { get; set; }
-        public DbSet<GroupPost> GroupPosts { get; set; }
+       // public DbSet<GroupPost> GroupPosts { get; set; }
         public DbSet<Post> Posts { get; set; }
         public DbSet<FriendList> FriendLists { get; set; }
 

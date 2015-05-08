@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using SozialWeb.Service;
+using Microsoft.AspNet.Identity;
 
 namespace SozialWeb.Controllers
 {
@@ -18,10 +19,19 @@ namespace SozialWeb.Controllers
         public ActionResult Index(string status)
         {
             PostService s = new PostService();
+            var userId = User.Identity.GetUserId();
+            s.addStatus(userId, status);
 
-            s.addStatus("TODO: sækja notandaID", status);
+            return RedirectToAction("index");
+        }
 
-            return RedirectToAction("...")
+        public ActionResult TestingPost()
+        {
+            PostService s = new PostService();
+            var userId = User.Identity.GetUserId();
+            string status = "This is a status";
+            s.addStatus(userId, status);
+            return View();
         }
  
         public ActionResult About()
