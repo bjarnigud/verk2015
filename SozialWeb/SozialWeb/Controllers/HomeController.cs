@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using SozialWeb.Service;
 
 namespace SozialWeb.Controllers
 {
@@ -11,6 +12,16 @@ namespace SozialWeb.Controllers
         public ActionResult Index()
         {
             return View();
+        }
+
+        [HttpPost]
+        public ActionResult Index(string status)
+        {
+            PostService s = new PostService();
+
+            s.addStatus("TODO: sækja notandaID", status);
+
+            return RedirectToAction("...")
         }
  
         public ActionResult About()
