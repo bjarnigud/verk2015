@@ -10,12 +10,13 @@ namespace SozialWeb.Service
     {
         public List<ApplicationUser> getFriends(string userId)
         {
+            /*
             List<ApplicationUser> friendList = new List<ApplicationUser>();
             ApplicationDbContext db = new ApplicationDbContext();
             var allUsers = from user in db.Users
                            select user;
-
-
+            */
+            ApplicationDbContext db = new ApplicationDbContext();
             var allFriends = from friend in db.FriendLists
                              where userId == friend.friend1.Id
                              select friend.friend2;
@@ -23,11 +24,16 @@ namespace SozialWeb.Service
 
             foreach (ApplicationUser friend in allFriends)
             {
-                currentUserFriendsList.Add(friend);
+                currentUserFriendsList.Add(friend);                 //ekki góð leið til að gera þetta
             }
 
 
             return currentUserFriendsList;
+        }
+
+        public void addFriend(string user1, string user2)
+        {
+            ApplicationDbContext db = new ApplicationDbContext();
         }
     }
 }
