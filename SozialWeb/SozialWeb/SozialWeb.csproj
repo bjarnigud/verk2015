@@ -181,6 +181,7 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Post.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\FriendListService.cs" />
     <Compile Include="Service\PostService.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -245,6 +246,7 @@
     <Content Include="Views\FriendsList\FriendsListTestView.cshtml" />
     <Content Include="Views\Home\TestingPost.cshtml" />
     <Content Include="Views\Home\TestingPostList.cshtml" />
+    <Content Include="Views\FriendsList\FriendsListView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
