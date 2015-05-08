@@ -8,9 +8,9 @@ namespace SozialWeb.Models
     public class Group
     {
         public int ID { get; set; }
-        public string Name { get; set; }
-        public List<ApplicationUser> Posts { get; set; }
-        public List<ApplicationUser> Members { get; set; }
+        public string name { get; set; }
+        public List<ApplicationUser> posts { get; set; }
+        public List<ApplicationUser> members { get; set; }
  
     }
 }
