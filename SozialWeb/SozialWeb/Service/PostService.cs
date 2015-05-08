@@ -25,5 +25,17 @@ namespace SozialWeb.Service
                 db.SaveChanges();
             }
         }
+
+        public List <Post> getPosts(string userId)
+        {
+             ApplicationDbContext db = new ApplicationDbContext();
+             List<Post> Posts = new List<Post>();
+
+             var postList = (from p in db.Posts
+                             where p.author.Id == userId
+                             select p).ToList();
+
+             return postList;
+        }
     }
 }

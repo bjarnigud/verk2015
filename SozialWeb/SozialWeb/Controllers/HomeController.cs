@@ -33,6 +33,14 @@ namespace SozialWeb.Controllers
             s.addStatus(userId, status);
             return View();
         }
+
+        public ActionResult TestingPostList()
+        {
+            PostService p = new PostService();
+            var userId = User.Identity.GetUserId();
+            var posts = p.getPosts(userId);
+            return View(posts);
+        }
  
         public ActionResult About()
         {

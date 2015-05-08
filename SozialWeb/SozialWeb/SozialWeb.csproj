@@ -244,6 +244,7 @@
     <Content Include="Views\Groups\GroupsView.cshtml" />
     <Content Include="Views\FriendsList\FriendsListTestView.cshtml" />
     <Content Include="Views\Home\TestingPost.cshtml" />
+    <Content Include="Views\Home\TestingPostList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
