@@ -8,9 +8,9 @@ namespace SozialWeb.Models
     public class Comment
     {
         public int ID { get; set; }
-        public string Text { get; set; }
-        public int U_ID { get; set; }
-        public int P_ID { get; set; }
-        public bool Like { get; set; }
+        public string text { get; set; }
+        public ApplicationUser user { get; set; }
+        public Post commentPost { get; set; }
+        public bool like { get; set; }
     }
 }
