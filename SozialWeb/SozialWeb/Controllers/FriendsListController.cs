@@ -28,5 +28,15 @@ namespace SozialWeb.Controllers
             var friendsList = f.getFriends(userId);
             return View(friendsList);
         }
+
+        public ActionResult FriendsListTestView()
+        {
+            var userId = User.Identity.GetUserId();
+            ApplicationDbContext db = new ApplicationDbContext();
+
+            FriendListService f = new FriendListService();
+            var friendsList = f.getNotFriends(userId);
+            return View(friendsList);
+        }
     }
 }

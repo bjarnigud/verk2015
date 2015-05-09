@@ -12,5 +12,6 @@ namespace SozialWeb.Models
         public ApplicationUser user { get; set; }
         public Post commentPost { get; set; }
         public bool like { get; set; }
+        public DateTime timeOfComment { get; set; }
     }
 }
