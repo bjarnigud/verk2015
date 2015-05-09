@@ -10,5 +10,7 @@ namespace SozialWeb.Models
         public int ID { get; set; }
         public string text { get; set; }
         public virtual ApplicationUser author { get; set; }
+        public DateTime timeOfPost { get; set; }
+
     }
 }

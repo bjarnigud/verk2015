@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using System.Collections.Generic;
+using System;
 
 namespace SozialWeb.Models
 {
@@ -12,6 +13,7 @@ namespace SozialWeb.Models
     {
         public string Name { get; set; }
         public string Gender { get; set; }
+        //public DateTime timeOfBirth { get; set; }
         public virtual ICollection<Post> Posts { get; set; }
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
@@ -39,6 +41,8 @@ namespace SozialWeb.Models
        // public DbSet<GroupPost> GroupPosts { get; set; }
         public DbSet<Post> Posts { get; set; }
         public DbSet<FriendList> FriendLists { get; set; }
+        public DbSet<Message> Messages { get; set; }
+        public DbSet<FriendRequest> FriendRequests { get; set; }
 
         /* When you add new model add line here ...*/
     }

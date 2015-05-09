@@ -51,7 +51,15 @@ namespace SozialWeb.Service
 
             };
 
+            var friendConnection2 = new FriendList
+            {
+                friend1 = secondUser,
+                friend2 = firstUser
+
+            };
+
             db.FriendLists.Add(friendConnection);
+            db.FriendLists.Add(friendConnection2);
             db.SaveChanges();
 
             return true;
@@ -62,13 +70,17 @@ namespace SozialWeb.Service
             ApplicationDbContext db = new ApplicationDbContext();
 
             FriendList friendList = new FriendList();
+            FriendList friendList2 = new FriendList();
             friendList = db.FriendLists.Where(f => f.friend1.Id == user1 && f.friend2.Id == user2).SingleOrDefault();
+            friendList2 = db.FriendLists.Where(f => f.friend1.Id == user2 && f.friend2.Id == user1).SingleOrDefault();
 
-            if(friendList == null)
+            if(friendList == null || friendList2 == null)
             {
                 return false;
             }
             db.FriendLists.Remove(friendList);
+            db.FriendLists.Remove(friendList2);
+            
             db.SaveChanges();
 
             return true;

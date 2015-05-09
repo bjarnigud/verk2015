@@ -19,6 +19,7 @@ namespace SozialWeb.Service
                 {
                     text   = status,
                     author = user
+                   
                 };
 
                 db.Posts.Add(post);
