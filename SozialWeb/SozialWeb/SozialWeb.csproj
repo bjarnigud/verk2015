@@ -255,6 +255,7 @@
     <Content Include="Views\Search\SearchView.cshtml" />
     <Content Include="Views\Profile\ProfileTestView.cshtml" />
     <Content Include="Views\Test\TestHome.cshtml" />
+    <Content Include="Views\Search\SearchTestView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

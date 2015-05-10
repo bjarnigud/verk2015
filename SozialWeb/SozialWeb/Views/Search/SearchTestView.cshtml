@@ -1,16 +1,10 @@
 ﻿@model IEnumerable<SozialWeb.Models.ApplicationUser>
 
 @{
-    ViewBag.Title = "SearchView";
+    ViewBag.Title = "SearchTestView";
 }
 
-<h2>SearchView</h2>
-@using(Html.BeginForm("SearchView", "Search"))
-{
-    @Html.TextBox("searchString");
-    <input type="submit" value="Search">
-}
-
+<h2>SearchTestView</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")

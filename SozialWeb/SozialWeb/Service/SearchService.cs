@@ -23,5 +23,27 @@ namespace SozialWeb.Service
 
             return allUserList;
         }
+
+        public List<ApplicationUser> findUser(string searchString)
+        {
+            ApplicationDbContext db = new ApplicationDbContext();
+            List<ApplicationUser> usersFound = new List<ApplicationUser>();
+            var users = from u in db.Users
+                         select u;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                users = users.Where(u => u.Name.Contains(searchString));
+            }
+            //usersFound = (List<ApplicationUser>)users;
+
+
+            foreach (ApplicationUser user in users)
+            {
+                usersFound.Add(user);                 //ekki góð leið til að gera þetta
+            }
+
+            return usersFound;
+        }
     }
 }
