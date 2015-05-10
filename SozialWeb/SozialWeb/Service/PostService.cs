@@ -18,7 +18,8 @@ namespace SozialWeb.Service
                 var post = new Post
                 {
                     text   = status,
-                    author = user
+                    author = user,
+                    timeOfPost = DateTime.Now
                    
                 };
 

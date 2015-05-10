@@ -209,6 +209,7 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\ajax.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -252,10 +253,11 @@
     <Content Include="Views\Home\TestingPostList.cshtml" />
     <Content Include="Views\FriendsList\FriendsListView.cshtml" />
     <Content Include="Views\Search\SearchView.cshtml" />
+    <Content Include="Views\Profile\ProfileTestView.cshtml" />
+    <Content Include="Views\Test\TestHome.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Test\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
