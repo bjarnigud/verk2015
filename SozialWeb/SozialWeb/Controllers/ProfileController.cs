@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using SozialWeb.Service;
+using SozialWeb.Models;
 
 
 namespace SozialWeb.Controllers
@@ -16,9 +17,13 @@ namespace SozialWeb.Controllers
             return View();
         }
 
-        public ActionResult ProfileTestView()
+        public ActionResult ProfileTestView(string id)
         {
-            return View();
+            //id = "452ef5e8-2c90-4845-aeb3-66842e6a6469";
+            ProfileService p = new ProfileService();
+            ApplicationUser user = new ApplicationUser();
+            user = p.getUser(id);
+            return View(user);
         }
 
     }

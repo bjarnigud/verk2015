@@ -186,6 +186,7 @@
     <Compile Include="Service\FriendListService.cs" />
     <Compile Include="Service\MessageService.cs" />
     <Compile Include="Service\PostService.cs" />
+    <Compile Include="Service\ProfileService.cs" />
     <Compile Include="Service\SearchService.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -253,9 +254,9 @@
     <Content Include="Views\Home\TestingPostList.cshtml" />
     <Content Include="Views\FriendsList\FriendsListView.cshtml" />
     <Content Include="Views\Search\SearchView.cshtml" />
-    <Content Include="Views\Profile\ProfileTestView.cshtml" />
     <Content Include="Views\Test\TestHome.cshtml" />
     <Content Include="Views\Search\SearchTestView.cshtml" />
+    <Content Include="Views\Profile\ProfileTestView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
