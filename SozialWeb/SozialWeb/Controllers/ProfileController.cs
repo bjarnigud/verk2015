@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using SozialWeb.Service;
 using SozialWeb.Models;
-
+using Microsoft.AspNet.Identity;
 
 namespace SozialWeb.Controllers
 {
@@ -14,7 +14,11 @@ namespace SozialWeb.Controllers
         // GET: Profile
         public ActionResult ProfileView()
         {
-            return View();
+            PostService p = new PostService();
+            var userId = User.Identity.GetUserId();
+            IEnumerable<Post> model = p.getPosts(userId);
+
+            return View(model);
         }
 
         public ActionResult ProfileTestView(string id)
@@ -24,6 +28,30 @@ namespace SozialWeb.Controllers
             ApplicationUser user = new ApplicationUser();
             user = p.getUser(id);
             return View(user);
+        }
+
+        public ActionResult TestHome()
+        {
+            PostService p = new PostService();
+            var userId = User.Identity.GetUserId();
+            IEnumerable<Post> model = p.getPosts(userId);
+
+            return View(model);
+        }
+
+        [HttpPost]
+        public ActionResult AddPost(Post model)
+        {
+            var test = model;
+            if (ModelState.IsValid)
+            {
+                //model.UserName = System.Security.Principal.WindowsIdentity.GetCurrent().Name;
+                //CommentsRepository.Instance.AddComment(model);
+                PostService p = new PostService();
+                var userId = User.Identity.GetUserId();
+                p.addStatus(userId, model.text);
+            }
+            return RedirectToAction("ProfileView");
         }
 
     }

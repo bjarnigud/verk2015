@@ -119,15 +119,9 @@ namespace SozialWeb.Service
         {
            
             ApplicationDbContext db = new ApplicationDbContext();
-            //ApplicationUser user1;
-            //ApplicationUser user2;
             SearchService s = new SearchService();
 
              
-
-            //user1 = s.findUser(sender);
-            //user2 = s.findUser(reciver);
-
             var user1 = db.Users.Where(u => u.Id == sender).SingleOrDefault();
             var user2 = db.Users.Where(u => u.Id == reciver).SingleOrDefault();
 
@@ -143,6 +137,40 @@ namespace SozialWeb.Service
 
             db.FriendRequests.Add(friendRequest);
             db.SaveChanges();
+        }
+
+        public List<FriendRequest> getAllFriendRequestsReciver(string userId)
+        {
+            List<FriendRequest> fr = new List<FriendRequest>();
+            ApplicationDbContext db = new ApplicationDbContext();
+
+            var allRequests = from f in db.FriendRequests
+                              where userId == f.requestReciver.Id
+                              select f;
+
+            foreach (FriendRequest requests in allRequests)
+            {
+                fr.Add(requests);                 
+            }
+
+            return fr;
+        }
+
+        public List<FriendRequest> getAllFriendRequestsSender(string userId)
+        {
+            List<FriendRequest> fr = new List<FriendRequest>();
+            ApplicationDbContext db = new ApplicationDbContext();
+
+            var allRequests = from f in db.FriendRequests
+                              where userId == f.requestSender.Id
+                              select f;
+
+            foreach (FriendRequest requests in allRequests)
+            {
+                fr.Add(requests);            
+            }
+
+            return fr;
         }
     }
 }

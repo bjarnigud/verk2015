@@ -1,0 +1,28 @@
+﻿@model IEnumerable<SozialWeb.Models.FriendRequest>
+
+@{
+    ViewBag.Title = "SeeFriendRequests";
+}
+
+<h2>SeeFriendRequests</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            ID: @item.ID<br />
+            Reciver: @item.requestReciver.Name<br />
+            Sender: @item.requestSender.Name
+          
+        </td>
+    </tr>
+}
+
+</table>
