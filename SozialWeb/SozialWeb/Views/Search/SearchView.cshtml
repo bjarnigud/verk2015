@@ -35,9 +35,10 @@
             @Html.DisplayFor(modelItem => item.Gender)
         </td>
         <td>
-            @Html.ActionLink("EditName", "ProfileTestView", "Profile") | 
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            @Html.ActionLink("View profile", "ProfileTestView", "Profile", new {id = item.Id }, null) | 
+            @Html.ActionLink("Details", "Details", new { /* id=item.Id */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })  |
+           
         </td>
     </tr>
 }
