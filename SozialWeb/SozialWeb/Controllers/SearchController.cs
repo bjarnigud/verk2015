@@ -36,7 +36,7 @@ namespace SozialWeb.Controllers
         {
             SearchService s = new SearchService();
             List<ApplicationUser> users = new List<ApplicationUser>();
-            users = s.findUser(searchString);
+            users = s.findUsers(searchString);
 
             return View(users);
         }

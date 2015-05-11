@@ -8,7 +8,7 @@ namespace SozialWeb.Models
     public class FriendList
     {
         public int ID { get; set; }
-        public ApplicationUser friend1 { get; set; }
-        public ApplicationUser friend2 { get; set; }
+        public virtual ApplicationUser friend1 { get; set; }
+        public virtual ApplicationUser friend2 { get; set; }
     }
 }

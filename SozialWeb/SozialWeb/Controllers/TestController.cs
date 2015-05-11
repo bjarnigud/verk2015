@@ -43,5 +43,15 @@ namespace SozialWeb.Controllers
             }
             return RedirectToAction("TestHome");
         }
+
+        public ActionResult SendFriendRequest(string reciverId)
+        {
+            FriendListService f = new FriendListService();
+            var senderId = User.Identity.GetUserId();
+
+            f.sendFriendRequest(senderId, reciverId);
+
+            return View("Hello");
+        }
     }
 }

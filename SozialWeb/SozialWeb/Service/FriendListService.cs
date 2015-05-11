@@ -86,6 +86,7 @@ namespace SozialWeb.Service
             return true;
         }
 
+        //?????????????? - þarf kannski ekki og virkar líklegast ekki
         public List<ApplicationUser> getNotFriends(string userId)
         {
             ApplicationDbContext db = new ApplicationDbContext();
@@ -112,6 +113,32 @@ namespace SozialWeb.Service
 
 
             return currentUserFriendsList;
+        }
+
+        public void sendFriendRequest(string sender, string reciver)
+        {
+           
+            ApplicationDbContext db = new ApplicationDbContext();
+            ApplicationUser user1;
+            ApplicationUser user2;
+            SearchService s = new SearchService();
+
+
+            user1 = s.findUser(sender);
+            user2 = s.findUser(reciver);
+
+           
+
+          
+
+            var friendRequest = new FriendRequest
+            {
+                requestSender = user1,
+                requestReciver = user2
+            };
+
+            db.FriendRequests.Add(friendRequest);
+            db.SaveChanges();
         }
     }
 }

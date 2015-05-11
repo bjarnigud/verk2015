@@ -9,7 +9,7 @@ namespace SozialWeb.Models
     {
         public int ID { get; set; }
         public string text { get; set; }
-        public ApplicationUser user { get; set; }
+        public virtual ApplicationUser user { get; set; }
         public Post commentPost { get; set; }
         public bool like { get; set; }
         public DateTime timeOfComment { get; set; }

@@ -8,7 +8,7 @@ namespace SozialWeb.Models
     public class FriendRequest
     {
         public int ID { get; set; }
-        public ApplicationUser requestSender { get; set; }
-        public ApplicationUser requestReciver { get; set; }
+        public virtual ApplicationUser requestSender { get; set; }
+        public virtual ApplicationUser requestReciver { get; set; }
     }
 }

@@ -258,6 +258,7 @@
     <Content Include="Views\Test\TestHome.cshtml" />
     <Content Include="Views\Search\SearchTestView.cshtml" />
     <Content Include="Views\Profile\ProfileTestView.cshtml" />
+    <Content Include="Views\Test\SendFriendRequest.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

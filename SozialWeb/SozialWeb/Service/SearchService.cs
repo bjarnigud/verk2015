@@ -24,7 +24,7 @@ namespace SozialWeb.Service
             return allUserList;
         }
 
-        public List<ApplicationUser> findUser(string searchString)
+        public List<ApplicationUser> findUsers(string searchString)
         {
             ApplicationDbContext db = new ApplicationDbContext();
             List<ApplicationUser> usersFound = new List<ApplicationUser>();
@@ -45,5 +45,25 @@ namespace SozialWeb.Service
 
             return usersFound;
         }
+
+        // laga til nöfn á föllum
+        public ApplicationUser findUser(string id)
+        {
+            ApplicationDbContext db = new ApplicationDbContext();
+            ApplicationUser userReturned = new ApplicationUser();
+            var user = from u in db.Users
+                       where u.Id == id
+                       select u;
+        
+
+        foreach (ApplicationUser u in user)
+            {
+                userReturned = u;                 //ekki góð leið til að gera þetta
+            }
+
+        return userReturned;
+        }
+        
+
     }
 }
