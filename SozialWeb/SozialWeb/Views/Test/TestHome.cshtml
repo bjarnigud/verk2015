@@ -1,6 +1,6 @@
 ﻿@using SozialWeb.Models
 @model IEnumerable<SozialWeb.Models.Post>
-        <script src="~/Scripts/ajax.js" type="text/javascript"></script>
+        
                     
 
     @{
@@ -8,20 +8,20 @@
     }
 
     <h2>TestHome</h2>
+                      <div id="submitStatus">
+                          @using (Html.BeginForm("AddPost", "Test"))
+                          {
 
-    @using (Html.BeginForm("AddPost", "Test"))
-    {
-       
-        <fieldset>
-            <legend>Bæta við athugasemd</legend>
-            <div class="form-group">
-                <label for="" class="control-label">Texti:</label>
-                <input type="text" name="text" class="form-control" />
-            </div>
-            <input type="submit" class="btn btn-primary" value="Senda inn" />
-        </fieldset>
-    }
-
+                              <fieldset>
+                                  <legend>Bæta við athugasemd</legend>
+                                  <div class="form-group">
+                                      <label for="" class="control-label">Texti:</label>
+                                      <input type="text" name="text" class="form-control" />
+                                  </div>
+                                  <input type="submit" class="btn btn-primary" value="Senda inn" />
+                              </fieldset>
+                          }
+                      </div>
     <div id="post-list">
         <hr />
         <h3>Athugasemdir <span class="badge">Model.count - todo</span></h3>

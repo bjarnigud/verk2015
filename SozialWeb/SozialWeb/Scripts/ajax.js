@@ -7,7 +7,7 @@ $(function () {
     // Ágætt að venja sig á að nota "event delegation", þ.e .on() fallið í jQuery, en það hengir event á það sem er
     // akkúrat núna í DOM trénu í skjalinu og *einnig* öll element sem gætu bæst við síðar á dýnamískan máta
     // Hér hengjum við submit event á öll form í skjalinu (sem er bara eitt eins og er)
-    $('body').on('submit', 'form', function () {
+    $('#submitStatus').on('submit', 'form', function () {
 
         // Inn í þessum submit event handler er $(this) vísun í form tagið sjálft.  Geymum reference á það í breytunni "theForm"
         var theForm = $(this);
