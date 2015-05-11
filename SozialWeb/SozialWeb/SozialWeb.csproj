@@ -184,6 +184,7 @@
     <Compile Include="Models\Post.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service\FriendListService.cs" />
+    <Compile Include="Service\GroupService.cs" />
     <Compile Include="Service\MessageService.cs" />
     <Compile Include="Service\PostService.cs" />
     <Compile Include="Service\ProfileService.cs" />

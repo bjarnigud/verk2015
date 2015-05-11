@@ -36,8 +36,14 @@
         </td>
         <td>
             @Html.ActionLink("View profile", "ProfileTestView", "Profile", new {id = item.Id }, null) | 
-            @Html.ActionLink("Details", "Details", new { /* id=item.Id */ }) |
+            @Html.ActionLink("Send friend request", "Details", new { /* id=item.Id */ }) |
             @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })  |
+            @using (Html.BeginForm("SearchView", "Search"))
+            {
+                  @Html.TextBox("messageString");
+            <input type="submit" value="Message">
+            }
+          
            
         </td>
     </tr>
