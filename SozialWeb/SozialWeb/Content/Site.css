@@ -31,3 +31,13 @@ textarea {
     width:100%;
     max-width:600px;
 }
+
+.navbar-inverse .navbar-nav > li > a
+{
+    color: white;
+}
+
+.navbar-inverse .navbar-brand 
+{
+    color: white;
+}
