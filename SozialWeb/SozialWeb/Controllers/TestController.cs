@@ -26,6 +26,7 @@ namespace SozialWeb.Controllers
             PostService p = new PostService();
             var userId = User.Identity.GetUserId();
             IEnumerable<Post> model = p.getPosts(userId);
+         
             return View(model);
         }
 
@@ -51,7 +52,7 @@ namespace SozialWeb.Controllers
 
             f.sendFriendRequest(senderId, reciverId);
 
-            return View("Hello");
+            return View();
         }
     }
 }

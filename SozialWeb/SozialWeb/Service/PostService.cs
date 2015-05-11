@@ -35,6 +35,7 @@ namespace SozialWeb.Service
 
              var postList = (from p in db.Posts
                              where p.author.Id == userId
+                             orderby p.timeOfPost descending
                              select p).ToList();
 
              return postList;

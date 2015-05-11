@@ -119,16 +119,20 @@ namespace SozialWeb.Service
         {
            
             ApplicationDbContext db = new ApplicationDbContext();
-            ApplicationUser user1;
-            ApplicationUser user2;
+            //ApplicationUser user1;
+            //ApplicationUser user2;
             SearchService s = new SearchService();
 
+             
 
-            user1 = s.findUser(sender);
-            user2 = s.findUser(reciver);
+            //user1 = s.findUser(sender);
+            //user2 = s.findUser(reciver);
 
-           
+            var user1 = db.Users.Where(u => u.Id == sender).SingleOrDefault();
+            var user2 = db.Users.Where(u => u.Id == reciver).SingleOrDefault();
 
+            string user1id = user1.Id;
+            string user2id = user2.Id;
           
 
             var friendRequest = new FriendRequest

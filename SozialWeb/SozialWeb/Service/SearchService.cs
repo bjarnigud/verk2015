@@ -35,8 +35,6 @@ namespace SozialWeb.Service
             {
                 users = users.Where(u => u.Name.Contains(searchString));
             }
-            //usersFound = (List<ApplicationUser>)users;
-
 
             foreach (ApplicationUser user in users)
             {
