@@ -93,6 +93,10 @@ namespace SozialWeb.Models
         [Display(Name = "Gender")]
         public string Gender { get; set; }
 
+        [Required]
+        [Display(Name = "Url location of the Pic")]
+        public string PicLocation { get; set; }
+
  
 
     }
