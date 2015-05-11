@@ -54,5 +54,14 @@ namespace SozialWeb.Controllers
 
             return View();
         }
+
+        public ActionResult SeeFriendRequests()
+        {
+            FriendListService fr = new FriendListService();
+            List <FriendRequest> userRequests = new List <FriendRequest>();
+            var userId = User.Identity.GetUserId();
+            userRequests =  fr.getAllFriendRequestsReciver(userId);
+            return View(userRequests);
+        }
     }
 }

@@ -1,5 +1,7 @@
-﻿@{
-    ViewBag.Title = "ProfileView";
-}
-
-<h2>Profile page</h2>
+﻿@using SozialWeb.Models
+@model IEnumerable <SozialWeb.Models.Post>
+    @{
+        ViewBag.Title = "ProfileView";
+    }
+    @Html.Partial("_Partial")
+    <h2>Profile page</h2>
