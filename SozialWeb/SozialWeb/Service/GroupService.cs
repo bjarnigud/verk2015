@@ -24,5 +24,14 @@ namespace SozialWeb.Service
             db.Groups.Add(group);
             db.SaveChanges();
         }
+
+        public List<Group> GetAllGroups()
+        {
+            ApplicationDbContext db = new ApplicationDbContext();
+            var groups = (from g in db.Groups
+                         select g).ToList();
+
+            return groups;
+        }
     }
 }

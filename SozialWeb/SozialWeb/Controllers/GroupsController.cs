@@ -14,7 +14,9 @@ namespace SozialWeb.Controllers
         // GET: Groups
         public ActionResult GroupsView()
         {
-            return View();
+            GroupService g = new GroupService();
+            var groups = g.GetAllGroups();
+            return View(groups);
         }
 
         [HttpPost]
@@ -31,6 +33,13 @@ namespace SozialWeb.Controllers
             
             
             return RedirectToAction("GroupsView");
+        }
+
+        public ActionResult SeeGroupsList()
+        {
+            GroupService g = new GroupService();
+            var groups = g.GetAllGroups();
+            return View(groups);
         }
 
     }

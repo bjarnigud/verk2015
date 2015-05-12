@@ -1,13 +1,35 @@
 ﻿@using SozialWeb.Models
-@model SozialWeb.Models.Group
+@model IEnumerable<SozialWeb.Models.Group>
 
-@{
-    ViewBag.Title = "GroupsView";
-}
+    @{
+        ViewBag.Title = "GroupsView";
+    }
 
-<h2>GroupsView</h2>
+    <h2>GroupsView</h2>
 
+                      <table class="table">
+                          <tr>
+                              <th>
+                                  @Html.DisplayNameFor(model => model.name)
+                              </th>
+                              <th></th>
+                          </tr>
 
+                          @foreach (var item in Model)
+                          {
+                              <tr>
+                                  <td>
+                                      @Html.DisplayFor(modelItem => item.name)
+                                  </td>
+                                  <td>
+                                      @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                                      @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+                                      @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+                                  </td>
+                              </tr>
+                          }
+
+                      </table>
 
     @Html.AntiForgeryToken()
 
@@ -25,16 +47,16 @@
                     <label for="" class="control-label">Name:</label>
                     @Html.TextBox("name");
                 </div>
-               
-               
+
+
                 <input type="submit" class="btn btn-primary" value="Create" />
             </fieldset>
-}
+        }
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
+        <div>
+            @Html.ActionLink("Back to List", "Index")
+        </div>
 
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}
+        @section Scripts {
+            @Scripts.Render("~/bundles/jqueryval")
+        }
