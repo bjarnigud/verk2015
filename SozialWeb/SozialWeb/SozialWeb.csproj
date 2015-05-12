@@ -262,6 +262,7 @@
     <Content Include="Views\Test\SeeFriendRequests.cshtml" />
     <Content Include="Views\Shared\_Partial.cshtml" />
     <Content Include="Views\Test\AcceptFriendRequest.cshtml" />
+    <Content Include="Views\Test\TestError.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
