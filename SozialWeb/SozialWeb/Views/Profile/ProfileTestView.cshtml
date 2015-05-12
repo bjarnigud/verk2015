@@ -14,17 +14,17 @@
             
         </dt>
         <dt>
-           Hello
+            <img src="@Url.Content(Model.PicLocation)" alt="Image" />
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.Name)
         </dd>
         <dt>
-            @Html.DisplayNameFor(Model => Model.Age)
+            @Html.DisplayNameFor(model => model.Age)
         </dt>
         <dd>
-            @Html.DisplayFor(age => Model.Age)
+            @Html.DisplayFor(model => model.Age)
         </dd>
         <dt>
             @Html.DisplayNameFor(model => model.Gender)

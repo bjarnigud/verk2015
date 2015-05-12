@@ -11,10 +11,6 @@
     <input type="submit" value="Search">
 }
 
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
 <table class="table">
     <tr>
         <th>
@@ -30,6 +26,9 @@
     <tr>
         <td>
             @Html.DisplayFor(modelItem => item.Name)
+            <br />
+            @Html.ActionLink("View profile", "ProfileTestView", "Profile", new { id = item.Id }, null)
+            
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Gender)
