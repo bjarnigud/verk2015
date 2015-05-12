@@ -19,7 +19,8 @@
         <td>
             ID: @item.ID<br />
             Reciver: @item.requestReciver.Name<br />
-            Sender: @item.requestSender.Name
+            Sender: @item.requestSender.Name <br />
+            @Html.ActionLink("Accept request", "AcceptFriendRequest", "Test", new { Id = item.ID }, null)
           
         </td>
     </tr>

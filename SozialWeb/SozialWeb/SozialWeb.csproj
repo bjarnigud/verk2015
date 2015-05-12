@@ -260,8 +260,8 @@
     <Content Include="Views\Profile\ProfileTestView.cshtml" />
     <Content Include="Views\Test\SendFriendRequest.cshtml" />
     <Content Include="Views\Test\SeeFriendRequests.cshtml" />
-    <Content Include="Views\Test\Test2.cshtml" />
     <Content Include="Views\Shared\_Partial.cshtml" />
+    <Content Include="Views\Test\AcceptFriendRequest.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

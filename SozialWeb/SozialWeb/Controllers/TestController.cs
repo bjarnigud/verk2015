@@ -63,5 +63,14 @@ namespace SozialWeb.Controllers
             userRequests =  fr.getAllFriendRequestsReciver(userId);
             return View(userRequests);
         }
+
+        public ActionResult AcceptFriendRequest(int id)
+        {
+            FriendListService fr = new FriendListService();
+            FriendRequest f = fr.getFriendListById(id);
+            fr.addFriend(f.requestReciver.Id, f.requestSender.Id);
+            fr.deleteFriendRequest(id);
+            return View();
+        }
     }
 }

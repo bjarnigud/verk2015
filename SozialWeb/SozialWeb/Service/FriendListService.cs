@@ -172,5 +172,24 @@ namespace SozialWeb.Service
 
             return fr;
         }
+
+        public FriendRequest getFriendListById(int id) //?id ????'
+        {
+             ApplicationDbContext db = new ApplicationDbContext();
+            var friendRequest = db.FriendRequests.Where(f => f.ID == id).SingleOrDefault();
+
+            return friendRequest;
+
+        }
+
+        public void deleteFriendRequest(int id)
+        {
+            ApplicationDbContext db = new ApplicationDbContext();
+            var friendRequest = db.FriendRequests.Where(f => f.ID == id).SingleOrDefault();
+
+            db.FriendRequests.Remove(friendRequest);
+            db.SaveChanges();
+            
+        }
     }
 }
