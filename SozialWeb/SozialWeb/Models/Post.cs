@@ -11,6 +11,7 @@ namespace SozialWeb.Models
         public string text { get; set; }
         public virtual ApplicationUser author { get; set; }
         public DateTime timeOfPost { get; set; }
+        //public virtual ApplicationUser reciver {get; set;}
 
         // Puylllpasd jkmasd
     }

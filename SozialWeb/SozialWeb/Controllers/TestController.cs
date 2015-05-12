@@ -54,17 +54,17 @@ namespace SozialWeb.Controllers
             if(test == true)
             {
                string message = "You are already friend with that user silly";
-               return  RedirectToAction("TestError", "Test");
+               return RedirectToAction("TestError", "Test", new { errorMessage = "You are already friend with that user silly" });
             }
 
             if(senderId == reciverId)                                  //Athugar hvort sé verið að senda sjálfum sér vinabeiðni og ef svo er  
             {                                                          // fer notandi á villusíðu vegna þess að það er sorglegt að senda sjálfum sér vinabeiðni
-                return RedirectToAction("TestError", "Test");
+                return RedirectToAction("TestError", "Test", new {errorMessage = "Cant send a friend request to yourself" });
             }
            
             if(f.alreadyFriendRequest(senderId, reciverId))
             {
-                return RedirectToAction("TestError", "Test");
+                return RedirectToAction("TestError", "Test", new { errorMessage = "Friend request already sent, be patient" });
             }
 
             f.sendFriendRequest(senderId, reciverId);
@@ -93,7 +93,7 @@ namespace SozialWeb.Controllers
         public ActionResult TestError(string errorMessage)
         {
             ViewBag.message = errorMessage;
-            ViewBag.message = "This is the viewBag message";
+           // ViewBag.message = "This is the viewBag message";
 
             return View();
         }

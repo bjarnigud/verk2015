@@ -1,5 +1,40 @@
-﻿@{
+﻿@using SozialWeb.Models
+@model SozialWeb.Models.Group
+
+@{
     ViewBag.Title = "GroupsView";
 }
 
-<h2>Group page</h2>
+<h2>GroupsView</h2>
+
+
+
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Group</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+
+        @using (Html.BeginForm("CreateNewGroup", "Groups"))
+        {
+
+            <fieldset>
+                <legend>Create group</legend>
+                <div class="form-group">
+                    <label for="" class="control-label">Name:</label>
+                    @Html.TextBox("name");
+                </div>
+               
+               
+                <input type="submit" class="btn btn-primary" value="Create" />
+            </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
