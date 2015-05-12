@@ -19,33 +19,42 @@
         <th>
             @Html.DisplayNameFor(model => model.Gender)
         </th>
-        <th></th>
+
+        <th> 
+            @Html.DisplayNameFor(model => model.Age)
+        </th>
+        <th>
+            Send friend request
+        </th>
+        <th>
+            Message
+        </th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Name)
-            <br />
-            @Html.ActionLink("View profile", "ProfileTestView", "Profile", new { id = item.Id }, null)
-            
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Gender)
-        </td>
-        <td>
-            @Html.ActionLink("View profile", "ProfileTestView", "Profile", new {id = item.Id }, null) | 
-            @Html.ActionLink("Send friend request", "SendFriendRequest", "Test", new { reciverId = item.Id }, null) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })  |
-            @using (Html.BeginForm("SearchView", "Search"))
-            {
-                  @Html.TextBox("messageString");
-            <input type="submit" value="Message">
-            }
-          
-           
-        </td>
-    </tr>
-}
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+                <br/>
+                @Html.ActionLink("View Profile", "ProfileTestView", "Profile", new { id = item.Id }, null)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Gender)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Age)
+            </td>
+            <td>
+                @Html.ActionLink("Send friend request", "SendFriendRequest", "Test", new { reciverId = item.Id }, null)
+            </td>
+            <td>
+                @using (Html.BeginForm("SearchView", "Search"))
+                {
+                    @Html.TextBox("messageString");
+                    <input type="submit" value="Message">
+                }
+            </td>  
+        </tr>
+    }
 
 </table>

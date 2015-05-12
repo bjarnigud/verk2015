@@ -7,16 +7,17 @@
     ViewBag.Title = "TestHome";
 }
 
-<h2>TestHome</h2>
+<h2>Your page</h2>
 
 @using (Html.BeginForm("AddPost", "Profile"))
 {
 
     <fieldset>
-        <legend>Bæta við athugasemd</legend>
+        <legend></legend>
         <div class="form-group">
-            <label for="" class="control-label">Texti:</label>
-            <input type="text" name="text" class="form-control" />
+            <label for="" class="control-label">Text:</label>
+            <br />
+            <textarea name="text" cols="60" rows="5" placeholder="What's on your mind?"></textarea>
         </div>
         <input type="submit" class="btn btn-primary" id="submitStatus" value="Senda inn" />
     </fieldset>

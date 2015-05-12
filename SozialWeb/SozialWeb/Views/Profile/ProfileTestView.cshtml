@@ -4,22 +4,12 @@
     ViewBag.Title = "ProfileTestView";
 }
 
-<h2>ProfileTestView</h2>
+<h2>@Html.DisplayFor(model => model.Name)</h2>
 
 <div>
-    <h4>ApplicationUser</h4>
+    <h4><img src="@Url.Content(Model.PicLocation)" alt="image" /></h4>
 	<hr />
     <dl class="dl-horizontal">
-        <dt>
-            
-        </dt>
-        <dt>
-            <img src="@Url.Content(Model.PicLocation)" alt="image" />
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Name)
-        </dd>
         <dt>
             @Html.DisplayNameFor(model => model.Age)
         </dt>
@@ -36,7 +26,9 @@
 
     </dl>
 </div>
-<p>
+<!--
+    <p>
     @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
     @Html.ActionLink("Back to List", "Index")
-</p>
+    </p>
+-->
