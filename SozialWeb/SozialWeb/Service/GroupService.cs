@@ -33,5 +33,30 @@ namespace SozialWeb.Service
 
             return groups;
         }
+
+        public Group GetGroupById(int id)
+        {
+            ApplicationDbContext db = new ApplicationDbContext();
+            var group = db.Groups.Where(g => g.ID == id).SingleOrDefault();
+
+            return group;
+        }
+
+        public bool JoinGroup(string userId, int groupId)   
+        {
+            ApplicationDbContext db = new ApplicationDbContext();
+            var user = db.Users.Where(u => u.Id == userId).SingleOrDefault();
+            var groupToJoin = db.Groups.Where(g => g.ID == groupId).SingleOrDefault();
+
+            var groupMember = new GroupMember{
+                                  groupMember = user,
+                                  group = groupToJoin
+                              };
+
+            db.GroupMembers.Add(groupMember);
+            db.SaveChanges();
+            return true;
+        }
+
     }
 }

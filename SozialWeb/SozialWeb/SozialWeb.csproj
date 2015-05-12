@@ -177,6 +177,7 @@
     <Compile Include="Models\FriendList.cs" />
     <Compile Include="Models\FriendRequest.cs" />
     <Compile Include="Models\Group.cs" />
+    <Compile Include="Models\GroupMember.cs" />
     <Compile Include="Models\GroupPost.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -264,6 +265,7 @@
     <Content Include="Views\Test\AcceptFriendRequest.cshtml" />
     <Content Include="Views\Test\TestError.cshtml" />
     <Content Include="Views\Groups\SeeGroupsList.cshtml" />
+    <Content Include="Views\Groups\GroupProfile.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

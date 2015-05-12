@@ -35,11 +35,29 @@ namespace SozialWeb.Controllers
             return RedirectToAction("GroupsView");
         }
 
-        public ActionResult SeeGroupsList()
+        public ActionResult SeeGroupsList(int id)
         {
             GroupService g = new GroupService();
-            var groups = g.GetAllGroups();
-            return View(groups);
+            var group = g.GetGroupById(id);
+           
+            return View(group);
+        }
+
+        public ActionResult GroupProfile (int groupId)
+        {
+            GroupService g = new GroupService();
+            Group group = new Group();
+   
+            group = g.GetGroupById(groupId);
+            return View(group);
+        }
+
+        public ActionResult JoinGroup(int groupId)
+        {
+            GroupService g = new GroupService();
+            var userId = User.Identity.GetUserId();
+            g.JoinGroup(userId, groupId);
+            return RedirectToAction("GroupsView");
         }
 
     }

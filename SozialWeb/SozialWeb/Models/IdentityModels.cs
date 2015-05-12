@@ -44,6 +44,7 @@ namespace SozialWeb.Models
         public DbSet<FriendList> FriendLists { get; set; }
         public DbSet<Message> Messages { get; set; }
         public DbSet<FriendRequest> FriendRequests { get; set; }
+        public DbSet<GroupMember> GroupMembers { get; set; }
 
         /* When you add new model add line here ...*/
     }

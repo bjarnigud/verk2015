@@ -23,7 +23,6 @@ namespace SozialWeb.Controllers
 
         public ActionResult ProfileTestView(string id)
         {
-            //id = "452ef5e8-2c90-4845-aeb3-66842e6a6469";
             ProfileService p = new ProfileService();
             ApplicationUser user = new ApplicationUser();
             user = p.getUser(id);

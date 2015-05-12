@@ -22,9 +22,11 @@
                                       @Html.DisplayFor(modelItem => item.name)
                                   </td>
                                   <td>
+                                      @Html.ActionLink("View group", "GroupProfile", "Groups", new { groupId = item.ID }, null) |
                                       @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
-                                      @Html.ActionLink("Details", "Details", new { id = item.ID }) |
-                                      @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+                                      @Html.ActionLink("Join Group", "JoinGroup", "Groups", new { groupId = item.ID }, null) |
+                                      @Html.ActionLink("Leave Group", "Edit", new { groupId = item.ID }) 
+                                      
                                   </td>
                               </tr>
                           }

@@ -53,13 +53,12 @@ namespace SozialWeb.Controllers
             bool test = f.alreadyFriends(reciverId, senderId);          //Athugar hvort sé verið að senda vinabeiðni á vin sinn, ef svo fer á error síðu
             if(test == true)
             {
-               string message = "You are already friend with that user silly";
                return RedirectToAction("TestError", "Test", new { errorMessage = "You are already friend with that user silly" });
             }
 
             if(senderId == reciverId)                                  //Athugar hvort sé verið að senda sjálfum sér vinabeiðni og ef svo er  
             {                                                          // fer notandi á villusíðu vegna þess að það er sorglegt að senda sjálfum sér vinabeiðni
-                return RedirectToAction("TestError", "Test", new {errorMessage = "Cant send a friend request to yourself" });
+                return RedirectToAction("TestError", "Test", new {errorMessage = "Can't send a friend request to yourself" });
             }
            
             if(f.alreadyFriendRequest(senderId, reciverId))
