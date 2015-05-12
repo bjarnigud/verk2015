@@ -20,7 +20,12 @@
         <dd>
             @Html.DisplayFor(model => model.Name)
         </dd>
-
+        <dt>
+            @Html.DisplayNameFor(Model => Model.Age)
+        </dt>
+        <dd>
+            @Html.DisplayFor(age => Model.Age)
+        </dd>
         <dt>
             @Html.DisplayNameFor(model => model.Gender)
         </dt>

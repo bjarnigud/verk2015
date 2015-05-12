@@ -13,7 +13,7 @@ namespace SozialWeb.Models
     {
         public string Name { get; set; }
         public string Gender { get; set; }
-        //public DateTime timeOfBirth { get; set; }
+        public int Age { get; set; }
         public virtual ICollection<Post> Posts { get; set; }
         public string PicLocation { get; set; }
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)

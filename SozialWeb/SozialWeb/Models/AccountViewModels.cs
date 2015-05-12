@@ -85,8 +85,8 @@ namespace SozialWeb.Models
         public string Email { get; set; }
 
         [Required]
-        [Display(Name = "Birthday")]
-        public int Birthday { get; set; }
+        [Display(Name = "Type In Your Age")]
+        public int Age { get; set; }
         
 
         [Required]
@@ -94,7 +94,7 @@ namespace SozialWeb.Models
         public string Gender { get; set; }
 
         [Required]
-        [Display(Name = "Url location of the Pic")]
+        [Display(Name = "Url location of the your Profile Picture")]
         public string PicLocation { get; set; }
 
  
