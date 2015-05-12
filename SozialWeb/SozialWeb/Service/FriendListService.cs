@@ -191,5 +191,38 @@ namespace SozialWeb.Service
             db.SaveChanges();
             
         }
+
+        public bool alreadyFriends(string user1id, string user2id)
+        {
+            ApplicationDbContext db = new ApplicationDbContext();
+            var user1 = db.Users.Where(u => u.Id == user1id).SingleOrDefault();
+            var user2 = db.Users.Where(u => u.Id == user2id).SingleOrDefault();
+
+            var find = from f in db.FriendLists
+                        where user1id == f.friend1.Id 
+                        && user2id == f.friend2.Id
+                            select f;
+            if(find.Count() == 0)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        public bool alreadyFriendRequest(string user1, string user2)
+        {
+            ApplicationDbContext db = new ApplicationDbContext();
+
+            var find = from f in db.FriendRequests
+                       where user1 == f.requestReciver.Id && user2 == f.requestSender.Id
+                       select f;
+
+            if (find.Count() == 0)
+            {
+                return false;
+            }
+
+            return true;
+        }
     }
 }

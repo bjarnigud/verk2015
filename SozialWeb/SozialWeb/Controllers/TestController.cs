@@ -49,6 +49,23 @@ namespace SozialWeb.Controllers
         {
             FriendListService f = new FriendListService();
             var senderId = User.Identity.GetUserId();
+         
+            bool test = f.alreadyFriends(reciverId, senderId);          //Athugar hvort sé verið að senda vinabeiðni á vin sinn, ef svo fer á error síðu
+            if(test == true)
+            {
+               string message = "You are already friend with that user silly";
+               return  RedirectToAction("TestError", "Test");
+            }
+
+            if(senderId == reciverId)                                  //Athugar hvort sé verið að senda sjálfum sér vinabeiðni og ef svo er  
+            {                                                          // fer notandi á villusíðu vegna þess að það er sorglegt að senda sjálfum sér vinabeiðni
+                return RedirectToAction("TestError", "Test");
+            }
+           
+            if(f.alreadyFriendRequest(senderId, reciverId))
+            {
+                return RedirectToAction("TestError", "Test");
+            }
 
             f.sendFriendRequest(senderId, reciverId);
 
@@ -70,6 +87,14 @@ namespace SozialWeb.Controllers
             FriendRequest f = fr.getFriendListById(id);
             fr.addFriend(f.requestReciver.Id, f.requestSender.Id);
             fr.deleteFriendRequest(id);
+            return View();
+        }
+
+        public ActionResult TestError(string errorMessage)
+        {
+            ViewBag.message = errorMessage;
+            ViewBag.message = "This is the viewBag message";
+
             return View();
         }
     }
