@@ -4,6 +4,8 @@
     ViewBag.Title = "ProfileTestView";
 }
 
+@Html.Partial("_Partial", Model.Posts)
+
 <h2>@Html.DisplayFor(model => model.Name)</h2>
 
 <div>
