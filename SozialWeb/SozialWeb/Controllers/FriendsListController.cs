@@ -8,7 +8,7 @@ using Microsoft.AspNet.Identity;
 using SozialWeb.Service;
 
 namespace SozialWeb.Controllers
-{
+{   [Authorize]
     public class FriendsListController : Controller
     {
         // GET: FriendsList

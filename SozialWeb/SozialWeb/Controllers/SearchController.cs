@@ -32,6 +32,7 @@ namespace SozialWeb.Controllers
             return View(users);
         }
         */
+        [Authorize]
         public ActionResult SearchView(string searchString)
         {
             SearchService s = new SearchService();

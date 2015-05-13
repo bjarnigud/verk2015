@@ -8,7 +8,7 @@ using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 
 namespace SozialWeb.Controllers
-{
+{   [Authorize]
     public class TestController : Controller
     {
         public string Index() 
