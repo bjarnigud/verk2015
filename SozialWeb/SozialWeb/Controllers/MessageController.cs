@@ -8,7 +8,7 @@ using SozialWeb.Models;
 using Microsoft.AspNet.Identity;
 
 namespace SozialWeb.Controllers
-{
+{   [Authorize]
     public class MessageController : Controller
     {
         //

@@ -7,7 +7,7 @@ using SozialWeb.Service;
 using Microsoft.AspNet.Identity;
 
 namespace SozialWeb.Controllers
-{
+{   [Authorize]
     public class HomeController : Controller
     {
         public ActionResult Index()

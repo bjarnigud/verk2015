@@ -8,7 +8,7 @@ using SozialWeb.Models;
 using Microsoft.AspNet.Identity;
 
 namespace SozialWeb.Controllers
-{
+{   [Authorize]
     public class GroupsController : Controller
     {
         // GET: Groups
@@ -23,7 +23,7 @@ namespace SozialWeb.Controllers
             var groups2 = g.findGroups(searchString);
             return View(groups2);
         }
-
+      
         [HttpPost]
         public ActionResult CreateNewGroup(string name)
         {
@@ -35,8 +35,7 @@ namespace SozialWeb.Controllers
                 PostService p = new PostService();
                 var userId = User.Identity.GetUserId();
                 g.CreateGroup(name, userId);
-            
-            
+       
             return RedirectToAction("GroupsView");
         }
 
