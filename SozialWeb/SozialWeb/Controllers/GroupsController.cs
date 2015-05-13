@@ -25,16 +25,18 @@ namespace SozialWeb.Controllers
         }
       
         [HttpPost]
-        public ActionResult CreateNewGroup(string name)
+        public ActionResult CreateNewGroup(string name, string description)
         {
             GroupService g = new GroupService();
 
 
                 //model.UserName = System.Security.Principal.WindowsIdentity.GetCurrent().Name;
                 //CommentsRepository.Instance.AddComment(model);
-                PostService p = new PostService();
+
                 var userId = User.Identity.GetUserId();
-                g.CreateGroup(name, userId);
+                g.CreateGroup(name, description, userId);
+
+                
        
             return RedirectToAction("GroupsView");
         }
