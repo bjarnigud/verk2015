@@ -97,6 +97,10 @@ namespace SozialWeb.Models
         [Display(Name = "Url location of your Profile Picture")]
         public string PicLocation { get; set; }
 
+        [Required]
+        [Display(Name = "Your Location")]
+        public string LocationOfUser { get; set; }
+
  
 
     }
