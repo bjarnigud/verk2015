@@ -13,6 +13,12 @@ namespace SozialWeb
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
             // user friendly url for registering
+
+            routes.MapRoute(
+               name: "ProfileView",
+               url: "ProfileTestView",
+               defaults: new { controller = "Profile", action = "Profile", id = UrlParameter.Optional }
+           );
             routes.MapRoute(
                 name: "Login",
                 url: "login",
