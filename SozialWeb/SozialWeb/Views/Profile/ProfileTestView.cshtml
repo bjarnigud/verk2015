@@ -4,7 +4,6 @@
     ViewBag.Title = "ProfileTestView";
 }
 
-@Html.Partial("_Partial", Model.Posts)
 
 <h2>@Html.DisplayFor(model => model.Name)</h2>
 
@@ -39,6 +38,7 @@
 
     </dl>
 </div>
+@Html.Partial("_Partial", Model.Posts)
 <!--
     <p>
     @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
