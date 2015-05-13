@@ -1,0 +1,44 @@
+﻿@model IEnumerable<SozialWeb.Models.Message>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.text)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.timeOfMessage)
+        </th>
+        <th>
+            Sent From
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.text)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.timeOfMessage)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.author.Name)
+        </td>
+        <td>
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete Message", "DeleteMessage", new { messageId = item.ID }, new { returnUrl = Request.Url.AbsoluteUri })
+        </td>
+    </tr>
+}
+
+</table>

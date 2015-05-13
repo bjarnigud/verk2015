@@ -11,8 +11,6 @@ namespace SozialWeb.Service
         public bool SendMessage(string user1, string user2, string textMessage)
         {
             ApplicationDbContext db = new ApplicationDbContext();
-           // ApplicationUser firstUser = new ApplicationUser();
-            //ApplicationUser secondUser = new ApplicationUser();
 
             var firstUser = db.Users.Where(u => u.Id == user1).SingleOrDefault();
             var secondUser = db.Users.Where(u => u.Id == user2).SingleOrDefault();
@@ -33,6 +31,33 @@ namespace SozialWeb.Service
 
             db.Messages.Add(message);
            
+            db.SaveChanges();
+
+            return true;
+        }
+
+        public List<Message> GetAllMessagesByUserId(string userId)
+        {
+            ApplicationDbContext db = new ApplicationDbContext();
+
+            var messageList = (from m in db.Messages
+                            where m.reciver.Id == userId
+                            orderby m.timeOfMessage ascending
+                            select m).ToList();
+
+            return messageList;
+        }
+
+        public bool DeleteMessage(int messageId)
+        {
+            ApplicationDbContext db = new ApplicationDbContext();
+            var message = db.Messages.Where(m => m.ID == messageId).SingleOrDefault();
+
+            if(message == null)
+            {
+                return false;
+            }
+            db.Messages.Remove(message);
             db.SaveChanges();
 
             return true;

@@ -15,7 +15,11 @@ namespace SozialWeb.Controllers
         // GET: /Message/
         public ActionResult Index()
         {
-            return View();
+            MessageService m = new MessageService();
+            var userId = User.Identity.GetUserId();
+            var list = m.GetAllMessagesByUserId(userId);
+            
+            return View(list);
         }
 
         public ActionResult SendMessage (string message, string reciverId)
@@ -27,6 +31,19 @@ namespace SozialWeb.Controllers
 
             return RedirectToAction("SearchView", "Search");
             
+        }
+
+        public ActionResult DeleteMessage(int? messageId, string returnUrl)
+        {
+            MessageService m = new MessageService();
+            int id;
+            if(messageId == null)
+            {
+                return RedirectToAction("TestError", "Test", new { errorMessage = "Can't delete message" });
+            }
+            id = (int)messageId;
+            m.DeleteMessage(id);
+            return RedirectToAction(returnUrl);
         }
 	}
 }
