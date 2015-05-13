@@ -58,5 +58,17 @@ namespace SozialWeb.Service
             return true;
         }
 
+        public bool LeaveGroup(string userId, int groupId)
+        {
+            ApplicationDbContext db = new ApplicationDbContext();
+            var user = db.Users.Where(u => u.Id == userId).SingleOrDefault();
+            var groupMember = db.GroupMembers.Where(g => g.group.ID == groupId && g.groupMember.Id == userId).SingleOrDefault();
+
+
+            db.GroupMembers.Remove(groupMember);
+            db.SaveChanges();
+            return true;
+        }
+
     }
 }
