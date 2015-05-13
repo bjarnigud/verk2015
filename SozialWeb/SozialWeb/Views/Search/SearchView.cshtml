@@ -46,9 +46,9 @@
                 @Html.ActionLink("Send friend request", "SendFriendRequest", "Test", new { reciverId = item.Id }, null)
             </td>
             <td>
-                @using (Html.BeginForm("SearchView", "Search"))
+                @using (Html.BeginForm("SendMessage", "Message", new { reciverId = item.Id }))
                 {
-                    @Html.TextBox("messageString");
+                    @Html.TextBox("message");
                     <input type="submit" value="Message">
                 }
             </td>  

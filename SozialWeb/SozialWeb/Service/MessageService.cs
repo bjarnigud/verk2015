@@ -11,16 +11,17 @@ namespace SozialWeb.Service
         public bool SendMessage(string user1, string user2, string textMessage)
         {
             ApplicationDbContext db = new ApplicationDbContext();
-            ApplicationUser firstUser = new ApplicationUser();
-            ApplicationUser secondUser = new ApplicationUser();
+           // ApplicationUser firstUser = new ApplicationUser();
+            //ApplicationUser secondUser = new ApplicationUser();
 
-            firstUser = db.Users.Where(u => u.Id == user1).SingleOrDefault();
-            secondUser = db.Users.Where(u => u.Id == user2).SingleOrDefault();
-
+            var firstUser = db.Users.Where(u => u.Id == user1).SingleOrDefault();
+            var secondUser = db.Users.Where(u => u.Id == user2).SingleOrDefault();
+            
             if (firstUser == null || secondUser == null)
             {
                 return false;
             }
+             
             var message = new Message
             {
                 author = firstUser,
@@ -30,8 +31,8 @@ namespace SozialWeb.Service
 
             };
 
-
-            //db.Message.Add(message);
+            db.Messages.Add(message);
+           
             db.SaveChanges();
 
             return true;
