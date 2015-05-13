@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using SozialWeb.Models;
+using Microsoft.AspNet.Identity;
 
 namespace SozialWeb.Service
 {
@@ -64,7 +65,7 @@ namespace SozialWeb.Service
 
             return true;
         }
-
+        /*
         public bool removeFriend(string user1, string user2)
         {
             ApplicationDbContext db = new ApplicationDbContext();
@@ -85,7 +86,7 @@ namespace SozialWeb.Service
 
             return true;
         }
-
+        */
         //?????????????? - þarf kannski ekki og virkar líklegast ekki
         public List<ApplicationUser> getNotFriends(string userId)
         {
@@ -221,6 +222,29 @@ namespace SozialWeb.Service
             {
                 return false;
             }
+
+            return true;
+        }
+
+        public bool removeFriend(string user1, string user2)
+        {
+            ApplicationDbContext db = new ApplicationDbContext();
+            var friend = (from f in db.FriendLists
+                         where f.friend1.Id == user1 && f.friend2.Id == user2
+                         select f).SingleOrDefault();
+
+            var friend2 = (from f in db.FriendLists
+                         where f.friend1.Id == user1 && f.friend2.Id == user2
+                         select f).SingleOrDefault();
+
+            if(friend == null || friend2 == null)
+            {
+                return false;
+            }
+
+            db.FriendLists.Remove(friend);
+            db.FriendLists.Remove(friend2);
+            db.SaveChanges();
 
             return true;
         }

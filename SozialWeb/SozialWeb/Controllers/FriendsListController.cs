@@ -38,5 +38,15 @@ namespace SozialWeb.Controllers
             var friendsList = f.getNotFriends(userId);
             return View(friendsList);
         }
+
+        public ActionResult RemoveFriend(string user2, string returnurl)
+        {
+            var userId = User.Identity.GetUserId();
+            FriendListService f = new FriendListService();
+
+            f.removeFriend(userId, user2);
+            return RedirectToAction(returnurl);
+
+        }
     }
 }
