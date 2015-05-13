@@ -41,7 +41,7 @@ namespace SozialWeb.Service
              return postList;
         }
 
-        public void addPic (string userId, image)
+        public void addPic (string userId, string image)
         {
             ApplicationDbContext db = new ApplicationDbContext();
 
@@ -53,7 +53,7 @@ namespace SozialWeb.Service
                     PicUrl = image,
                     author = user,
                     timeOfPost = DateTime.Now
-                }
+                };
 
                 db.PostImages.Add(postImage);
                 db.SaveChanges();
