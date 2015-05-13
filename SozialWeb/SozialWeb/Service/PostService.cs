@@ -40,5 +40,37 @@ namespace SozialWeb.Service
 
              return postList;
         }
+
+        public void addPic (string userId, image)
+        {
+            ApplicationDbContext db = new ApplicationDbContext();
+
+            var user = db.Users.Where(u => u.Id == userId).SingleOrDefault();
+            if (user != null)
+            {
+                var postImage = new PostImage
+                {
+                    PicUrl = image,
+                    author = user,
+                    timeOfPost = DateTime.Now
+                }
+
+                db.PostImages.Add(postImage);
+                db.SaveChanges();
+            }
+        }
+
+        public List <PostImage> getPics(string userId)
+        {
+            ApplicationDbContext db = new ApplicationDbContext();
+             List<PostImage> ImagePosts = new List<PostImage>();
+
+           var postImageList = (from p in db.PostImages
+                             where p.author.Id == userId
+                             orderby p.timeOfPost descending
+                             select p).ToList();
+
+           return postImageList;
+        }
     }
 }
