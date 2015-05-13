@@ -94,7 +94,7 @@ namespace SozialWeb.Models
         public string Gender { get; set; }
 
         [Required]
-        [Display(Name = "Url location of the your Profile Picture")]
+        [Display(Name = "Url location of your Profile Picture")]
         public string PicLocation { get; set; }
 
  
