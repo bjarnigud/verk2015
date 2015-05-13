@@ -53,5 +53,17 @@ namespace SozialWeb.Controllers
             return RedirectToAction("ProfileView");
         }
 
+        public ActionResult AddImage(PostImage model)
+        {
+            var image = model;
+            if(ModelState.IsValid)
+            {
+                PostService k = new PostService();
+                var userId = User.Identity.GetUserId();
+                k.addPic(userId, model.PicUrl);
+            }
+            return View(model);
+        }
+
     }
 }
