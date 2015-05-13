@@ -76,6 +76,13 @@ namespace SozialWeb.Controllers
             g.LeaveGroup(userId, groupId);
             return RedirectToAction("GroupsView");
         }
+        public ActionResult SearchView(string searchString)
+        {
+            GroupService g = new GroupService();
+            List<Group> groups = new List<Group>();
+            groups = g.findGroups(searchString);
 
+            return View(groups);
+        }
     }
 }

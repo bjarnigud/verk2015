@@ -80,6 +80,23 @@ namespace SozialWeb.Service
             }
             return true;
         }
+        public List<Group> findGroups(string searchString)
+        {
+            ApplicationDbContext db = new ApplicationDbContext();
+            List<Group> groupsFound = new List<Group>();
+            var groups = from g in db.Groups
+                         select g;
 
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                groups = groups.Where(g => g.name.Contains(searchString));
+            }
+
+            foreach (Group g in groups)
+            {
+                groupsFound.Add(g);                 //ekki góð leið til að gera þetta
+            }
+            return groupsFound;
+        }
     }
 }
