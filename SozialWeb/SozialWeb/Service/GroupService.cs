@@ -98,5 +98,15 @@ namespace SozialWeb.Service
             }
             return groupsFound;
         }
+
+        public List<GroupPost> getGroupPosts(int id)
+        {
+            ApplicationDbContext db = new ApplicationDbContext();
+
+            var groupPosts = (from g in db.GroupPosts
+                             where id == g.groupReciver.ID
+                             select g).ToList();
+            return groupPosts;
+        }
     }
 }

@@ -85,7 +85,7 @@ namespace SozialWeb.Controllers
         {
             GroupService g = new GroupService();
             List<Group> groups = new List<Group>();
-            groups = g.findGroups(searchString);
+            var groupPosts = g.findGroups(searchString);
 
             return View(groups);
         }
