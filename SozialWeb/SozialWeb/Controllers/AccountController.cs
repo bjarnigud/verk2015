@@ -152,7 +152,7 @@ namespace SozialWeb.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email, Name = model.Name, Gender = model.Gender, PicLocation = model.PicLocation, Age = model.Age};
+                var user = new ApplicationUser { UserName = model.Email, Email = model.Email, Name = model.Name, Gender = model.Gender, PicLocation = model.PicLocation, Age = model.Age, LocationOfUser = model.LocationOfUser};
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
