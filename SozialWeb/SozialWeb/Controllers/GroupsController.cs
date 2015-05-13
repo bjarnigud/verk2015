@@ -12,11 +12,16 @@ namespace SozialWeb.Controllers
     public class GroupsController : Controller
     {
         // GET: Groups
-        public ActionResult GroupsView()
+        public ActionResult GroupsView(string searchString)
         {
             GroupService g = new GroupService();
-            var groups = g.GetAllGroups();
-            return View(groups);
+            if(searchString == "")
+            {
+                var groups = g.GetAllGroups();
+                return View(groups);
+            }
+            var groups2 = g.findGroups(searchString);
+            return View(groups2);
         }
 
         [HttpPost]
