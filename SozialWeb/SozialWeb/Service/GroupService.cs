@@ -70,5 +70,16 @@ namespace SozialWeb.Service
             return true;
         }
 
+        public bool IsAMember(string userId, int groupId)
+        {
+            ApplicationDbContext db = new ApplicationDbContext();
+            var groupMember = db.GroupMembers.Where(g => g.group.ID == groupId && g.groupMember.Id == userId).SingleOrDefault();
+            if(groupMember == null)
+            {
+                return false;
+            }
+            return true;
+        }
+
     }
 }

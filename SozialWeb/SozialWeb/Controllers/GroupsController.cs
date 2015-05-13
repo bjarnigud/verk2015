@@ -54,8 +54,13 @@ namespace SozialWeb.Controllers
 
         public ActionResult JoinGroup(int groupId)
         {
+            
             GroupService g = new GroupService();
             var userId = User.Identity.GetUserId();
+            if(g.IsAMember(userId, groupId) == true)
+            {
+                return RedirectToAction("TestError", "Test", new { errorMessage = "Can't join the group more than once" });
+            }
             g.JoinGroup(userId, groupId);
             return RedirectToAction("GroupsView");
         }
@@ -64,6 +69,10 @@ namespace SozialWeb.Controllers
         {
             GroupService g = new GroupService();
             var userId = User.Identity.GetUserId();
+            if (g.IsAMember(userId, groupId) == false)
+            {
+                return RedirectToAction("TestError", "Test", new { errorMessage = "Can't leave a group if you're not a member" });
+            }
             g.LeaveGroup(userId, groupId);
             return RedirectToAction("GroupsView");
         }
