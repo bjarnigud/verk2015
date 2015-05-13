@@ -88,5 +88,12 @@ namespace SozialWeb.Controllers
 
             return View(groups);
         }
+
+        public ActionResult groupMembers(int groupId)
+        {
+            GroupService g = new GroupService();
+            
+            return View();
+        }
     }
 }

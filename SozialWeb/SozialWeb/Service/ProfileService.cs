@@ -12,6 +12,7 @@ namespace SozialWeb.Service
         {
             ApplicationDbContext db = new ApplicationDbContext();
             ApplicationUser userToReturn = new ApplicationUser();
+           
             var userFromLinq = from user in db.Users
                        where user.Id == id
                        select user;

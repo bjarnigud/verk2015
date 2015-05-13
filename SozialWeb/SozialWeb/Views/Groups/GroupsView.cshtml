@@ -14,7 +14,8 @@
                       <table class="table">
                           <tr>
                               <th>
-                                  @Html.DisplayNameFor(model => model.name)
+                                  @Html.DisplayNameFor(model => model.name)<br />
+                                
                               </th>
                               <th></th>
                           </tr>
@@ -29,7 +30,8 @@
                                       @Html.ActionLink("View group", "GroupProfile", "Groups", new { groupId = item.ID }, null) |
                                       @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
                                       @Html.ActionLink("Join Group", "JoinGroup", "Groups", new { groupId = item.ID }, null) |
-                                      @Html.ActionLink("Leave Group", "LeaveGroup", "Groups", new { groupId = item.ID }, null) 
+                                      @Html.ActionLink("Leave Group", "LeaveGroup", "Groups", new { groupId = item.ID }, null) |
+                                      @Html.DisplayFor(modelItem => item.descriptionOfGroup)
                                       
                                   </td>
                               </tr>
