@@ -11,8 +11,7 @@ namespace SozialWeb.Controllers
 {   [Authorize]
     public class MessageController : Controller
     {
-        //
-        // GET: /Message/
+
         public ActionResult Index()
         {
             MessageService m = new MessageService();

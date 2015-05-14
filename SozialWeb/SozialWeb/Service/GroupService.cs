@@ -25,6 +25,7 @@ namespace SozialWeb.Service
 
             db.Groups.Add(group);
             db.SaveChanges();
+            JoinGroup(userId, group.ID);
         }
 
         public List<Group> GetAllGroups()
