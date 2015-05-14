@@ -3,8 +3,10 @@
     ViewBag.Title = "TestError";
 }
 
-<h2>There was an error</h2>
+<h2>The message was deleted!</h2>
 
-<p>@ViewBag.message</p>
+<p>
+    @Html.ActionLink("Back to messages", "Index", "Message")
+</p>
 
 
