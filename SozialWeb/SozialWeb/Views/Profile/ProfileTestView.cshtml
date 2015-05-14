@@ -24,7 +24,7 @@
             @Html.DisplayFor(model => model.Gender)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.LocationOfUser)
+            Location Of User
         </dt>
         <dd>
             @Html.DisplayFor(model => model.LocationOfUser)
@@ -51,7 +51,7 @@
     <fieldset>
         <legend></legend>
         <div class="form-group">
-            <label for="" class="control-label">Status:</label>
+            <h3> Status </h3>
             <br />
             <textarea name="text" cols="60" rows="5" placeholder="What's on your mind?"></textarea>
         </div>
@@ -63,12 +63,10 @@
 
 <div id="post-list">
     
-
     <h3>Users Feed</h3>
 
-  
-
     @foreach (var post in ViewBag.Posts)
+        
     {
         <blockquote>
             <header><img src="@Url.Content(Model.PicLocation)" width="50" height="50" alt="image" />  @post.author.Name </header>
