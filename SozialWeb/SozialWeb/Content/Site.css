@@ -147,9 +147,9 @@ a.site-logo  {
   } 
 .post {
   float: right;
-  position: relative;
-  margin-top: -365px;
-  margin-right: 200px;
+  position: absolute;
+  top: 0;
+  left: 450px;
 }
 #post-list
 {
@@ -159,4 +159,8 @@ a.site-logo  {
 textarea
 {
     max-width:500px
+}
+.profile_about
+{
+    position:relative;
 }

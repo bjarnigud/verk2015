@@ -37,6 +37,37 @@
         </dd>
 
     </dl>
+
+    <div class="post">
+
+        @using (Html.BeginForm("AddPost", "Profile", new { reciverId = Model.Id }))
+        {
+
+
+            <div class="form-group">
+                <br />
+                <textarea name="text" rows="5" cols="100" placeholder="What's on your mind?"></textarea>
+            </div>
+
+            <input type="submit" class="btn btn-primary" id="submitStatus" value="Submit" />
+
+
+        }
+
+        <div id="post-list">
+
+            <h3>Users Feed</h3>
+
+            @foreach (var post in ViewBag.Posts)
+            {
+                <blockquote>
+                    <header><img src="@Url.Content(post.author.PicLocation)" width="50" height="50" alt="image" /> <a href="@Url.Action("ProfileTestView", "Profile", new { id = post.author.Id})"> @post.author.Name</a> </header>
+                    <p><b>@post.text</b></p>
+                    <footer><i>@post.timeOfPost.ToString("dd.MM.yyyy HH:mm")</i></footer>
+                </blockquote>
+            }
+        </div>
+    </div>
 </div>
 
 <!--
@@ -45,35 +76,3 @@
     @Html.ActionLink("Back to List", "FriendListView", "FriendList")
     </p>
 -->
-<div class="post">
-
-    @using (Html.BeginForm("AddPost", "Profile", new { reciverId = Model.Id}))
-    {
-
-        <fieldset>
-            <legend></legend>
-            <div class="form-group">
-                <br />
-                <textarea name="text" rows="5" cols="100" placeholder="What's on your mind?"></textarea>
-            </div>
-
-            <input type="submit" class="btn btn-primary" id="submitStatus" value="Submit" />
-
-        </fieldset>
-    }
-
-    <div id="post-list">
-    
-        <h3>Users Feed</h3>
-
-        @foreach (var post in ViewBag.Posts)
-        
-        {
-            <blockquote>
-                <header><img src="@Url.Content(post.author.PicLocation)" width="50" height="50" alt="image" /> <a href="@Url.Action("ProfileTestView", "Profile", new { id = post.author.Id})"> @post.author.Name</a> </header>
-                <p><b>@post.text</b></p>
-                <footer><i>@post.timeOfPost.ToString("dd.MM.yyyy HH:mm")</i></footer>
-            </blockquote>
-        }
-    </div>
-</div>
