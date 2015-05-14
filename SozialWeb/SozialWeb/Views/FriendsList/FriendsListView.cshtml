@@ -17,7 +17,19 @@
         <th>
             @Html.DisplayNameFor(model => model.Gender)
         </th>
-        <th></th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Age)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LocationOfUser)
+        </th>
+        <th>
+            Message
+        </th>
+        <th>
+
+        </th>
     </tr>
 
 @foreach (var item in Model) {
@@ -29,9 +41,20 @@
             @Html.DisplayFor(modelItem => item.Gender)
         </td>
         <td>
-            @Html.ActionLink("Remove Friend", "RemoveFriend", new { user2 = item.Id }, new { returnurl = Request.Url.AbsoluteUri }) |
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            @Html.DisplayFor(modelItem => item.Age)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LocationOfUser)
+        </td>
+        <td>
+            @using (Html.BeginForm("SendMessage", "Message", new { reciverId = item.Id }))
+            {
+                @Html.TextBox("message");
+                <input type="submit" value="Message">
+            }
+        </td>
+        <td>
+            @Html.ActionLink("Remove Friend", "RemoveFriend", new { user2 = item.Id }, new { returnurl = Request.Url.AbsoluteUri }) 
         </td>
     </tr>
 }

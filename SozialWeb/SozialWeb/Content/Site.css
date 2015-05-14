@@ -138,3 +138,10 @@ tr:nth-child(odd) td {
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+a.site-logo  {     
+ background: url(http://s10.postimg.org/velw4czyh/Logo.png) no-repeat top left;
+ display: block;       
+ width: 100px;       
+ height: 100px;       
+ text-indent: -9999px; /* hides the link text */
+  } 

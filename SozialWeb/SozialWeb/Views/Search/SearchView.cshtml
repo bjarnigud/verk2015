@@ -24,6 +24,9 @@
             @Html.DisplayNameFor(model => model.Age)
         </th>
         <th>
+            @Html.DisplayNameFor(model => model.LocationOfUser)
+        </th>
+        <th>
             Send friend request
         </th>
         <th>
@@ -41,6 +44,9 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Age)
+            </td>
+            <td>
+                @Html.DisplayFor(ModelItem => item.LocationOfUser)
             </td>
             <td>
                 @Html.ActionLink("Send friend request", "SendFriendRequest", "Test", new { reciverId = item.Id }, null)
