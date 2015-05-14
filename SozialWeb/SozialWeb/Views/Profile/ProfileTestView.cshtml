@@ -69,7 +69,7 @@
         
     {
         <blockquote>
-            <header><img src="@Url.Content(Model.PicLocation)" width="50" height="50" alt="image" />  @post.author.Name </header>
+            <header><img src="@Url.Content(post.author.PicLocation)" width="50" height="50" alt="image" />  @post.author.Name </header>
             <p><b>@post.text</b></p>
             <footer><i>@post.timeOfPost.ToString("dd.MM.yyyy HH:mm")</i></footer>
         </blockquote>
