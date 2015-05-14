@@ -17,9 +17,9 @@ namespace SozialWeb.Controllers
             PostService p = new PostService();
             var userId = User.Identity.GetUserId();
             //IEnumerable<Post> model = p.getPosts(userId);
-            IEnumerable<Post> model = p.getPosts(id);
-
-            return View(model);
+           // IEnumerable<Post> model = p.getPosts(id);
+            return RedirectToAction("ProfileTestView", new { id = userId });
+            //return View(model);
         }
 
         public ActionResult ProfileTestView(string id)
