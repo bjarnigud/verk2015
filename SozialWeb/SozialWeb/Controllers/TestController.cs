@@ -60,7 +60,8 @@ namespace SozialWeb.Controllers
             {                                                          // fer notandi á villusíðu vegna þess að það er sorglegt að senda sjálfum sér vinabeiðni
                 return RedirectToAction("TestError", "Test", new {errorMessage = "Can't send a friend request to yourself" });
             }
-           
+            bool already;
+            already = f.alreadyFriendRequest(senderId, reciverId);
             if(f.alreadyFriendRequest(senderId, reciverId))
             {
                 return RedirectToAction("TestError", "Test", new { errorMessage = "Friend request already sent, be patient" });

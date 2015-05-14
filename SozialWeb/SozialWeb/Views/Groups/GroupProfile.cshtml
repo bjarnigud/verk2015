@@ -46,4 +46,30 @@
 </p>
 
 
-   
+   @using (Html.BeginForm("AddPost", "Groups",new {groupId = Model.ID}))
+{
+
+    <fieldset>
+        <legend></legend>
+        <div class="form-group">
+            <label for="" class="control-label">Text:</label>
+            <br />
+            <textarea name="text" cols="60" rows="5" placeholder="What's on your mind?"></textarea>
+        </div>
+        <input type="submit" class="btn btn-primary" id="submitStatus" value="Senda inn" />
+    </fieldset>
+}
+
+<div id="post-list">
+    <hr />
+    <h3>Athugasemdir <span class="badge">Model.count - todo</span></h3>
+    <hr />
+
+    @foreach (var item in ViewBag.Posts)
+    {
+        <blockquote>
+            <p>@item.text</p>
+            <footer>@item.author.Name </footer>
+        </blockquote>
+    }
+</div>

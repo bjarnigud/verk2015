@@ -23,6 +23,7 @@ namespace SozialWeb.Controllers
             var groups2 = g.findGroups(searchString);
             var userId = User.Identity.GetUserId();
             ViewBag.Groups = g.getUserGroups(userId);
+        
             return View(groups2);
         }
       
@@ -57,7 +58,7 @@ namespace SozialWeb.Controllers
             Group group = new Group();
             List<ApplicationUser> members = new List<ApplicationUser>();
             members = g.getGroupMembers(groupId);
-            
+            ViewBag.Posts = g.getGroupPosts(groupId);
             //ViewData["Members"] = members;
             ViewBag.Members = members;
            
@@ -104,6 +105,24 @@ namespace SozialWeb.Controllers
             GroupService g = new GroupService();
             var members = g.getGroupMembers(ID);
             return View(members);
+        }
+
+        [HttpPost]
+        public ActionResult AddPost(GroupPost model, int groupId)
+        {
+            
+           // if (ModelState.IsValid)
+           // {
+                //model.UserName = System.Security.Principal.WindowsIdentity.GetCurrent().Name;
+                //CommentsRepository.Instance.AddComment(model);
+               // PostService p = new PostService();
+                GroupService g = new GroupService();
+                var userId = User.Identity.GetUserId();
+               // g.addGroupPost(model.text, model.groupReciver.ID, userId);
+                g.addGroupPost(model.text, groupId, userId);
+                //p.addStatus(userId, model.text);
+           // }
+            return RedirectToAction("GroupProfile", new { groupId = groupId});
         }
     }
 }

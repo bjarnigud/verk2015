@@ -149,5 +149,29 @@ namespace SozialWeb.Service
             }
             return groups;
         }
+
+        public bool addGroupPost(string status, int groupId, string userId)
+        {
+            ApplicationDbContext db = new ApplicationDbContext();
+
+            var user = db.Users.Where(u => u.Id == userId).SingleOrDefault();
+            var group = db.Groups.Where(g => g.ID == groupId).SingleOrDefault();
+            if (user != null)
+            {
+                var groupPost = new GroupPost
+                {
+                    text = status,
+                    author = user,
+                   // timeOfPost = DateTime.Now,
+                    groupReciver = group
+                    
+
+                };
+                db.GroupPosts.Add(groupPost);
+                db.SaveChanges();
+                return true;
+            }
+            return false;
+        }
     }
 }
