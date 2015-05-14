@@ -20,10 +20,30 @@
 
     </dl>
 </div>
+
+<table class="table">
+    <tr>
+        <th>
+            Group Members<br />
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in ViewBag.Members)
+    {
+        <tr>
+            <td>
+                @item.Name
+            </td>
+        </tr>
+
+    }
+
+</table>
 <p>
     @Html.ActionLink("Edit", "Edit" ) |
     @Html.ActionLink("Back to List", "Index")
 </p>
-<p>
- 
-</p>
+
+
+   

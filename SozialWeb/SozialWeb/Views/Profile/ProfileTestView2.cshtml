@@ -1,0 +1,74 @@
+﻿@model SozialWeb.Models.ApplicationUser
+
+@{
+    ViewBag.Title = "ProfileTestView";
+}
+
+
+<h2>@Html.DisplayFor(model => model.Name)</h2>
+
+<div>
+    <h4><img src="@Url.Content(Model.PicLocation)" alt="image" /></h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Age)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Age)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Gender)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Gender)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.LocationOfUser)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.LocationOfUser)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+    </dl>
+</div>
+
+<!--
+    <p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+    </p>
+-->
+@using (Html.BeginForm("AddPost", "Profile"))
+{
+
+    <fieldset>
+        <legend></legend>
+        <div class="form-group">
+            <label for="" class="control-label">Text:</label>
+            <br />
+            <textarea name="text" cols="60" rows="5" placeholder="What's on your mind?"></textarea>
+        </div>
+        <input type="submit" class="btn btn-primary" id="submitStatus" value="Senda inn" />
+    </fieldset>
+}
+
+<div id="post-list">
+    <hr />
+    <h3>Athugasemdir <span class="badge">Model.count - todo</span></h3>
+    <hr />
+
+    @foreach (Post post in @ViewData["Posts"])
+    {
+        <blockquote>
+            <p>@post.text</p>
+            <footer>@post.author.Name - @post.timeOfPost.ToString("dd.MM.yyyy HH:mm")</footer>
+        </blockquote>
+    }
+</div>

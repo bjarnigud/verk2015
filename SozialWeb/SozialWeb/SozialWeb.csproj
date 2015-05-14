@@ -269,8 +269,8 @@
     <Content Include="Views\Groups\SeeGroupsList.cshtml" />
     <Content Include="Views\Groups\GroupProfile.cshtml" />
     <Content Include="Views\Message\Index.cshtml" />
-    <Content Include="Views\Groups\_GroupMembers.cshtml" />
     <Content Include="Views\Profile\AddImage.cshtml" />
+    <Content Include="Views\Shared\GroupMembers.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

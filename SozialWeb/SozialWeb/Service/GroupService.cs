@@ -111,14 +111,23 @@ namespace SozialWeb.Service
             return groupPosts;
         }
 
-        public List<GroupMember> getGroupMembers(int id)
+        public List<ApplicationUser> getGroupMembers(int id)
         {
             ApplicationDbContext db = new ApplicationDbContext();
-            var groupMembers = (from g in db.GroupMembers
-                              // where id == g.group
+            List<ApplicationUser> gr = new List<ApplicationUser>();
+            var groupMembers = (from g in db.Users
                                select g).ToList();
 
-            return groupMembers;
+            foreach(ApplicationUser member in groupMembers)                 //finnur alla notendur sem eru í þessum hóp
+            {
+               
+                if (IsAMember(member.Id, id) == true)       //gert svona vegna tæknilegra erfiðleika
+                {
+                    gr.Add(member);
+                }
+            }
+
+            return gr;
         }
     }
 }

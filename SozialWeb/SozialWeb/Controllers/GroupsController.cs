@@ -53,6 +53,10 @@ namespace SozialWeb.Controllers
         {
             GroupService g = new GroupService();
             Group group = new Group();
+            List<ApplicationUser> members = new List<ApplicationUser>();
+            members = g.getGroupMembers(groupId);
+            ViewData["Members"] = members;
+            ViewBag.Members = members;
    
             group = g.GetGroupById(groupId);
             return View(group);
@@ -91,11 +95,11 @@ namespace SozialWeb.Controllers
             return View(groups);
         }
 
-        public ActionResult groupMembers(int groupId)
+        public ActionResult GroupMembers(int ID)
         {
             GroupService g = new GroupService();
-            
-            return View();
+            var members = g.getGroupMembers(ID);
+            return View(members);
         }
     }
 }
