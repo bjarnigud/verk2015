@@ -51,24 +51,25 @@
     <fieldset>
         <legend></legend>
         <div class="form-group">
-            <label for="" class="control-label">Text:</label>
+            <label for="" class="control-label">Status:</label>
             <br />
             <textarea name="text" cols="60" rows="5" placeholder="What's on your mind?"></textarea>
         </div>
-        <input type="submit" class="btn btn-primary" id="submitStatus" value="Senda inn" />
+        <input type="submit" class="btn btn-primary" id="submitStatus" value="Submit" />
     </fieldset>
 }
 
 <div id="post-list">
     <hr />
-    <h3>Athugasemdir <span class="badge">Model.count - todo</span></h3>
+    <h3>Users Feed</h3>
     <hr />
 
     @foreach (var post in ViewBag.Posts)
     {
         <blockquote>
-            <p>@post.text</p>
-            <footer>@post.author.Name - @post.timeOfPost.ToString("dd.MM.yyyy HH:mm")</footer>
+            <header><img src="@Url.Content(Model.PicLocation)" width="50" height="50" alt="image" />  @post.author.Name </header>
+            <p><b>@post.text</b></p>
+            <footer><i>@post.timeOfPost.ToString("dd.MM.yyyy HH:mm")</i></footer>
         </blockquote>
     }
 </div>
