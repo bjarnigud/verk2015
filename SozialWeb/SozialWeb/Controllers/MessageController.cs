@@ -21,14 +21,15 @@ namespace SozialWeb.Controllers
             return View(list);
         }
 
-        public ActionResult SendMessage (string message, string reciverId)
+        public ActionResult SendMessage (string message, string reciverId, string returnurl)
         {
             MessageService m = new MessageService();
             var userId = User.Identity.GetUserId();
 
             m.SendMessage(userId, reciverId, message);
 
-            return RedirectToAction("SearchView", "Search");
+            //return RedirectToAction("SearchView", "Search");
+            return Redirect(returnurl);
             
         }
 

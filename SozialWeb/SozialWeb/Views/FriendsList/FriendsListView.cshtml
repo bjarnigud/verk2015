@@ -44,7 +44,7 @@
             @Html.DisplayFor(modelItem => item.LocationOfUser)
         </td>
         <td>
-            @using (Html.BeginForm("SendMessage", "Message", new { reciverId = item.Id }))
+            @using (Html.BeginForm("SendMessage", "Message", new { reciverId = item.Id, returnurl = Request.Url.AbsoluteUri }))
             {
                 @Html.TextBox("message");
                 <input type="submit" value="Message">
