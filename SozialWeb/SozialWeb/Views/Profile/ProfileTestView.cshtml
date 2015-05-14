@@ -5,11 +5,11 @@
 }
 
 
-<h2>@Html.DisplayFor(model => model.Name)</h2>
 
-<div>
+
+<div class="profile_about">
+    <h2>@Html.DisplayFor(model => model.Name)</h2>
     <h4><img src="@Url.Content(Model.PicLocation)" alt="image" /></h4>
-	<hr />
     <dl class="dl-horizontal">
         <dt>
             @Html.DisplayNameFor(model => model.Age)
@@ -45,33 +45,35 @@
     @Html.ActionLink("Back to List", "FriendListView", "FriendList")
     </p>
 -->
-@using (Html.BeginForm("AddPost", "Profile", new { reciverId = Model.Id}))
-{
+<div class="post">
 
-    <fieldset>
-        <legend></legend>
-        <div class="form-group">
-            <h3> Status </h3>
-            <br />
-            <textarea name="text" cols="60" rows="5" placeholder="What's on your mind?"></textarea>
-        </div>
-
-        <input type="submit" class="btn btn-primary" id="submitStatus" value="Submit" />
-
-    </fieldset>
-}
-
-<div id="post-list">
-    
-    <h3>Users Feed</h3>
-
-    @foreach (var post in ViewBag.Posts)
-        
+    @using (Html.BeginForm("AddPost", "Profile", new { reciverId = Model.Id}))
     {
-        <blockquote>
-            <header><img src="@Url.Content(post.author.PicLocation)" width="50" height="50" alt="image" /> <a href="@Url.Action("ProfileTestView", "Profile", new { id = post.author.Id})"> @post.author.Name</a> </header>
-            <p><b>@post.text</b></p>
-            <footer><i>@post.timeOfPost.ToString("dd.MM.yyyy HH:mm")</i></footer>
-        </blockquote>
+
+        <fieldset>
+            <legend></legend>
+            <div class="form-group">
+                <br />
+                <textarea name="text" rows="5" cols="100" placeholder="What's on your mind?"></textarea>
+            </div>
+
+            <input type="submit" class="btn btn-primary" id="submitStatus" value="Submit" />
+
+        </fieldset>
     }
+
+    <div id="post-list">
+    
+        <h3>Users Feed</h3>
+
+        @foreach (var post in ViewBag.Posts)
+        
+        {
+            <blockquote>
+                <header><img src="@Url.Content(post.author.PicLocation)" width="50" height="50" alt="image" /> <a href="@Url.Action("ProfileTestView", "Profile", new { id = post.author.Id})"> @post.author.Name</a> </header>
+                <p><b>@post.text</b></p>
+                <footer><i>@post.timeOfPost.ToString("dd.MM.yyyy HH:mm")</i></footer>
+            </blockquote>
+        }
+    </div>
 </div>

@@ -145,3 +145,18 @@ a.site-logo  {
  height: 100px;       
  text-indent: -9999px; /* hides the link text */
   } 
+.post {
+  float: right;
+  position: relative;
+  margin-top: -365px;
+  margin-right: 200px;
+}
+#post-list
+{
+    max-width:300px;
+    max-height:100px;
+}
+textarea
+{
+    max-width:500px
+}
