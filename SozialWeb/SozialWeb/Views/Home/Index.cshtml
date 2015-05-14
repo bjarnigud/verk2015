@@ -10,3 +10,11 @@
         <h2>Welcome to SozialWeb</h2>
     </div>
 </div>
+
+@foreach (var item in ViewBag.Posts)
+{
+    <blockquote>
+        <p>@item.text</p>
+        <footer>@item.author.Name - @item.timeOfPost.ToString("dd.MM.yyyy HH:mm")</footer>
+    </blockquote>
+}

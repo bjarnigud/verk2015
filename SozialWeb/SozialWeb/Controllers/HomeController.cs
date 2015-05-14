@@ -12,6 +12,9 @@ namespace SozialWeb.Controllers
     {
         public ActionResult Index()
         {
+            var userId = User.Identity.GetUserId();
+            PostService p = new PostService();
+            ViewBag.Posts = p.getNewestPosts(userId);
             return View();
         }
 

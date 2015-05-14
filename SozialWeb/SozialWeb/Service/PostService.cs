@@ -94,5 +94,29 @@ namespace SozialWeb.Service
                 db.SaveChanges();
             }
         }
+
+        public IEnumerable<Post> getNewestPosts(string userId)
+        {
+            ApplicationDbContext db = new ApplicationDbContext();
+            FriendListService f = new FriendListService();
+            List<Post> newestPost = new List<Post>();
+            var allPost = (from p in db.Posts
+                           orderby p.timeOfPost descending
+                          select p).ToList();
+
+            foreach(Post p in allPost)
+            {
+                if(f.alreadyFriends(p.author.Id, userId))
+                {
+                    newestPost.Add(p);
+                }
+            }
+           
+            
+            var tenPosts = newestPost.Take(10);
+            return tenPosts;
+
+        }
+   
     }
 }
