@@ -21,6 +21,8 @@ namespace SozialWeb.Controllers
                 return View(groups);
             }
             var groups2 = g.findGroups(searchString);
+            var userId = User.Identity.GetUserId();
+            ViewBag.Groups = g.getUserGroups(userId);
             return View(groups2);
         }
       
@@ -55,8 +57,10 @@ namespace SozialWeb.Controllers
             Group group = new Group();
             List<ApplicationUser> members = new List<ApplicationUser>();
             members = g.getGroupMembers(groupId);
-            ViewData["Members"] = members;
+            
+            //ViewData["Members"] = members;
             ViewBag.Members = members;
+           
    
             group = g.GetGroupById(groupId);
             return View(group);

@@ -129,5 +129,25 @@ namespace SozialWeb.Service
 
             return gr;
         }
+
+        public List<Group> getUserGroups(string userId)
+        {
+            ApplicationDbContext db = new ApplicationDbContext();
+            List<Group> groups = new List<Group>();
+            
+           
+            var allGroups = from g in db.Groups
+                            select g;
+
+            foreach (Group group in allGroups)                 //finnur alla notendur sem eru í þessum hóp
+            {
+
+                if (IsAMember(userId, group.ID) == true)       //gert svona vegna tæknilegra erfiðleika
+                {
+                    groups.Add(group);
+                }
+            }
+            return groups;
+        }
     }
 }
