@@ -162,7 +162,7 @@ namespace SozialWeb.Service
                 {
                     text = status,
                     author = user,
-                   // timeOfPost = DateTime.Now,
+                    timeOfPost = DateTime.Now,
                     groupReciver = group
                     
 

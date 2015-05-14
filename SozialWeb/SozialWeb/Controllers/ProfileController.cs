@@ -28,7 +28,7 @@ namespace SozialWeb.Controllers
             FriendListService f = new FriendListService();
             user = p.getUser(id);
             var userId = User.Identity.GetUserId();
-            if(!f.alreadyFriends(id, userId))
+            if(!f.alreadyFriends(id, userId) && userId != id)
             {
                 return RedirectToAction("TestError", "Test", new { errorMessage = "You can only view profiles of users that are friends with" });
             }

@@ -14,8 +14,8 @@ $(document).ready(function () {
         $.ajax({
             type: 'POST',
             processData: false,
-            url: '/Profile/AddPost',
-           // url: theForm.attr('action'), // Í stað þess að harðkóða inn slóðina, þá lesum við einfaldlega slóðina sem formið er að vísa á by-default (action eigindið).
+            //url: '/Profile/AddPost',
+            url: theForm.attr('action'), // Í stað þess að harðkóða inn slóðina, þá lesum við einfaldlega slóðina sem formið er að vísa á by-default (action eigindið).
             //url: theForm.attr('action'), // Í stað þess að harðkóða inn slóðina, þá lesum við einfaldlega slóðina sem formið er að vísa á by-default (action eigindið).
             data: theForm.serialize(), // .serialize() aðgerðin les allar upplýsingar úr forminu og býr til query-string úr því, þ.e &name1=value1&name2=value2 etc.
         }).done(function (result) {

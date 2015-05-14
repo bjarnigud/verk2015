@@ -111,17 +111,15 @@ namespace SozialWeb.Controllers
         public ActionResult AddPost(GroupPost model, int groupId)
         {
             
-           // if (ModelState.IsValid)
-           // {
-                //model.UserName = System.Security.Principal.WindowsIdentity.GetCurrent().Name;
-                //CommentsRepository.Instance.AddComment(model);
-               // PostService p = new PostService();
+          
                 GroupService g = new GroupService();
                 var userId = User.Identity.GetUserId();
-               // g.addGroupPost(model.text, model.groupReciver.ID, userId);
+                if(model == null)
+                {
+
+                }
                 g.addGroupPost(model.text, groupId, userId);
-                //p.addStatus(userId, model.text);
-           // }
+
             return RedirectToAction("GroupProfile", new { groupId = groupId});
         }
     }
