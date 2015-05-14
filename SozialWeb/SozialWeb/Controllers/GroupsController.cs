@@ -54,11 +54,18 @@ namespace SozialWeb.Controllers
         {
             GroupService g = new GroupService();
             Group group = new Group();
+            var userId = User.Identity.GetUserId();
+            if(!g.IsAMember(userId, groupId))
+            {
+                return RedirectToAction("TestError", "Test", new { errorMessage = "Can't view profiles of groups when your not a member" });
+            }
+
             List<ApplicationUser> members = new List<ApplicationUser>();
             members = g.getGroupMembers(groupId);                           //finnur alla meðlimi hópsins to setur í viewbag til að loopa í gegn í viewinu
             ViewBag.Posts = g.getGroupPosts(groupId);                       //finnur alla pósta á svæði hópsins og setur í viewbag til að sýna
+           
             ViewBag.Members = members;
-            
+
             group = g.GetGroupById(groupId);                                //finnur hópinn
             return View(group);
         }

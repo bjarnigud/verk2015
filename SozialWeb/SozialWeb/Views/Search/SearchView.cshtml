@@ -52,7 +52,7 @@
                 @Html.ActionLink("Send friend request", "SendFriendRequest", "Test", new { reciverId = item.Id }, null)
             </td>
             <td>
-                @using (Html.BeginForm("SendMessage", "Message", new { reciverId = item.Id }))
+                @using (Html.BeginForm("SendMessage", "Message", new { reciverId = item.Id, returnurl = Request.Url.AbsoluteUri }))
                 {
                     @Html.TextBox("message");
                     <input type="submit" value="Send Message">
