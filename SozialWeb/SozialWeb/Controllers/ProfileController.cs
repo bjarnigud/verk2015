@@ -12,11 +12,12 @@ namespace SozialWeb.Controllers
     public class ProfileController : Controller
     {
         // GET: Profile
-        public ActionResult ProfileView()
+        public ActionResult ProfileView(string id)
         {
             PostService p = new PostService();
             var userId = User.Identity.GetUserId();
-            IEnumerable<Post> model = p.getPosts(userId);
+            //IEnumerable<Post> model = p.getPosts(userId);
+            IEnumerable<Post> model = p.getPosts(id);
 
             return View(model);
         }
@@ -26,12 +27,15 @@ namespace SozialWeb.Controllers
             ProfileService p = new ProfileService();
             ApplicationUser user = new ApplicationUser();
             FriendListService f = new FriendListService();
+            PostService ps = new PostService();
             user = p.getUser(id);
             var userId = User.Identity.GetUserId();
             if(!f.alreadyFriends(id, userId) && userId != id)
             {
                 return RedirectToAction("TestError", "Test", new { errorMessage = "You can only view profiles of users that are friends with" });
             }
+            var posts = ps.getPosts(id);
+            ViewBag.Posts = posts;
             return View(user);
         }
 
@@ -45,18 +49,17 @@ namespace SozialWeb.Controllers
         }
 
         [HttpPost]
-        public ActionResult AddPost(Post model)
+        public ActionResult AddPost(Post model, string reciverId)
         {
             var test = model;
             if (ModelState.IsValid)
             {
-                //model.UserName = System.Security.Principal.WindowsIdentity.GetCurrent().Name;
-                //CommentsRepository.Instance.AddComment(model);
                 PostService p = new PostService();
                 var userId = User.Identity.GetUserId();
-                p.addStatus(userId, model.text);
+                p.addStatus(userId, model.text, reciverId);
             }
-            return RedirectToAction("ProfileView");
+            //return RedirectToAction("ProfileView", new { id = reciverId });
+            return RedirectToAction("ProfileTestView", new { id = reciverId });
         }
 
         public ActionResult AddImage(PostImage model)

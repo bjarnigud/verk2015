@@ -34,7 +34,7 @@ namespace SozialWeb.Service
              List<Post> Posts = new List<Post>();
 
              var postList = (from p in db.Posts
-                             where p.author.Id == userId
+                             where p.reciver.Id == userId
                              orderby p.timeOfPost descending
                              select p).ToList();
 
@@ -71,6 +71,28 @@ namespace SozialWeb.Service
                              select p).ToList();
 
            return postImageList;
+        }
+
+        public void addStatus(string userId, string status, string reciverId)
+        {
+            ApplicationDbContext db = new ApplicationDbContext();
+
+            var user = db.Users.Where(u => u.Id == userId).SingleOrDefault();
+            var reciver = db.Users.Where(r => r.Id == reciverId).SingleOrDefault();
+            if (user != null)
+            {
+                var post = new Post
+                {
+                    text = status,
+                    author = user,
+                    timeOfPost = DateTime.Now,
+                    reciver = reciver
+
+                };
+
+                db.Posts.Add(post);
+                db.SaveChanges();
+            }
         }
     }
 }
