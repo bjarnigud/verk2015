@@ -1,12 +1,9 @@
 ﻿
 @{
-    ViewBag.Title = "TestError";
+    ViewBag.Title = "There was an error";
 }
 
-<h2>The message was deleted!</h2>
+<h2>There was an error</h2>
 
-<p>
-    @Html.ActionLink("Back to messages", "Index", "Message")
-</p>
-
+<p>@ViewBag.message</p>
 
