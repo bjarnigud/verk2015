@@ -25,7 +25,13 @@ namespace SozialWeb.Controllers
         {
             ProfileService p = new ProfileService();
             ApplicationUser user = new ApplicationUser();
+            FriendListService f = new FriendListService();
             user = p.getUser(id);
+            var userId = User.Identity.GetUserId();
+            if(!f.alreadyFriends(id, userId))
+            {
+                return RedirectToAction("TestError", "Test", new { errorMessage = "You can only view profiles of users that are friends with" });
+            }
             return View(user);
         }
 
