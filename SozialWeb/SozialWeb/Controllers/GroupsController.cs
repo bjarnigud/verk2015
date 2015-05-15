@@ -53,7 +53,8 @@ namespace SozialWeb.Controllers
         public ActionResult GroupProfile (int groupId)
         {
             GroupService g = new GroupService();
-            Group group = new Group();
+            PostImageService p  = new PostImageService();
+            //Group group = new Group();
             var userId = User.Identity.GetUserId();
             if(!g.IsAMember(userId, groupId))
             {
@@ -65,8 +66,9 @@ namespace SozialWeb.Controllers
             ViewBag.Posts = g.getGroupPosts(groupId);                       //finnur alla pósta á svæði hópsins og setur í viewbag til að sýna
            
             ViewBag.Members = members;
+            ViewBag.Images = p.getGroupImages(groupId);
 
-            group = g.GetGroupById(groupId);                                //finnur hópinn
+            var group = g.GetGroupById(groupId);                                //finnur hópinn
             return View(group);
         }
     
@@ -99,7 +101,7 @@ namespace SozialWeb.Controllers
             return RedirectToAction("GroupsView");
         }
 
-        //Athuga hvort meigi eyða!!!!!!!!!!!!!!!!!!!!!
+        
         public ActionResult SearchView(string searchString)
         {
             GroupService g = new GroupService();
@@ -142,11 +144,9 @@ namespace SozialWeb.Controllers
 
             PostImageService p = new PostImageService();
             var userId = User.Identity.GetUserId();
-            //k.addPic(userId, model.PicUrl);
             p.addGroupImage(url, userId, groupId);
-            //}
-            //return View(model);
-            return RedirectToAction("GroupProfile", new { id = groupId });
+          
+            return RedirectToAction("GroupProfile", new { groupId = groupId });
         }
     }
 }

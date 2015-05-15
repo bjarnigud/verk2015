@@ -82,4 +82,32 @@
 <p>
     @Html.ActionLink("Back to List", "GroupsView", "Groups")
 </p>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<div>
+    @using (Html.BeginForm("AddGroupPostImage", "Groups", new { groupId = Model.ID }))
+    {
 
+
+        <div class="form-group">
+            <br />
+            <text name="url" rows="5" cols="100" placeholder="What's on your mind?"></text>
+            @Html.TextBox("url")
+        </div>
+
+        <input type="submit" class="btn btn-primary" id="submitStatus" value="Submit" />
+    }
+
+    @foreach (var image in ViewBag.Images)
+    {
+        <blockquote>
+            <header><img src="@Url.Content(image.PicUrl)" width="50" height="50" alt="image" />  </header>
+            <p><b>@image.PicUrl</b></p>
+            <footer><i></i></footer>
+        </blockquote>
+    }
+</div>

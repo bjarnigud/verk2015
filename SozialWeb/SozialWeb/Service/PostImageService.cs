@@ -60,9 +60,21 @@ namespace SozialWeb.Service
                     timeOfPost = DateTime.Now
                 };
                 db.GroupPostImages.Add(image);
-               // db.G
                 db.SaveChanges();
             }
+
+        }
+
+        public List<GroupPostImage> getGroupImages(int groupId)
+        {
+            ApplicationDbContext db = new ApplicationDbContext();
+            var user = db.Groups.Where(g => g.ID == groupId).SingleOrDefault();
+
+            var images = (from i in db.GroupPostImages
+                          where i.reciver.ID == groupId
+                          select i).ToList();
+
+            return images;
 
         }
     }
