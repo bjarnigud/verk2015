@@ -4,6 +4,7 @@
     ViewBag.Title = "Profile";
 }
 <script src="~/Scripts/ajax.js" type="text/javascript"></script>
+
 <h2>Group Profile</h2>
 
 <div class="groupspage">
@@ -96,15 +97,15 @@
 
             <input type="submit" class="btn btn-primary" id="submitStatus" value="Submit" />
         }
-
-        @foreach (var image in ViewBag.Images)
-        {
-            <blockquote>
-                <header><img src="@Url.Content(image.PicUrl)" width="300" height="300" alt="image" />  </header>
-                <footer><i></i></footer>
-            </blockquote>
-        }
-    </div>
-
+        <div id="ajax-2">
+            @foreach (var image in ViewBag.Images)
+            {
+                <blockquote>
+                    <header><img src="@Url.Content(image.PicUrl)" width="300" height="300" alt="image" />  </header>
+                    <footer><i></i></footer>
+                </blockquote>
+            }
+        </div>
+        </div>
 </div>
 

@@ -104,7 +104,7 @@ namespace SozialWeb.Controllers
 
             return View(groups);
         }
-        
+
         public ActionResult GroupMembers(int ID)
         {
             GroupService g = new GroupService();
