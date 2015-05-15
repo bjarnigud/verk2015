@@ -4,83 +4,80 @@
     @{
         ViewBag.Title = "GroupsView";
     }
+<div class="group-main">
     <h2>Search for a group</h2>
-    @using(Html.BeginForm("GroupsView", "Groups"))
+    @using (Html.BeginForm("GroupsView", "Groups"))
     {
         @Html.TextBox("searchString");
         <input type="submit" value="Search">
     }
 
-                      <table class="table">
-                          <tr>
-                              <th>
-                                 Name
-                                
-                              </th>
-                              <th>
-                                  Description
-                              </th>
-                              <th>
-
-                              </th>
-                          </tr>
-
-                          @foreach (var item in Model)
-                          {
-                              <tr>
-                                  <td>
-                                      @Html.DisplayFor(modelItem => item.name)
-                                  </td>
-                                  <td>
-                                      @Html.DisplayFor(modelItem => item.descriptionOfGroup)
-                                  </td>
-                                  <td>
-                                      @Html.ActionLink("View group", "GroupProfile", "Groups", new { groupId = item.ID }, null) |
-                                      @Html.ActionLink("Join Group", "JoinGroup", "Groups", new { groupId = item.ID }, null) |
-                                      @Html.ActionLink("Leave Group", "LeaveGroup", "Groups", new { groupId = item.ID }, null) |
-                                      
-                                      
-                                  </td>
-                                  
-                              </tr>
-                          }
-
-                      </table>
-
-    @Html.AntiForgeryToken()
-<h3>Your Groups</h3>
-<table class="table">
-    <tr>
-        <th>
-            Group Name<br />
-        </th>
-        <th>
-            Description
-        </th>
-        <th>
-
-        </th>
-    </tr>
-
-    @foreach (var item in ViewBag.Groups)
-    {
+    <table class="table-groupsview">
         <tr>
-            <td>
-                <a href="@Url.Action("GroupProfile", "Groups", new { groupId = item.ID})">@item.name</a>
-            </td>
-            <td>
-                @item.descriptionOfGroup
-            </td>
-            <td>
-                
-            </td>
+            <th>
+                Name
+
+            </th>
+            <th>
+                Description
+            </th>
+            <th>
+
+            </th>
         </tr>
 
-    }
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.descriptionOfGroup)
+                </td>
+                <td>
+                    @Html.ActionLink("View group", "GroupProfile", "Groups", new { groupId = item.ID }, null) |
+                    @Html.ActionLink("Join Group", "JoinGroup", "Groups", new { groupId = item.ID }, null) |
+                    @Html.ActionLink("Leave Group", "LeaveGroup", "Groups", new { groupId = item.ID }, null) |
 
-</table>
 
-    <div class="form-horizontal">
+                </td>
+
+            </tr>
+        }
+
+    </table>
+
+    @Html.AntiForgeryToken()
+    <h3>Your Groups</h3>
+    <table class="table-groupsview2">
+        <tr>
+            <th>
+                Group Name<br />
+            </th>
+            <th>
+                Description
+            </th>
+
+        </tr>
+
+        @foreach (var item in ViewBag.Groups)
+        {
+            <tr>
+                <td>
+                    <a href="@Url.Action("GroupProfile", "Groups", new { groupId = item.ID})">@item.name</a>
+                </td>
+                <td>
+                    @item.descriptionOfGroup
+                </td>
+                <td></td>
+            </tr>
+
+        }
+
+    </table>
+
+    <div class="group-create">
         <hr />
         @Html.ValidationSummary(true)
 
@@ -91,7 +88,7 @@
                 <h3>Create Group</h3>
                 <div class="form-group">
                     <label for="" class="control-label">Name of the group:</label>
-                    <br/>
+                    <br />
                     @Html.TextBox("name")
                 </div>
 
@@ -104,7 +101,11 @@
                 <input type="submit" class="btn btn-primary" value="Create" />
             </fieldset>
         }
-        </div>
+    </div>
+</div>
+   
+
+    
 
         @section Scripts {
             @Scripts.Render("~/bundles/jqueryval")
