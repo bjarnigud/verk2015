@@ -59,22 +59,22 @@
             </th>
 
         </tr>
+        <div id="post-list">
+            @foreach (var item in ViewBag.Groups)
+            {
+                <tr>
+                    <td>
+                        <a href="@Url.Action("GroupProfile", "Groups", new { groupId = item.ID})">@item.name</a>
+                    </td>
+                    <td>
+                        @item.descriptionOfGroup
+                    </td>
 
-        @foreach (var item in ViewBag.Groups)
-        {
-            <tr>
-                <td>
-                    <a href="@Url.Action("GroupProfile", "Groups", new { groupId = item.ID})">@item.name</a>
-                </td>
-                <td>
-                    @item.descriptionOfGroup
-                </td>
-                
-            </tr>
+                </tr>
 
-        }
-
-    </table>
+            }
+            </div>
+</table>
 
     <div class="group-create">
         <hr />

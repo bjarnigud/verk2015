@@ -13,7 +13,7 @@ namespace SozialWeb.Service
             ApplicationDbContext db = new ApplicationDbContext();
 
             var user = db.Users.Where(u => u.Id == userId).SingleOrDefault();           //finds user 
-            var reciver = db.Users.Where(r => r.Id == reciverId).SingleOrDefault();     
+            var reciver = db.Users.Where(r => r.Id == reciverId).SingleOrDefault();     //finding 
 
             if(user != null)
             {
