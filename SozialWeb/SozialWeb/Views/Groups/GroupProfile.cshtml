@@ -39,7 +39,7 @@
         {
             <tr>
                 <td>
-                    @item.Name
+                    <a href="@Url.Action("ProfileTestView", "Profile", new { id = item.Id})">@item.Name</a>   
                 </td>
             </tr>
 
