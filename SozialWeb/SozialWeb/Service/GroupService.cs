@@ -65,7 +65,8 @@ namespace SozialWeb.Service
         {
             ApplicationDbContext db = new ApplicationDbContext();
             var user = db.Users.Where(u => u.Id == userId).SingleOrDefault();
-            var groupMember = db.GroupMembers.Where(g => g.group.ID == groupId && g.groupMember.Id == userId).SingleOrDefault();
+            var groupMember = db.GroupMembers.Where(g => g.group.ID == groupId 
+                && g.groupMember.Id == userId).SingleOrDefault();
 
 
             db.GroupMembers.Remove(groupMember);
@@ -76,7 +77,8 @@ namespace SozialWeb.Service
         public bool IsAMember(string userId, int groupId)
         {
             ApplicationDbContext db = new ApplicationDbContext();
-            var groupMember = db.GroupMembers.Where(g => g.group.ID == groupId && g.groupMember.Id == userId).SingleOrDefault();
+            var groupMember = db.GroupMembers.Where(g => g.group.ID == groupId 
+                && g.groupMember.Id == userId).SingleOrDefault();
             if(groupMember == null)
             {
                 return false;
@@ -88,6 +90,7 @@ namespace SozialWeb.Service
             ApplicationDbContext db = new ApplicationDbContext();
             List<Group> groupsFound = new List<Group>();
             var groups = from g in db.Groups
+                       
                          select g;
 
             if (!String.IsNullOrEmpty(searchString))

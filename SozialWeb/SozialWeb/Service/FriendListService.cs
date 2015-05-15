@@ -15,7 +15,7 @@ namespace SozialWeb.Service
             ApplicationDbContext db = new ApplicationDbContext();   //gets access to database
             var allFriends = (from friend in db.FriendLists
                              where userId == friend.friend1.Id
-                             orderby friend.friend2.Name
+                             orderby friend.friend2.Name            //get users in alphabetical order
                               select friend.friend2).ToList() ;
 
 
@@ -25,52 +25,47 @@ namespace SozialWeb.Service
         public bool addFriend(string user1, string user2)
         {
             ApplicationDbContext db = new ApplicationDbContext();
-            ApplicationUser firstUser = new ApplicationUser();
-            ApplicationUser secondUser = new ApplicationUser();
 
-            firstUser = db.Users.Where(u => u.Id == user1).SingleOrDefault();
-            secondUser = db.Users.Where(u => u.Id == user2).SingleOrDefault();
+            var firstUser = db.Users.Where(u => u.Id == user1).SingleOrDefault();       //finding first user
+            var secondUser = db.Users.Where(u => u.Id == user2).SingleOrDefault();      //finding second user
 
-            if(firstUser == null || secondUser == null)
+            if(firstUser == null || secondUser == null)                                 //if either user does not exit then return false
             {
                 return false;
             }
-            var friendConnection = new FriendList
+            var friendConnection = new FriendList                                       // user 1 is a friend of user 2
             {
                 friend1 = firstUser,
                 friend2 = secondUser
 
             };
 
-            var friendConnection2 = new FriendList
+            var friendConnection2 = new FriendList                                      // user 2 is a friend of user 1
             {
                 friend1 = secondUser,
                 friend2 = firstUser
 
             };
 
-            db.FriendLists.Add(friendConnection);
+            db.FriendLists.Add(friendConnection);                                       //writeing to database
             db.FriendLists.Add(friendConnection2);
             db.SaveChanges();
 
             return true;
         }
 
-        public void SendFriendRequest(string sender, string reciver)
+        public void SendFriendRequest(string sender, string reciver)        //sending friend request to other user
         {
            
             ApplicationDbContext db = new ApplicationDbContext();
             SearchService s = new SearchService();
 
              
-            var user1 = db.Users.Where(u => u.Id == sender).SingleOrDefault();
+            var user1 = db.Users.Where(u => u.Id == sender).SingleOrDefault();      //finding users
             var user2 = db.Users.Where(u => u.Id == reciver).SingleOrDefault();
-
-            string user1id = user1.Id;
-            string user2id = user2.Id;
           
 
-            var friendRequest = new FriendRequest
+            var friendRequest = new FriendRequest                                  //creating requests
             {
                 requestSender = user1,
                 requestReciver = user2
@@ -80,38 +75,28 @@ namespace SozialWeb.Service
             db.SaveChanges();
         }
 
-        public List<FriendRequest> GetAllFriendRequestsReciver(string userId)
+        public List<FriendRequest> GetAllFriendRequestsReciver(string userId)       //Finding all requests user has recived
         {
-            List<FriendRequest> fr = new List<FriendRequest>();
             ApplicationDbContext db = new ApplicationDbContext();
 
-            var allRequests = from f in db.FriendRequests
+            var allRequests = (from f in db.FriendRequests
                               where userId == f.requestReciver.Id
-                              select f;
+                              orderby f.requestReciver.Name
+                              select f).ToList();
 
-            foreach (FriendRequest requests in allRequests)
-            {
-                fr.Add(requests);                 
-            }
-
-            return fr;
+            return allRequests;
         }
 
-        public List<FriendRequest> GetAllFriendRequestsSender(string userId)
+        public List<FriendRequest> GetAllFriendRequestsSender(string userId)         //Finding all friend requests user has sent
         {
-            List<FriendRequest> fr = new List<FriendRequest>();
             ApplicationDbContext db = new ApplicationDbContext();
 
-            var allRequests = from f in db.FriendRequests
+            var allRequests = (from f in db.FriendRequests
                               where userId == f.requestSender.Id
-                              select f;
+                              orderby f.requestSender.Name
+                              select f).ToList();
 
-            foreach (FriendRequest requests in allRequests)
-            {
-                fr.Add(requests);            
-            }
-
-            return fr;
+            return allRequests;
         }
 
         public FriendRequest GetFriendListById(int id) //?id ????'

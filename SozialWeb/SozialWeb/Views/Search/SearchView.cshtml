@@ -50,7 +50,7 @@
                 @Html.DisplayFor(ModelItem => item.LocationOfUser)
             </td>
             <td>
-                @Html.ActionLink("Send friend request", "SendFriendRequest", "Test", new { reciverId = item.Id }, null)
+                @Html.ActionLink("Send friend request", "SendFriendRequest", "FriendsList", new { reciverId = item.Id }, null)
             </td>
             <td>
                 @using (Html.BeginForm("SendMessage", "Message", new { reciverId = item.Id, returnurl = Request.Url.AbsoluteUri }))

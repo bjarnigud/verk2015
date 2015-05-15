@@ -274,6 +274,7 @@
     <Content Include="Views\Message\Index.cshtml" />
     <Content Include="Views\Profile\AddImage.cshtml" />
     <Content Include="Views\Shared\GroupMembers.cshtml" />
+    <Content Include="Views\FriendsList\RemoveFriend.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

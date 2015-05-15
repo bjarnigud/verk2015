@@ -30,7 +30,9 @@ namespace SozialWeb.Controllers
             FriendListService f = new FriendListService();
 
             f.RemoveFriend(userId, user2);
-            return RedirectToAction(returnurl);                                 //notandi sendur aftur þaðan sem hann kom
+            return View();
+
+           //return RedirectToAction(returnurl);                                 //notandi sendur aftur þaðan sem hann kom
 
         }
 
