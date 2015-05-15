@@ -68,16 +68,17 @@
         }
 
    
-
+        <div id="post-list">
             @foreach (var item in ViewBag.Posts)
             {
                 <blockquote>
                     <header><img src="@Url.Content(item.author.PicLocation)" width="50" height="50" alt="image" /> <a href="@Url.Action("ProfileTestView", "Profile", new { id = item.author.Id})"> @item.author.Name</a> </header>
-                    <br/>
+                    <br />
                     <p>@item.text</p>
                     <footer>@item.author.Name - @item.timeOfPost.ToString("dd.MM.yyyy HH:mm")</footer>
                 </blockquote>
             }
+            </div>
         </div>
     </div>
 
