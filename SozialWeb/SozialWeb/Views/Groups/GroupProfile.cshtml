@@ -25,6 +25,10 @@
             @Html.DisplayFor(model => model.descriptionOfGroup)
         </dd>
 
+        <dt>
+            @Html.ActionLink("Back to List", "GroupsView", "Groups")
+        </dt>
+
     </dl>
     <hr />
     <table class="grouptable">
@@ -71,6 +75,8 @@
             @foreach (var item in ViewBag.Posts)
             {
                 <blockquote>
+                    <header><img src="@Url.Content(item.author.PicLocation)" width="50" height="50" alt="image" /> <a href="@Url.Action("ProfileTestView", "Profile", new { id = item.author.Id})"> @item.author.Name</a> </header>
+                    <br/>
                     <p>@item.text</p>
                     <footer>@item.author.Name - @item.timeOfPost.ToString("dd.MM.yyyy HH:mm")</footer>
                 </blockquote>
@@ -78,34 +84,29 @@
         </div>
     </div>
 
+    <div class="groupImage">
+        @using (Html.BeginForm("AddGroupPostImage", "Groups", new { groupId = Model.ID }))
+        {
+
+            <div class="form-group">
+              
+                <label for="" class="control-label">Image url:</label>
+                <br />
+                <text name="url" rows="5" cols="100" placeholder="What's on your mind?"></text>
+                @Html.TextBox("url")
+            </div>
+
+            <input type="submit" class="btn btn-primary" id="submitStatus" value="Submit" />
+        }
+
+        @foreach (var image in ViewBag.Images)
+        {
+            <blockquote>
+                <header><img src="@Url.Content(image.PicUrl)" width="300" height="300" alt="image" />  </header>
+                <footer><i></i></footer>
+            </blockquote>
+        }
+    </div>
+
 </div>
-<p>
-    @Html.ActionLink("Back to List", "GroupsView", "Groups")
-</p>
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<div>
-    @using (Html.BeginForm("AddGroupPostImage", "Groups", new { groupId = Model.ID }))
-    {
 
-        <div class="form-group">
-            <br />
-            <text name="url" rows="5" cols="100" placeholder="What's on your mind?"></text>
-            @Html.TextBox("url")
-        </div>
-
-        <input type="submit" class="btn btn-primary" id="submitStatus" value="Submit" />
-    }
-
-    @foreach (var image in ViewBag.Images)
-    {
-        <blockquote>
-            <header><img src="@Url.Content(image.PicUrl)" width="300" height="300" alt="image" />  </header>
-            <footer><i></i></footer>
-        </blockquote>
-    }
-</div>
