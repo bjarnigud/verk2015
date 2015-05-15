@@ -37,7 +37,8 @@
     @foreach (var item in Model) {
         <tr>
             <td> <!-- Þetta mun birta link með nafni notenda á prófíl notanda-->
-                <a href="@Url.Action("ProfileTestView", "Profile", new { id = item.Id})">@Html.DisplayFor(modelItem => item.Name)</a>   
+                <a href="@Url.Action("ProfileTestView", "Profile", new { id = item.Id})">@Html.DisplayFor(modelItem => item.Name)</a>  
+             
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Gender)
