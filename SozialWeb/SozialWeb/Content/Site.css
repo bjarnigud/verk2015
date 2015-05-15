@@ -2,7 +2,7 @@
   background-color: #fff9fc;
   padding: 5%;
   margin: auto;
-  background-image: url("https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQ699WdJjfXijhl364UE8h5MsxemYrJ6fMT8dqA-CLrmiUyRprO");
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSchrDcSIlXLQlbC4saVBgjRKpZdBy3btHIgkBRwwx7afIqw17ZYA");
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -196,7 +196,7 @@ textarea
 	line-height: 15px;
 	margin: 15px auto;
 	text-align: left;
-	width: 500px;
+	width: 600px;
     margin-left:0px;
 }
 .table-groupsview2{
@@ -205,9 +205,9 @@ textarea
 	box-shadow: inset 0 1px 0 #fff;
 	font-size: 12px;
 	line-height: 15px;
-	margin: 30px auto;
+	margin: 15px auto;
 	text-align: left;
-	width: 500px;
+	width: 600px;
     margin-left:0px;
 }
 .jumbotron h1 {
@@ -235,4 +235,13 @@ th {
   position: absolute;
   top: 0;
   left: 60%;
+}
+.jumbotron {
+  padding: 30px;
+  margin-bottom: 30px;
+  font-size: 21px;
+  font-weight: 200;
+  line-height: 2.1428571435;
+  color: inherit;
+  background: linear-gradient(#e5e5ff, #9999ff); /* Standard syntax */
 }
