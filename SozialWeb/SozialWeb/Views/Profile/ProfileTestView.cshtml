@@ -42,8 +42,7 @@
 
         @using (Html.BeginForm("AddPost", "Profile", new { reciverId = Model.Id }))
         {
-
-
+            
             <div class="form-group">
                 <br />
                 <textarea name="text" rows="5" cols="100" placeholder="What's on your mind?"></textarea>
@@ -79,14 +78,13 @@
 @using (Html.BeginForm("AddPostImage", "Profile", new { reciverId = Model.Id }))
 {
 
-
     <div class="form-group">
         <br />
         <text name="url" rows="5" cols="100" placeholder="What's on your mind?"></text>
         @Html.TextBox("url")
     </div>
 
-    <input type="submit" class="btn btn-primary" id="submitStatus" value="Submit" />
+    <input type="url" class="btn btn-primary" id="submitStatus" value="Submit" />
 }
 
 @foreach (var image in ViewBag.Images)
