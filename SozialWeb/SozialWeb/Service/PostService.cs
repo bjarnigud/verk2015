@@ -8,14 +8,14 @@ namespace SozialWeb.Service
 {
     public class PostService
     {
-        public void AddStatus(string userId, string status)
+        public void AddStatus(string userId, string status)                      // Lets user add status
         {
-            ApplicationDbContext db = new ApplicationDbContext();
+            ApplicationDbContext db = new ApplicationDbContext();               // get acces to the database
 
             var user = db.Users.Where(u => u.Id == userId).SingleOrDefault();
             if (user != null)
             {
-                var post = new Post
+                var post = new Post                                              // creates the status
                 {
                     text   = status,
                     author = user,

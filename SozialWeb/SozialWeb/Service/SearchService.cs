@@ -8,9 +8,9 @@ namespace SozialWeb.Service
 {
     public class SearchService
     {
-        public List<ApplicationUser> GetUsers(string userId)
+        public List<ApplicationUser> GetUsers(string userId)                 // gets all users
         {
-            List<ApplicationUser> allUserList = new List<ApplicationUser>();
+            List<ApplicationUser> allUserList = new List<ApplicationUser>(); // gets acces to database
             ApplicationDbContext db = new ApplicationDbContext();
             var allUsers = from user in db.Users
                            where user.Id != userId
@@ -18,48 +18,50 @@ namespace SozialWeb.Service
 
             foreach (ApplicationUser user in allUsers)
             {
-                allUserList.Add(user);                 //ekki góð leið til að gera þetta
+                allUserList.Add(user);                 
             }
 
             return allUserList;
         }
 
-        public List<ApplicationUser> FindUsers(string searchString)
+        public List<ApplicationUser> FindUsers(string searchString)         // finds uers
         {
-            ApplicationDbContext db = new ApplicationDbContext();
-            List<ApplicationUser> usersFound = new List<ApplicationUser>();
-            var users = from u in db.Users
+            ApplicationDbContext db = new ApplicationDbContext();           // gets acces to database
+            List<ApplicationUser> usersFound = new List<ApplicationUser>(); 
+            var users = from u in db.Users                          
                          select u;
 
-            if (!String.IsNullOrEmpty(searchString))
+            if (!String.IsNullOrEmpty(searchString))                        // checks if string is empty
             {
-                users = users.Where(u => u.Name.Contains(searchString));
+                users = users.Where(u => u.Name.Contains(searchString));    // Finds user
             }
 
             foreach (ApplicationUser user in users)
             {
-                usersFound.Add(user);                 //ekki góð leið til að gera þetta
-            }
-
-            return usersFound;
+                usersFound.Add(user);    
+            
+            }                                                           // adds the users found
+                    
+            return usersFound;      
+                                                                    // returns the user thats was found
         }
 
         // laga til nöfn á föllum
-        public ApplicationUser FindUser(string id)
+        public ApplicationUser FindUser(string id)                          // finds user
         {
-            ApplicationDbContext db = new ApplicationDbContext();
+            ApplicationDbContext db = new ApplicationDbContext();           // gets acces to database
             ApplicationUser userReturned = new ApplicationUser();
             var user = from u in db.Users
-                       where u.Id == id
+                       where u.Id == id                                     // finds user in database
                        select u;
         
 
-        foreach (ApplicationUser u in user)
+        foreach (ApplicationUser u in user)                                 //  loops in users
             {
-                userReturned = u;                 //ekki góð leið til að gera þetta
+                userReturned = u;                                           // returns user      
             }
 
-        return userReturned;
+        return userReturned;                                                // returns user
         }
         
 
