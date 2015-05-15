@@ -153,7 +153,7 @@ a.site-logo  {
 }
 #post-list
 {
-    max-width:300px;
+    max-width:500px;
     max-height:100px;
 }
 textarea
@@ -177,8 +177,12 @@ textarea
 }
 .groupPost {
   position: absolute;
-  right: 600px;
+  right: 800px;
 }
 .groupsPage{
     position:relative;
+}
+.groupImage {
+  position: absolute;
+  left: 1150px;
 }
