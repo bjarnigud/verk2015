@@ -19,18 +19,16 @@ namespace SozialWeb.Controllers
             if(searchString == "")
             {
                 var groups = g.GetAllGroups();
-                return View(groups);                            //birtir alla notendur ef það er engin leitar strengur settur inn(kannski óþarfi)
+                return View(groups);                            //Shows allt the user if no search string is put it
             }
-            var groups2 = g.FindGroups(searchString);           //finnur alla hópa sem hafa leitarstrenginn í nafninu
+            var groups2 = g.FindGroups(searchString);           //Finds allt the groups that have string in their name
             var userId = User.Identity.GetUserId();
-            ViewBag.Groups = g.GetUserGroups(userId);           //tekur alla hópa sem notandi er skráður í og setur í viewbag til að birta í view
+            ViewBag.Groups = g.GetUserGroups(userId);           //Takes all the grouos that are sigends in and adds them to viewbag to show in the view
         
             return View(groups2);
         }
-      
-        //Býr til nýjan hóp í groupView í gegnum group service. Innskráður notandi verður stofnandi hópsins og fyrsti meðlimur
         [HttpPost]
-        public ActionResult CreateNewGroup(string name, string description, string picture)
+        public ActionResult CreateNewGroup(string name, string description, string picture) //Makes a new group in the groupview trough group service. Signed in user has to be author and first member
         {
             GroupService g = new GroupService();
 
@@ -48,9 +46,7 @@ namespace SozialWeb.Controllers
             return View(group);
         }
 
-        /* Profile view fyrir hópa, tekur inn id á hóp og birtir profile fyrir þann hóp
-         * */
-        public ActionResult GroupProfile (int groupId)
+        public ActionResult GroupProfile (int groupId)  // Profile view for groups , takes in id for a group and shows a profile form that group
         {
             GroupService g = new GroupService();
             PostImageService p  = new PostImageService();
@@ -62,18 +58,17 @@ namespace SozialWeb.Controllers
             }
 
             List<ApplicationUser> members = new List<ApplicationUser>();
-            members = g.GetGroupMembers(groupId);                           //finnur alla meðlimi hópsins og setur í viewbag til að loopa í gegn í viewinu
-            ViewBag.Posts = g.GetGroupPosts(groupId);                       //finnur alla pósta á svæði hópsins og setur í viewbag til að sýna
+            members = g.GetGroupMembers(groupId);                           //Finds all the members og the grouops and puts them in viewbag to loop trough the view
+            ViewBag.Posts = g.GetGroupPosts(groupId);                       //Finds all the posts on the groups profile and puts them in viewbag to show them
            
             ViewBag.Members = members;
             ViewBag.Images = p.GetGroupImages(groupId);
 
-            var group = g.GetGroupById(groupId);                                //finnur hópinn
+            var group = g.GetGroupById(groupId);                                //Finds the group
             return View(group);
         }
     
-        //Kallað í þetta í GroupsView til að ganga í hóp    
-        public ActionResult JoinGroup(int groupId)
+        public ActionResult JoinGroup(int groupId) // This is called in groupview to join a group
         {
             
             GroupService g = new GroupService();
@@ -81,23 +76,22 @@ namespace SozialWeb.Controllers
             if(g.IsAMember(userId, groupId) == true)
             {
                 return RedirectToAction("TestError", "Test", new { errorMessage = "Can't join the group more than once" });
-                //sendir notanda á villu síðu ef hann er nú þegar hópmeðlimur
+                //Sends a error to the user ef he is already a group member
             }
             g.JoinGroup(userId, groupId);
-            return RedirectToAction("GroupsView");      //fer aftur á GroupsView eftir að hópur er stofnaður
+            return RedirectToAction("GroupsView");      //Goes back to groupview after the group has been created
         }
 
-        // Kallað á þetta þegar notandi velur leave group í groupsview
-        public ActionResult LeaveGroup(int groupId)
+        public ActionResult LeaveGroup(int groupId) // this is called when the user leaves group in groupView
         {
             GroupService g = new GroupService();
             var userId = User.Identity.GetUserId();
             if (g.IsAMember(userId, groupId) == false)
             {
                 return RedirectToAction("TestError", "Test", new { errorMessage = "Can't leave a group if you're not a member" });
-                //Ef notandi reynir að hætta í hóp sem hann er ekki meðlimur í fer hann á villu síðu
+                //If a user tries to leave a group he is not a member of he gets a error message
             }
-            g.LeaveGroup(userId, groupId);                  //hættir í hóp
+            g.LeaveGroup(userId, groupId);                  //leaves the group
             return RedirectToAction("GroupsView");
         }
 
@@ -110,9 +104,7 @@ namespace SozialWeb.Controllers
 
             return View(groups);
         }
-        
 
-        // ATH HVORT MEIGI EYÐA????????????????
         public ActionResult GroupMembers(int ID)
         {
             GroupService g = new GroupService();
@@ -120,10 +112,8 @@ namespace SozialWeb.Controllers
             return View(members);
         }
         
-
-        //Býr til groupPost
         [HttpPost]
-        public ActionResult AddPost(GroupPost model, int groupId)
+        public ActionResult AddPost(GroupPost model, int groupId) // makes a grouppost
         {
             
           
@@ -135,7 +125,7 @@ namespace SozialWeb.Controllers
                 }
                 g.AddGroupPost(model.text, groupId, userId);
 
-            return RedirectToAction("GroupProfile", new { groupId = groupId});      //fær aftur á groupProfile og setur inn groupId sem færibreytu
+            return RedirectToAction("GroupProfile", new { groupId = groupId});      //Goes back to groupProfile and puts in groupId as member varible
         }
 
         [HttpPost]

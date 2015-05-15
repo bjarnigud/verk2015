@@ -4,6 +4,7 @@
     ViewBag.Title = "Profile";
 }
 <script src="~/Scripts/ajax.js" type="text/javascript"></script>
+
 <div class="groupspage">
 	<h2>Group Profile</h2>
     <dl class="dl-horizontal">
@@ -51,7 +52,6 @@
 
     <div class="groupPost">
 
-
         @using (Html.BeginForm("AddPost", "Groups", new { groupId = Model.ID }))
         {
 
@@ -61,11 +61,12 @@
                 <br />
                 <textarea name="text" cols="60" rows="5" placeholder="What's on your mind?"></textarea>
             </div>
-            <input type="submit" class="btn btn-primary" id="submitStatus" value="Senda inn" />
+            <input type="submit" class="btn btn-primary" id="submitStatus" value="Submit" />
 
         }
 
-   
+        <h3>Groups Feed</h3>
+
         <div id="post-list">
             @foreach (var item in ViewBag.Posts)
             {
@@ -95,14 +96,17 @@
             <input type="submit" class="btn btn-primary" id="submitStatus" value="Submit" />
         }
 
-        @foreach (var image in ViewBag.Images)
-        {
-            <blockquote>
-                <header><img src="@Url.Content(image.PicUrl)" width="300" height="300" alt="image" />  </header>
-                <footer><i></i></footer>
-            </blockquote>
-        }
-    </div>
+        <div id="ajax-2">
+            @foreach (var image in ViewBag.Images)
+            {
+                <blockquote>
+                    <header><img src="@Url.Content(image.PicUrl)" width="300" height="300" alt="image" />  </header>
+                    <footer><i></i></footer>
+                </blockquote>
+            }
+        </div>
+        </div>
+
 </div>
 
 

@@ -8,8 +8,6 @@ namespace SozialWeb.Controllers
 {
     public class PostImageController : Controller
     {
-        //
-        // GET: /PostImage/
         public ActionResult Index()
         {
             return View();
