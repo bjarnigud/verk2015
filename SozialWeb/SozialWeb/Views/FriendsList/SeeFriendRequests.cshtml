@@ -13,7 +13,6 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            ID: @item.ID<br />
             Reciver: @item.requestReciver.Name<br />
             Sender: @item.requestSender.Name <br />
             @Html.ActionLink("Accept request", "AcceptFriendRequest", "FriendsList", new { Id = item.ID }, null)

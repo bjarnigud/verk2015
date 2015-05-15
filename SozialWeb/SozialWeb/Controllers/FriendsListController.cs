@@ -32,8 +32,6 @@ namespace SozialWeb.Controllers
             f.RemoveFriend(userId, user2);
             return View();
 
-           //return RedirectToAction(returnurl);                                 //notandi sendur aftur þaðan sem hann kom
-
         }
 
         public ActionResult SendFriendRequest(string reciverId)

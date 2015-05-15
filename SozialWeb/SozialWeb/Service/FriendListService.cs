@@ -81,7 +81,7 @@ namespace SozialWeb.Service
 
             var allRequests = (from f in db.FriendRequests
                               where userId == f.requestReciver.Id
-                              orderby f.requestReciver.Name
+                              orderby f.requestSender.Name
                               select f).ToList();
 
             return allRequests;
@@ -93,7 +93,7 @@ namespace SozialWeb.Service
 
             var allRequests = (from f in db.FriendRequests
                               where userId == f.requestSender.Id
-                              orderby f.requestSender.Name
+                              orderby f.requestReciver.Name
                               select f).ToList();
 
             return allRequests;
@@ -159,7 +159,7 @@ namespace SozialWeb.Service
                          select f).SingleOrDefault();
 
             var friend2 = (from f in db.FriendLists
-                         where f.friend1.Id == user1 && f.friend2.Id == user2
+                         where f.friend1.Id == user2 && f.friend2.Id == user1
                          select f).SingleOrDefault();
 
             if(friend == null || friend2 == null)

@@ -10,7 +10,7 @@ namespace SozialWeb.Service
 {
     public class GroupService
     {
-        public void CreateGroup(string groupName, string description, string picture, string userId)
+        public void CreateGroup(string groupName, string description, string picture, string userId)    //when user creates a new group
         {
             ApplicationDbContext db = new ApplicationDbContext();
            
@@ -25,19 +25,20 @@ namespace SozialWeb.Service
 
             db.Groups.Add(group);
             db.SaveChanges();
-            JoinGroup(userId, group.ID);
+            JoinGroup(userId, group.ID);                                //so the creator becomes joins group automatically
         }
 
-        public List<Group> GetAllGroups()
+        public List<Group> GetAllGroups()                               //getting all groups in alphabetical order
         {
             ApplicationDbContext db = new ApplicationDbContext();
             var groups = (from g in db.Groups
+                          orderby g.name
                          select g).ToList();
 
             return groups;
         }
 
-        public Group GetGroupById(int id)
+        public Group GetGroupById(int id)                               //Getting group by group id
         {
             ApplicationDbContext db = new ApplicationDbContext();
             var group = db.Groups.Where(g => g.ID == id).SingleOrDefault();
@@ -100,7 +101,7 @@ namespace SozialWeb.Service
 
             foreach (Group g in groups)
             {
-                groupsFound.Add(g);                 //ekki góð leið til að gera þetta
+                groupsFound.Add(g);                 /
             }
             return groupsFound;
         }
