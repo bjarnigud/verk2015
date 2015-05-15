@@ -86,7 +86,8 @@ namespace SozialWeb.Controllers
                 PostImageService p = new PostImageService();
                 var userId = User.Identity.GetUserId();
                 //k.addPic(userId, model.PicUrl);
-                p.AddImage(url, userId, reciverId);
+                //p.AddImage(url, userId, reciverId);
+                p.AddImage(url, reciverId, userId);
             //}
             //return View(model);
             return RedirectToAction("ProfileTestView", new { id = reciverId });
