@@ -135,5 +135,18 @@ namespace SozialWeb.Controllers
 
             return RedirectToAction("GroupProfile", new { groupId = groupId});      //fær aftur á groupProfile og setur inn groupId sem færibreytu
         }
+
+        [HttpPost]
+        public ActionResult AddGroupPostImage(string url, int groupId)
+        {
+
+            PostImageService p = new PostImageService();
+            var userId = User.Identity.GetUserId();
+            //k.addPic(userId, model.PicUrl);
+            p.addGroupImage(url, userId, groupId);
+            //}
+            //return View(model);
+            return RedirectToAction("GroupProfile", new { id = groupId });
+        }
     }
 }

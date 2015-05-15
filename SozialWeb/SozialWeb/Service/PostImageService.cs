@@ -42,6 +42,28 @@ namespace SozialWeb.Service
             return images;
 
         }
- 
+
+        public void addGroupImage(string imageUrl, string userId, int groupId)
+        {
+            ApplicationDbContext db = new ApplicationDbContext();
+
+            var user = db.Users.Where(u => u.Id == userId).SingleOrDefault();
+            var reciver = db.Groups.Where(r => r.ID == groupId).SingleOrDefault();
+
+            if (user != null || reciver != null)
+            {
+                var image = new GroupPostImage
+                {
+                    author = user,
+                    PicUrl = imageUrl,
+                    reciver = reciver,
+                    timeOfPost = DateTime.Now
+                };
+                db.GroupPostImages.Add(image);
+               // db.G
+                db.SaveChanges();
+            }
+
+        }
     }
 }

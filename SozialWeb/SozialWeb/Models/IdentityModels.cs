@@ -47,6 +47,7 @@ namespace SozialWeb.Models
         public DbSet<FriendRequest> FriendRequests { get; set; }
         public DbSet<GroupMember> GroupMembers { get; set; }
         public DbSet<PostImage> PostImages { get; set; }
+        public DbSet<GroupPostImage> GroupPostImages { get; set; }
         /* When you add new model add line here ...*/
     }
 }
