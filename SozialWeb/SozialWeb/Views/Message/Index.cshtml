@@ -32,7 +32,7 @@
             @Html.DisplayFor(modelItem => item.author.Name)
         </td>
         <td>
-            @Html.ActionLink("Delete Message", "DeleteMessage", new { messageId = item.ID }, new { returnUrl = Request.Url.AbsoluteUri })
+            @Html.ActionLink("Delete Message", "DeleteMessage", new { messageId = item.ID , returnurl = Request.Url.AbsoluteUri })
         </td>
     </tr>
 }

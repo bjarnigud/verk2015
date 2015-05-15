@@ -33,7 +33,7 @@ namespace SozialWeb.Controllers
             
         }
 
-        public ActionResult DeleteMessage(int? messageId, string returnUrl)
+        public ActionResult DeleteMessage(int? messageId, string returnurl)
         {
             MessageService m = new MessageService();
             int id;
@@ -43,7 +43,7 @@ namespace SozialWeb.Controllers
             }
             id = (int)messageId;
             m.DeleteMessage(id);
-            return RedirectToAction(returnUrl);
+            return Redirect(returnurl);
         }
 	}
 }
