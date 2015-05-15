@@ -28,12 +28,12 @@ namespace SozialWeb.Service
         {
             ApplicationDbContext db = new ApplicationDbContext();           // gets acces to database
             List<ApplicationUser> usersFound = new List<ApplicationUser>(); 
-            var users = from u in db.Users                          
+            var users = from u in db.Users   
                          select u;
 
             if (!String.IsNullOrEmpty(searchString))                        // checks if string is empty
             {
-                users = users.Where(u => u.Name.Contains(searchString));    // Finds user
+               users = users.Where(u => u.Name.Contains(searchString));    // Finds user
             }
 
             foreach (ApplicationUser user in users)
@@ -41,7 +41,8 @@ namespace SozialWeb.Service
                 usersFound.Add(user);    
             
             }                                                           // adds the users found
-                    
+           
+            usersFound.Sort((x, y) => string.Compare(x.Name, y.Name));
             return usersFound;      
                                                                     // returns the user thats was found
         }
