@@ -32,7 +32,7 @@ namespace SozialWeb.Controllers
             var userId = User.Identity.GetUserId();
             if(!f.alreadyFriends(id, userId) && userId != id)
             {
-                return RedirectToAction("TestError", "Test", new { errorMessage = "You can only view profiles of users that are friends with" });
+                return RedirectToAction("TestError", "Test", new { errorMessage = "You can only view profiles of users that you are friends with" });
             }
             var posts = ps.getPosts(id);
             ViewBag.Posts = posts;
