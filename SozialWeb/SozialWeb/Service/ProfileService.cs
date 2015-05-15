@@ -19,7 +19,7 @@ namespace SozialWeb.Service
 
             foreach (ApplicationUser user in userFromLinq)
             {
-                userToReturn = user;                 //ekki góð leið til að gera þetta
+                userToReturn = user;                 
             }
 
             return userToReturn;

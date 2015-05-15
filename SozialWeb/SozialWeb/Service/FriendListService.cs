@@ -193,9 +193,9 @@ namespace SozialWeb.Service
         {
             ApplicationDbContext db = new ApplicationDbContext();
 
-            var find = from f in db.FriendRequests
-                       where user1 == f.requestReciver.Id && user2 == f.requestSender.Id
-                       select f;
+            var find = (from f in db.FriendRequests
+                       where user2 == f.requestReciver.Id && user1 == f.requestSender.Id
+                       select f).ToList();
 
             if (find.Count() == 0)
             {
