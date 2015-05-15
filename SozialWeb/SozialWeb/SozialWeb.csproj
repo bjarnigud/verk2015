@@ -166,6 +166,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MessageController.cs" />
+    <Compile Include="Controllers\PostImageController.cs" />
     <Compile Include="Controllers\ProfileController.cs" />
     <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Controllers\TestController.cs" />
@@ -189,6 +190,7 @@
     <Compile Include="Service\FriendListService.cs" />
     <Compile Include="Service\GroupService.cs" />
     <Compile Include="Service\MessageService.cs" />
+    <Compile Include="Service\PostImageService.cs" />
     <Compile Include="Service\PostService.cs" />
     <Compile Include="Service\ProfileService.cs" />
     <Compile Include="Service\SearchService.cs" />
@@ -276,6 +278,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\PostImage\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

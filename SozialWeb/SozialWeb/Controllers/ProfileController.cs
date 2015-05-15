@@ -22,7 +22,7 @@ namespace SozialWeb.Controllers
             //return View(model);
         }
 
-        public ActionResult ProfileTestView(string id)
+        public ActionResult ProfileTestView(string id, string url)
         {
             ProfileService p = new ProfileService();
             ApplicationUser user = new ApplicationUser();
@@ -36,6 +36,7 @@ namespace SozialWeb.Controllers
             }
             var posts = ps.getPosts(id);
             ViewBag.Posts = posts;
+            ViewBag.Images = ps.getPics(id);
             return View(user);
         }
 
@@ -61,7 +62,8 @@ namespace SozialWeb.Controllers
             //return RedirectToAction("ProfileView", new { id = reciverId });
             return RedirectToAction("ProfileTestView", new { id = reciverId });
         }
-
+        
+        [HttpPost]
         public ActionResult AddImage(PostImage model)
         {
             var image = model;
@@ -72,6 +74,22 @@ namespace SozialWeb.Controllers
                 k.addPic(userId, model.PicUrl);
             }
             return View(model);
+        }
+
+        [HttpPost]
+        public ActionResult AddPostImage(string url, string reciverId)
+        {
+            //var image = model;
+            //if (ModelState.IsValid)
+            //{
+                //PostService k = new PostService();
+                PostImageService p = new PostImageService();
+                var userId = User.Identity.GetUserId();
+                //k.addPic(userId, model.PicUrl);
+                p.addImage(url, userId, reciverId);
+            //}
+            //return View(model);
+            return RedirectToAction("ProfileTestView", new { id = reciverId });
         }
 
     }

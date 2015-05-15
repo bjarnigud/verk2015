@@ -117,6 +117,20 @@ namespace SozialWeb.Service
             return tenPosts;
 
         }
+
+        public List<PostImage> getImages(string userId)
+        {
+            ApplicationDbContext db = new ApplicationDbContext();
+            var user = db.Users.Where(u => u.Id == userId).SingleOrDefault();
+
+            var images = (from i in db.PostImages
+                          where i.reciver.Id == userId
+                          orderby i.timeOfPost descending
+                          select i).ToList();
+
+            return images;
+
+        }
    
     }
 }

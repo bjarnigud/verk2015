@@ -21,6 +21,11 @@ namespace SozialWeb.Controllers
             return "This is a test page";
         }
 
+        public ActionResult TestImage()
+        {
+            return View();
+        }
+
         public ActionResult TestHome()
         {
             PostService p = new PostService();
