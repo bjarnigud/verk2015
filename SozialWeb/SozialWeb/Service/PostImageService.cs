@@ -8,12 +8,12 @@ namespace SozialWeb.Service
 {
     public class PostImageService
     {
-        public void AddImage(string imageUrl, string userId, string reciverId)
+        public void AddImage(string imageUrl, string userId, string reciverId)          //Add image to profile
         {
             ApplicationDbContext db = new ApplicationDbContext();
 
-            var user = db.Users.Where(u => u.Id == userId).SingleOrDefault();
-            var reciver = db.Users.Where(r => r.Id == reciverId).SingleOrDefault();
+            var user = db.Users.Where(u => u.Id == userId).SingleOrDefault();           //finds user 
+            var reciver = db.Users.Where(r => r.Id == reciverId).SingleOrDefault();     
 
             if(user != null)
             {

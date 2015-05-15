@@ -12,19 +12,19 @@ namespace SozialWeb.Service
         {
             ApplicationDbContext db = new ApplicationDbContext();
 
-            var firstUser = db.Users.Where(u => u.Id == user1).SingleOrDefault();
+            var firstUser = db.Users.Where(u => u.Id == user1).SingleOrDefault();           //finds sender and reciver
             var secondUser = db.Users.Where(u => u.Id == user2).SingleOrDefault();
             
-            if (firstUser == null || secondUser == null)
+            if (firstUser == null || secondUser == null)                                    //if either user dosen't exist then return false
             {
                 return false;
             }
              
-            var message = new Message
+            var message = new Message                                                       //Creates message
             {
                 author = firstUser,
                 reciver = secondUser,
-                timeOfMessage = DateTime.Now,
+                timeOfMessage = DateTime.Now,                                               //insert the time when the message was sent
                 text = textMessage
 
             };
@@ -36,13 +36,13 @@ namespace SozialWeb.Service
             return true;
         }
 
-        public List<Message> GetAllMessagesByUserId(string userId)
+        public List<Message> GetAllMessagesByUserId(string userId)          //finds all messages user has
         {
             ApplicationDbContext db = new ApplicationDbContext();
 
             var messageList = (from m in db.Messages
                             where m.reciver.Id == userId
-                            orderby m.timeOfMessage ascending
+                            orderby m.timeOfMessage ascending               //orders the messages in order by time
                             select m).ToList();
 
             return messageList;
@@ -51,9 +51,9 @@ namespace SozialWeb.Service
         public bool DeleteMessage(int messageId)
         {
             ApplicationDbContext db = new ApplicationDbContext();
-            var message = db.Messages.Where(m => m.ID == messageId).SingleOrDefault();
+            var message = db.Messages.Where(m => m.ID == messageId).SingleOrDefault();          //find the message after it id
 
-            if(message == null)
+            if(message == null)                                                                 //if no message is found return false
             {
                 return false;
             }

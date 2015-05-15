@@ -52,7 +52,7 @@ namespace SozialWeb.Service
             var user = db.Users.Where(u => u.Id == userId).SingleOrDefault();           //finding user
             var groupToJoin = db.Groups.Where(g => g.ID == groupId).SingleOrDefault();  //finding group to join
 
-            var groupMember = new GroupMember{                                          //
+            var groupMember = new GroupMember{                                          //creating group member
                                   groupMember = user,
                                   group = groupToJoin
                               };
@@ -62,25 +62,25 @@ namespace SozialWeb.Service
             return true;
         }
 
-        public bool LeaveGroup(string userId, int groupId)
+        public bool LeaveGroup(string userId, int groupId)                              //when user leaves group
         {
             ApplicationDbContext db = new ApplicationDbContext();
             var user = db.Users.Where(u => u.Id == userId).SingleOrDefault();
-            var groupMember = db.GroupMembers.Where(g => g.group.ID == groupId 
+            var groupMember = db.GroupMembers.Where(g => g.group.ID == groupId          //finding user and group
                 && g.groupMember.Id == userId).SingleOrDefault();
 
 
-            db.GroupMembers.Remove(groupMember);
-            db.SaveChanges();
+            db.GroupMembers.Remove(groupMember);                                        //removes from database
+            db.SaveChanges();                                                           //save changes to database
             return true;
         }
 
         public bool IsAMember(string userId, int groupId)
         {
             ApplicationDbContext db = new ApplicationDbContext();
-            var groupMember = db.GroupMembers.Where(g => g.group.ID == groupId 
+            var groupMember = db.GroupMembers.Where(g => g.group.ID == groupId          //finding user and group
                 && g.groupMember.Id == userId).SingleOrDefault();
-            if(groupMember == null)
+            if(groupMember == null)                                                     //if search returns empty then he is not a member and returns false
             {
                 return false;
             }
@@ -91,7 +91,7 @@ namespace SozialWeb.Service
             ApplicationDbContext db = new ApplicationDbContext();
             List<Group> groupsFound = new List<Group>();
             var groups = from g in db.Groups
-                       
+                        // orderby g.name
                          select g;
 
             if (!String.IsNullOrEmpty(searchString))
@@ -112,6 +112,7 @@ namespace SozialWeb.Service
 
             var groupPosts = (from g in db.GroupPosts
                              where id == g.groupReciver.ID
+                             orderby g.timeOfPost descending                //return newest post at the top in the view
                              select g).ToList();
             return groupPosts;
         }
@@ -121,12 +122,13 @@ namespace SozialWeb.Service
             ApplicationDbContext db = new ApplicationDbContext();
             List<ApplicationUser> gr = new List<ApplicationUser>();
             var groupMembers = (from g in db.Users
+                                orderby g.Name
                                select g).ToList();
 
-            foreach(ApplicationUser member in groupMembers)                 //finnur alla notendur sem eru í þessum hóp
+            foreach(ApplicationUser member in groupMembers)                 //finds all users
             {
                
-                if (IsAMember(member.Id, id) == true)       //gert svona vegna tæknilegra erfiðleika
+                if (IsAMember(member.Id, id) == true)       //if the user is a member in the group then he is added to gr
                 {
                     gr.Add(member);
                 }
@@ -155,15 +157,15 @@ namespace SozialWeb.Service
             return groups;
         }
 
-        public bool AddGroupPost(string status, int groupId, string userId)
+        public bool AddGroupPost(string status, int groupId, string userId)     
         {
             ApplicationDbContext db = new ApplicationDbContext();
 
-            var user = db.Users.Where(u => u.Id == userId).SingleOrDefault();
+            var user = db.Users.Where(u => u.Id == userId).SingleOrDefault();       //finding user and group
             var group = db.Groups.Where(g => g.ID == groupId).SingleOrDefault();
             if (user != null)
             {
-                var groupPost = new GroupPost
+                var groupPost = new GroupPost                                       //creating new group post
                 {
                     text = status,
                     author = user,
@@ -172,9 +174,9 @@ namespace SozialWeb.Service
                     
 
                 };
-                db.GroupPosts.Add(groupPost);
+                db.GroupPosts.Add(groupPost);                                       //saving groupPost to database
                 db.SaveChanges();
-                return true;
+                return true;                                                        // returns true if success
             }
             return false;
         }
