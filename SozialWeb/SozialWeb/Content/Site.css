@@ -159,7 +159,7 @@ a.site-logo  {
 }
 textarea
 {
-    max-width:500px
+    max-width:350px
 }
 .profile_about
 {
@@ -277,4 +277,9 @@ blockquote {
   position: absolute;
   left: 0;
   margin-top: 9.5%;
+}
+#profileImagePost {
+  position: absolute;
+  margin-top: -18%;
+  right: 15%;
 }

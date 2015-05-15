@@ -76,22 +76,24 @@
     @Html.ActionLink("Back to List", "FriendListView", "FriendList")
     </p>
 -->
-@using (Html.BeginForm("AddPostImage", "Profile", new { reciverId = Model.Id }))
-{
+<div id="profileImagePost">
+    @using (Html.BeginForm("AddPostImage", "Profile", new { reciverId = Model.Id }))
+    {
 
-    <div class="form-group">
-        <br />
-        <text name="url" rows="5" cols="100" placeholder="What's on your mind?"></text>
-        @Html.TextBox("url")
-    </div>
+        <div class="form-group">
+            <br />
+            <text name="url" rows="5" cols="100" placeholder="What's on your mind?"></text>
+            @Html.TextBox("url")
+        </div>
 
-    <input type="submit" class="btn btn-primary" id="submitStatus" value="Submit" />
-}
+        <input type="submit" class="btn btn-primary" id="submitStatus" value="Submit" />
+    }
 
-@foreach (var image in ViewBag.Images)
-{
-    <blockquote>
-        <header><img src="@Url.Content(image.PicUrl)" width="300" height="300" alt="image" />  </header>
-        <footer><i></i></footer>
-    </blockquote>
-}
+    @foreach (var image in ViewBag.Images)
+    {
+        <blockquote>
+            <header><img src="@Url.Content(image.PicUrl)" width="300" height="300" alt="image" />  </header>
+            <footer><i></i></footer>
+        </blockquote>
+    }
+</div>
