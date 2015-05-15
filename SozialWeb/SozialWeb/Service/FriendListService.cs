@@ -9,22 +9,17 @@ namespace SozialWeb.Service
 {
     public class FriendListService
     {
-        public List<ApplicationUser> getFriends(string userId)
+        public List<ApplicationUser> getFriends(string userId)      //gets all friends of particular user
         {
  
-            ApplicationDbContext db = new ApplicationDbContext();
-            var allFriends = from friend in db.FriendLists
+            ApplicationDbContext db = new ApplicationDbContext();   //gets access to database
+            var allFriends = (from friend in db.FriendLists
                              where userId == friend.friend1.Id
-                             select friend.friend2;
-            List<ApplicationUser> currentUserFriendsList = new List<ApplicationUser>();
-
-            foreach (ApplicationUser friend in allFriends)
-            {
-                currentUserFriendsList.Add(friend);                 //ekki góð leið til að gera þetta
-            }
+                             orderby friend.friend2.Name
+                              select friend.friend2).ToList() ;
 
 
-            return currentUserFriendsList;
+            return allFriends;
         }
 
         public bool addFriend(string user1, string user2)

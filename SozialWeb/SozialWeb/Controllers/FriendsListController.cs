@@ -21,18 +21,6 @@ namespace SozialWeb.Controllers
             return View(friendsList);
         }
         
-    /*
-     *          EYÐA??????????????????
-     * */
-        public ActionResult FriendsListTestView()
-        {
-            var userId = User.Identity.GetUserId();
-            ApplicationDbContext db = new ApplicationDbContext();
-
-            FriendListService f = new FriendListService();
-            var friendsList = f.getNotFriends(userId);
-            return View(friendsList);
-        }
 
         /*Kallað í þetta ActionResult þegar er klikkað remove friend í FriendListView
          * */
