@@ -10,7 +10,7 @@ namespace SozialWeb.Service
 {
     public class GroupService
     {
-        public void CreateGroup(string groupName, string description, string userId)
+        public void CreateGroup(string groupName, string description, string picture, string userId)
         {
             ApplicationDbContext db = new ApplicationDbContext();
            
@@ -19,8 +19,8 @@ namespace SozialWeb.Service
             {
                 name = groupName,
                 creator = user,
-                descriptionOfGroup = description
-
+                descriptionOfGroup = description,
+                groupPicLocation = picture
             };
 
             db.Groups.Add(group);

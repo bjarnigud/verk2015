@@ -30,12 +30,12 @@ namespace SozialWeb.Controllers
       
         //Býr til nýjan hóp í groupView í gegnum group service. Innskráður notandi verður stofnandi hópsins og fyrsti meðlimur
         [HttpPost]
-        public ActionResult CreateNewGroup(string name, string description)
+        public ActionResult CreateNewGroup(string name, string description, string picture)
         {
             GroupService g = new GroupService();
 
                 var userId = User.Identity.GetUserId();
-                g.CreateGroup(name, description, userId);
+                g.CreateGroup(name, description, picture, userId);
                 
             return RedirectToAction("GroupsView");
         }
