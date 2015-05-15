@@ -14,7 +14,7 @@
 @foreach (var item in ViewBag.Posts)
 {
     <blockquote>
-        <header><img src="@Url.Content(item.author.PicLocation)" width="50" height="50" alt="image" /> <a href="@Url.Action("ProfileTestView", "Profile", new { id = item.author.Id})"> @item.author.Name</a> -> <a href="@Url.Action("ProfileTestView", "Profile", new { id = item.reciver.Id})"> @item.reciver.Name</header>
+        <header><img src="@Url.Content(item.author.PicLocation)" width="50" height="50" alt="image" /> <a href="@Url.Action("ProfileTestView", "Profile", new { id = item.author.Id})"> @item.author.Name</a> -> <a href="@Url.Action("ProfileTestView", "Profile", new { id = item.reciver.Id})"> @item.reciver.Name</a></header>
         <p>@item.text</p>
         <footer>@item.author.Name - @item.timeOfPost.ToString("dd.MM.yyyy HH:mm")</footer>
     </blockquote>
