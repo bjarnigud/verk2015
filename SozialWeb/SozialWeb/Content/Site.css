@@ -178,14 +178,16 @@ textarea
 }
 .groupPost {
   position: absolute;
-  right: 36%
+  right: 46%;
+  top: 25%;
 }
 .groupsPage{
     position:relative;
 }
 .groupImage {
   position: absolute;
-  left: 71%;
+  top: 25%;
+  left: 57.5%;
 }
 
 
