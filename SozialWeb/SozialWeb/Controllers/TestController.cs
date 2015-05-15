@@ -38,7 +38,6 @@ namespace SozialWeb.Controllers
         public ActionResult TestError(string errorMessage)
         {
             ViewBag.message = errorMessage;
-           // ViewBag.message = "This is the viewBag message";
 
             return View();
         }

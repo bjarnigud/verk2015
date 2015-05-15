@@ -28,7 +28,6 @@ namespace SozialWeb.Controllers
 
             m.SendMessage(userId, reciverId, message);
 
-            //return RedirectToAction("SearchView", "Search");
             return Redirect(returnurl);
             
         }
