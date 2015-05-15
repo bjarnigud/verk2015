@@ -101,7 +101,7 @@ namespace SozialWeb.Service
 
             foreach (Group g in groups)
             {
-                groupsFound.Add(g);                 /
+                groupsFound.Add(g);                 
             }
             return groupsFound;
         }
