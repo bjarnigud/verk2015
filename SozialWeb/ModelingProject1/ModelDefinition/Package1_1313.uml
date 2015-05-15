@@ -1,0 +1,335 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="b4f1ee72-68d5-42be-b670-d905bf11ddc7"
+  name="Controllers"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="857dffd0-dd40-43ed-87e4-6f009bd3524b"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DSozialWeb.Tests.Controllers"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="057af13c-6d86-4608-a256-809660aa894f"
+        name="HomeControllerTest"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="0629e2c8-dffd-4700-b2f4-02aa82614db6"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FLenovo%2Fverk2015%2FSozialWeb%2FSozialWeb.Tests%2Fbin%2FDebug%2FSozialWeb.Tests.dll Namespace%3DSozialWeb.Tests.Controllers Type%3DHomeControllerTest"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="57ceb5c6-87d8-4bb3-b75d-8eccb7c883aa"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="efc7bd05-601b-441f-8853-d37f60a1c218">
+                <propertyInstance
+                  Id="a7f7066a-d5e2-4d89-9c43-f67444dd6de6"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="b03b1f8e-4f96-4bdd-a53f-0a52f9ef0490">
+                <propertyInstance
+                  Id="5fb1a589-9df2-42af-8018-cb5118683de6"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="7168ff4e-c86c-41c8-94b1-45513392f344">
+                <propertyInstance
+                  Id="22662395-5d9c-4494-8b06-7b906fb4a5ca"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="1611461b-6e56-4692-bad7-e7f6be22f4e2">
+                <propertyInstance
+                  Id="e5282e17-c6e4-4d74-bbdc-40c1e4df333d"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="c1e6c002-64f5-4e1c-a2c4-8446df23b153">
+                <propertyInstance
+                  Id="147b5e11-68e9-4f62-94f2-ba7a3eb20398"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="3a1e43c6-0630-4a84-80ec-642d3e43cce3"
+            name="Index"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="c0cd77aa-d8de-4a69-8796-52e7c1218a50"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FLenovo%2Fverk2015%2FSozialWeb%2FSozialWeb.Tests%2Fbin%2FDebug%2FSozialWeb.Tests.dll Namespace%3DSozialWeb.Tests.Controllers Type%3DHomeControllerTest Member%3DIndex"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="28371da8-5de7-4bef-927c-6f09bf4c26e9"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a735a69a-972e-404b-b129-18cff53ed7e6">
+                    <propertyInstance
+                      Id="fffab4c4-7ca1-43c2-bd79-7cec30c033dd"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="90c752bb-32e9-4224-ad46-9050817da8f6">
+                    <propertyInstance
+                      Id="7d9f838b-3e01-43f6-9821-4330dda07d5e"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="fe6d9154-dc7e-4002-8186-42f4c0cf7e8c">
+                    <propertyInstance
+                      Id="c7f9e574-36f6-47c0-ac00-8664daee3eda"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8cef2feb-aacb-4f34-8c3a-4472ca41fe23">
+                    <propertyInstance
+                      Id="d55e75ea-c7ea-4d4b-a225-c7fb442efa94"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="99f7b430-e810-48b6-abbb-68fb4f3c4019">
+                    <propertyInstance
+                      Id="b01d491b-e44d-4e72-a7d2-5d0b2ebae799"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="276da92c-cf8f-422b-99b8-85efac20d1ef">
+                    <propertyInstance
+                      Id="aae46b11-89aa-4426-8fca-8190d2e66b92"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="00c0118e-c51a-436c-9ae7-6ea928876c8a"
+            name="About"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="ffc1b89e-93fa-4df7-b025-a89299b3795c"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FLenovo%2Fverk2015%2FSozialWeb%2FSozialWeb.Tests%2Fbin%2FDebug%2FSozialWeb.Tests.dll Namespace%3DSozialWeb.Tests.Controllers Type%3DHomeControllerTest Member%3DAbout"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="995fbd6e-6b4c-45f0-900d-c0d3338b4f89"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5002c95e-8c5a-4b20-90fa-af3969869222">
+                    <propertyInstance
+                      Id="d8f92dd5-ba54-45fd-b8ba-9b80b7c366fa"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1f3bad94-defe-4ce2-a24b-1c67078c2e51">
+                    <propertyInstance
+                      Id="333aa86f-140a-4b2a-9a98-ae9f434c30af"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="100d7cba-c6fa-4baa-80d7-3483b02e3385">
+                    <propertyInstance
+                      Id="873cf297-5d51-4b33-8d82-18916ae38bc9"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d92cceae-26d5-4b67-a72a-cecc0cfd990d">
+                    <propertyInstance
+                      Id="57938175-d8cf-4c61-b95c-f439559b7102"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="290cc676-bd81-44d0-9de7-d855608860bb">
+                    <propertyInstance
+                      Id="dcab22cf-06e3-446a-b795-3000baac739f"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ae1f02e4-b6f0-4c57-81ee-504ef2c493a2">
+                    <propertyInstance
+                      Id="1f9d60db-aedf-4c85-a24b-1bd095ccafb8"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="8e4ec64f-40ee-4df1-9075-23cf5674f585"
+            name="Contact"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="e63b0c6c-d400-4884-b12d-687c7204cf4e"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FLenovo%2Fverk2015%2FSozialWeb%2FSozialWeb.Tests%2Fbin%2FDebug%2FSozialWeb.Tests.dll Namespace%3DSozialWeb.Tests.Controllers Type%3DHomeControllerTest Member%3DContact"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="003fc388-db2f-4ffe-9d9d-87544eae66c7"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="769dc5ba-a6fa-4a3a-9240-c8b72370f8af">
+                    <propertyInstance
+                      Id="0e60e2ca-b1bd-4c9e-b729-157e9b78733b"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8e678dea-f072-409a-b23f-d56d23c8aef9">
+                    <propertyInstance
+                      Id="c7f9ee80-4c6c-465c-ae31-2970ad00bad0"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e5f3c8d4-6b49-4837-9b4e-293a24554f5b">
+                    <propertyInstance
+                      Id="5caf4ed6-99f2-4ea9-89d5-614d29648e01"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="26160747-f399-441f-ae71-bdb6390f032f">
+                    <propertyInstance
+                      Id="0b1de774-3af0-4af0-9af6-d7c8917281fc"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="757aad91-8201-4f9d-b0ec-f00f1fa9eab7">
+                    <propertyInstance
+                      Id="69b02381-4208-4bf8-be70-b4ea6d69b950"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0f8fd5af-b212-401b-981f-45b207d8b465">
+                    <propertyInstance
+                      Id="385249f2-18e5-4266-9f18-dd17e5c7c6e4"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="7aef2176-5eae-46b5-922f-b3992c0923a5"
+            name="HomeControllerTest"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="307558b7-ec86-4c0b-9a78-47c60955196f"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FLenovo%2Fverk2015%2FSozialWeb%2FSozialWeb.Tests%2Fbin%2FDebug%2FSozialWeb.Tests.dll Namespace%3DSozialWeb.Tests.Controllers Type%3DHomeControllerTest Member%3D.ctor"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="bb382a9f-d937-43eb-87bd-6f1b244861cc"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a47f8385-1866-4a01-ab13-665e50dc3342">
+                    <propertyInstance
+                      Id="d991cf06-5773-43b8-9420-536f50015906"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4be4f828-d921-4de9-9a39-78cde90eda69">
+                    <propertyInstance
+                      Id="8d076564-4d43-4571-a78f-254bfa41b9c3"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5501e803-c88e-4dbf-87cd-ba44afddd1ef">
+                    <propertyInstance
+                      Id="29db6376-ac6a-493d-8162-fc0b49df89d1"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c4bd5cb3-23b1-4d28-823c-ff38fea20fff">
+                    <propertyInstance
+                      Id="33da024d-a7d5-4c28-9d8e-152ba15cfba6"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3d438b9e-94f0-4eec-84ba-908cbd5eb5a3">
+                    <propertyInstance
+                      Id="6d9109ff-a8fb-48f6-b07c-75f630d4356e"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="23b53612-5491-4def-b896-74ac2f2a779c">
+                    <propertyInstance
+                      Id="f47df550-f35f-4576-af10-e12cfd8b34b9"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>
