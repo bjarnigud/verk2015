@@ -23,12 +23,12 @@ $(document).ready(function () {
             // result í þessu tilviki er allt svarið frá controllernum og þar sem við erum að nota óbreyttan controller, þá erum við að fá
             // allt HTML-ið til baka.  Við viljum hinsvegar bara fá þann part sem er inn í div-inu sem er með ID = comments-list.
             // Hér sendum við HTML-ið inn í jQuery object sem parsar það fyrir okkur og þá getum við notað .find() til að velja bara div-ið sem er með ID = comments-list
-            var resultHtml = $(result);
+            var resultHtml = $(result).find('#ajax-2');
             //console.log("This is the resultHtml" + resultHtml);
             //console.log("This is the result" + result);
             // Tökum svo núverandi DIV með ID = comments-list og gerum .replaceWith(), þ.e skiptum því og öllu innihaldinu út fyrir nýja HTML-ið sem er þá með nýjustu commentum
             // og þ.a.l líka commentinu sem við vorum að vista inn
-            $replaceWith(resultHtml);
+            $('#ajax-2').replaceWith(resultHtml);
             console.log(theForm.serialize());
 
 

@@ -150,7 +150,7 @@ a.site-logo  {
   float: right;
   position: absolute;
   top: 0;
-  left: 450px;
+  left: 35%;
 }
 #post-list
 {
@@ -282,4 +282,9 @@ blockquote {
   position: absolute;
   margin-top: -18%;
   right: 15%;
+}
+.profileImagePost {
+  position: absolute;
+  top: 0;
+  right: 0;
 }
