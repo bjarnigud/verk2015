@@ -72,6 +72,7 @@ namespace SozialWeb.Service
 
             var images = (from i in db.GroupPostImages
                           where i.reciver.ID == groupId
+                          orderby i.timeOfPost descending
                           select i).ToList();
 
             return images;

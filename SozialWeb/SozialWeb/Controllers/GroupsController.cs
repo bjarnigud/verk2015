@@ -112,7 +112,7 @@ namespace SozialWeb.Controllers
         }
         
 
-        // ATH HVORT MEIGI EYÐA????????????????
+       
         public ActionResult GroupMembers(int ID)
         {
             GroupService g = new GroupService();
