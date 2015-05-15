@@ -2,21 +2,27 @@
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron">
+<div class="frontpage">
     <h1>Welcome to SozialWeb</h1>
-</div>
-<div class="row">
-    <div class="col-md-4">
-        <h2>Recent Friends Posts</h2>
-    </div>
-</div>
 
-@foreach (var item in ViewBag.Posts)
-{
-    <blockquote>
-        <header><img src="@Url.Content(item.author.PicLocation)" width="50" height="50" alt="image" /> <a href="@Url.Action("ProfileTestView", "Profile", new { id = item.author.Id})"> @item.author.Name</a> -> <a href="@Url.Action("ProfileTestView", "Profile", new { id = item.reciver.Id})"> @item.reciver.Name</a></header>
-        <br />
-        <p>@item.text</p>
-        <footer>@item.author.Name - @item.timeOfPost.ToString("dd.MM.yyyy HH:mm")</footer>
-    </blockquote>
-}
+    <div class="logo_pic">
+        <img class="logo" src="~/Images/Logo.png" />
+    </div>
+    <div class="test">
+        
+            <h2>Recent Friends Posts</h2>
+        
+   </div>
+    
+</div>
+<div class="frontcomment">
+    @foreach (var item in ViewBag.Posts)
+    {
+        <blockquote>
+            <header><img src="@Url.Content(item.author.PicLocation)" width="50" height="50" alt="image" /> <a href="@Url.Action("ProfileTestView", "Profile", new { id = item.author.Id})"> @item.author.Name</a> -> <a href="@Url.Action("ProfileTestView", "Profile", new { id = item.reciver.Id})"> @item.reciver.Name</a></header>
+            <br />
+            <p>@item.text</p>
+            <footer>@item.author.Name - @item.timeOfPost.ToString("dd.MM.yyyy HH:mm")</footer>
+        </blockquote>
+    }
+</div>

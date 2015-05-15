@@ -2,7 +2,8 @@
   background-color: #fff9fc;
   padding: 5%;
   margin: auto;
-  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSchrDcSIlXLQlbC4saVBgjRKpZdBy3btHIgkBRwwx7afIqw17ZYA");
+   background-color:#E6E6FA
+ /* background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSchrDcSIlXLQlbC4saVBgjRKpZdBy3btHIgkBRwwx7afIqw17ZYA"); */
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -236,12 +237,44 @@ th {
   top: 0;
   left: 60%;
 }
-.jumbotron {
+.frontpage {
   padding: 30px;
   margin-bottom: 30px;
   font-size: 21px;
   font-weight: 200;
   line-height: 2.1428571435;
-  color: inherit;
-  background: linear-gradient(#e5e5ff, #9999ff); /* Standard syntax */
+    position: relative;
+  left: 8.5%;
+}
+
+.frontpage h1{
+    text-align:center;
+    font-family:Verdana;
+    font-size:70px;
+}
+.frontpage {
+    position: relative;
+}
+
+.logo_pic {
+  position: absolute;
+  top: 0%;
+  left: -9%;
+}
+frontPage{
+    position:absolute;
+}
+.frontcomment {
+  margin-top: 15%;
+  margin-left: 6.6%;
+}
+blockquote {
+  padding: 10px 20px;
+  margin: 0 0 20px;
+  border-left:none;
+}
+.test {
+  position: absolute;
+  left: 0;
+  margin-top: 9.5%;
 }
