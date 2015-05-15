@@ -8,7 +8,7 @@ namespace SozialWeb.Service
 {
     public class PostService
     {
-        public void addStatus(string userId, string status)
+        public void AddStatus(string userId, string status)
         {
             ApplicationDbContext db = new ApplicationDbContext();
 
@@ -28,7 +28,7 @@ namespace SozialWeb.Service
             }
         }
 
-        public List <Post> getPosts(string userId)
+        public List <Post> GetPosts(string userId)
         {
              ApplicationDbContext db = new ApplicationDbContext();
              List<Post> Posts = new List<Post>();
@@ -41,7 +41,7 @@ namespace SozialWeb.Service
              return postList;
         }
 
-        public void addPic (string userId, string image)
+        public void AddPic (string userId, string image)
         {
             ApplicationDbContext db = new ApplicationDbContext();
 
@@ -60,7 +60,7 @@ namespace SozialWeb.Service
             }
         }
 
-        public List <PostImage> getPics(string userId)
+        public List <PostImage> GetPics(string userId)
         {
             ApplicationDbContext db = new ApplicationDbContext();
              List<PostImage> ImagePosts = new List<PostImage>();
@@ -73,11 +73,11 @@ namespace SozialWeb.Service
            return postImageList;
         }
 
-        public void addStatus(string userId, string status, string reciverId)
+        public void addStatus(string UserId, string status, string reciverId)
         {
             ApplicationDbContext db = new ApplicationDbContext();
 
-            var user = db.Users.Where(u => u.Id == userId).SingleOrDefault();
+            var user = db.Users.Where(u => u.Id == UserId).SingleOrDefault();
             var reciver = db.Users.Where(r => r.Id == reciverId).SingleOrDefault();
             if (user != null)
             {
@@ -95,7 +95,7 @@ namespace SozialWeb.Service
             }
         }
 
-        public IEnumerable<Post> getNewestPosts(string userId)
+        public IEnumerable<Post> GetNewestPosts(string userId)
         {
             ApplicationDbContext db = new ApplicationDbContext();
             FriendListService f = new FriendListService();
@@ -106,7 +106,7 @@ namespace SozialWeb.Service
 
             foreach(Post p in allPost)
             {
-                if(f.alreadyFriends(p.author.Id, userId))
+                if(f.AlreadyFriends(p.author.Id, userId))
                 {
                     newestPost.Add(p);
                 }
@@ -118,7 +118,7 @@ namespace SozialWeb.Service
 
         }
 
-        public List<PostImage> getImages(string userId)
+        public List<PostImage> GetImages(string userId)
         {
             ApplicationDbContext db = new ApplicationDbContext();
             var user = db.Users.Where(u => u.Id == userId).SingleOrDefault();

@@ -8,7 +8,7 @@ namespace SozialWeb.Service
 {
     public class ProfileService
     {
-        public ApplicationUser getUser(string id)
+        public ApplicationUser GetUser(string id)
         {
             ApplicationDbContext db = new ApplicationDbContext();
             ApplicationUser userToReturn = new ApplicationUser();

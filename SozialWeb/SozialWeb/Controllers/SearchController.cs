@@ -11,33 +11,13 @@ namespace SozialWeb.Controllers
 {
     public class SearchController : Controller
     {
-        // GET: Search
-        /*
-        public ActionResult SearchView()
-        {
-            var userId = User.Identity.GetUserId();
-            SearchService s = new SearchService();
-            List<ApplicationUser> users = new List<ApplicationUser>();
-            users = s.getUsers(userId);             //laga til svo notandi komi líka???????
-            return View(users);
-        }
-         * */
-        /*
-        public ActionResult SearchTestView()
-        {
-            SearchService s = new SearchService();
-            List<ApplicationUser> users = new List<ApplicationUser>();
-            users = s.findUser("Heimir");
 
-            return View(users);
-        }
-        */
         [Authorize]
         public ActionResult SearchView(string searchString)
         {
             SearchService s = new SearchService();
             List<ApplicationUser> users = new List<ApplicationUser>();
-            users = s.findUsers(searchString);
+            users = s.FindUsers(searchString);
 
             return View(users);
         }

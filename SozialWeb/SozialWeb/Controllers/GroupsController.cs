@@ -21,9 +21,9 @@ namespace SozialWeb.Controllers
                 var groups = g.GetAllGroups();
                 return View(groups);                            //birtir alla notendur ef það er engin leitar strengur settur inn(kannski óþarfi)
             }
-            var groups2 = g.findGroups(searchString);           //finnur alla hópa sem hafa leitarstrenginn í nafninu
+            var groups2 = g.FindGroups(searchString);           //finnur alla hópa sem hafa leitarstrenginn í nafninu
             var userId = User.Identity.GetUserId();
-            ViewBag.Groups = g.getUserGroups(userId);           //tekur alla hópa sem notandi er skráður í og setur í viewbag til að birta í view
+            ViewBag.Groups = g.GetUserGroups(userId);           //tekur alla hópa sem notandi er skráður í og setur í viewbag til að birta í view
         
             return View(groups2);
         }
@@ -62,11 +62,11 @@ namespace SozialWeb.Controllers
             }
 
             List<ApplicationUser> members = new List<ApplicationUser>();
-            members = g.getGroupMembers(groupId);                           //finnur alla meðlimi hópsins og setur í viewbag til að loopa í gegn í viewinu
-            ViewBag.Posts = g.getGroupPosts(groupId);                       //finnur alla pósta á svæði hópsins og setur í viewbag til að sýna
+            members = g.GetGroupMembers(groupId);                           //finnur alla meðlimi hópsins og setur í viewbag til að loopa í gegn í viewinu
+            ViewBag.Posts = g.GetGroupPosts(groupId);                       //finnur alla pósta á svæði hópsins og setur í viewbag til að sýna
            
             ViewBag.Members = members;
-            ViewBag.Images = p.getGroupImages(groupId);
+            ViewBag.Images = p.GetGroupImages(groupId);
 
             var group = g.GetGroupById(groupId);                                //finnur hópinn
             return View(group);
@@ -106,7 +106,7 @@ namespace SozialWeb.Controllers
         {
             GroupService g = new GroupService();
             List<Group> groups = new List<Group>();
-            var groupPosts = g.findGroups(searchString);
+            var groupPosts = g.FindGroups(searchString);
 
             return View(groups);
         }
@@ -116,7 +116,7 @@ namespace SozialWeb.Controllers
         public ActionResult GroupMembers(int ID)
         {
             GroupService g = new GroupService();
-            var members = g.getGroupMembers(ID);
+            var members = g.GetGroupMembers(ID);
             return View(members);
         }
         
@@ -133,7 +133,7 @@ namespace SozialWeb.Controllers
                 {
                     return RedirectToAction("TestError", "Test", new { errorMessage = "There was an error, probably our fault" });
                 }
-                g.addGroupPost(model.text, groupId, userId);
+                g.AddGroupPost(model.text, groupId, userId);
 
             return RedirectToAction("GroupProfile", new { groupId = groupId});      //fær aftur á groupProfile og setur inn groupId sem færibreytu
         }
@@ -144,7 +144,7 @@ namespace SozialWeb.Controllers
 
             PostImageService p = new PostImageService();
             var userId = User.Identity.GetUserId();
-            p.addGroupImage(url, userId, groupId);
+            p.AddGroupImage(url, userId, groupId);
           
             return RedirectToAction("GroupProfile", new { groupId = groupId });
         }

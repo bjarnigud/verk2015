@@ -11,12 +11,7 @@ namespace SozialWeb.Service
     {
         public List<ApplicationUser> getFriends(string userId)
         {
-            /*
-            List<ApplicationUser> friendList = new List<ApplicationUser>();
-            ApplicationDbContext db = new ApplicationDbContext();
-            var allUsers = from user in db.Users
-                           select user;
-            */
+ 
             ApplicationDbContext db = new ApplicationDbContext();
             var allFriends = from friend in db.FriendLists
                              where userId == friend.friend1.Id
@@ -66,36 +61,7 @@ namespace SozialWeb.Service
             return true;
         }
 
-        //?????????????? - þarf kannski ekki og virkar líklegast ekki
-        public List<ApplicationUser> getNotFriends(string userId)
-        {
-            ApplicationDbContext db = new ApplicationDbContext();
-            var allUsers = (from user in db.Users
-                            select user);
-            var allFriends = (from friend in db.FriendLists
-                             where userId == friend.friend1.Id
-                             select friend.friend2);
-            
-            List<ApplicationUser> currentUserFriendsList = new List<ApplicationUser>();
-
-            foreach (ApplicationUser user in allUsers)
-            {
-                var user2 = from f in db.FriendLists
-                            where userId == f.friend1.Id && user.Id == f.friend2.Id
-                            select f;
-                if(user2 != null)
-                {
-                    currentUserFriendsList.Add(user);                 //ekki góð leið til að gera þetta
-                }
-
-                int a = currentUserFriendsList.Count();
-            }
-
-
-            return currentUserFriendsList;
-        }
-
-        public void sendFriendRequest(string sender, string reciver)
+        public void SendFriendRequest(string sender, string reciver)
         {
            
             ApplicationDbContext db = new ApplicationDbContext();
@@ -119,7 +85,7 @@ namespace SozialWeb.Service
             db.SaveChanges();
         }
 
-        public List<FriendRequest> getAllFriendRequestsReciver(string userId)
+        public List<FriendRequest> GetAllFriendRequestsReciver(string userId)
         {
             List<FriendRequest> fr = new List<FriendRequest>();
             ApplicationDbContext db = new ApplicationDbContext();
@@ -136,7 +102,7 @@ namespace SozialWeb.Service
             return fr;
         }
 
-        public List<FriendRequest> getAllFriendRequestsSender(string userId)
+        public List<FriendRequest> GetAllFriendRequestsSender(string userId)
         {
             List<FriendRequest> fr = new List<FriendRequest>();
             ApplicationDbContext db = new ApplicationDbContext();
@@ -153,7 +119,7 @@ namespace SozialWeb.Service
             return fr;
         }
 
-        public FriendRequest getFriendListById(int id) //?id ????'
+        public FriendRequest GetFriendListById(int id) //?id ????'
         {
              ApplicationDbContext db = new ApplicationDbContext();
             var friendRequest = db.FriendRequests.Where(f => f.ID == id).SingleOrDefault();
@@ -162,7 +128,7 @@ namespace SozialWeb.Service
 
         }
 
-        public void deleteFriendRequest(int id)
+        public void DeleteFriendRequest(int id)
         {
             ApplicationDbContext db = new ApplicationDbContext();
             var friendRequest = db.FriendRequests.Where(f => f.ID == id).SingleOrDefault();
@@ -172,7 +138,7 @@ namespace SozialWeb.Service
             
         }
 
-        public bool alreadyFriends(string user1id, string user2id)
+        public bool AlreadyFriends(string user1id, string user2id)
         {
             ApplicationDbContext db = new ApplicationDbContext();
             var user1 = db.Users.Where(u => u.Id == user1id).SingleOrDefault();
@@ -189,7 +155,7 @@ namespace SozialWeb.Service
             return true;
         }
 
-        public bool alreadyFriendRequest(string user1, string user2)
+        public bool AlreadyFriendRequest(string user1, string user2)
         {
             ApplicationDbContext db = new ApplicationDbContext();
 
@@ -205,7 +171,7 @@ namespace SozialWeb.Service
             return true;
         }
 
-        public bool removeFriend(string user1, string user2)
+        public bool RemoveFriend(string user1, string user2)
         {
             ApplicationDbContext db = new ApplicationDbContext();
             var friend = (from f in db.FriendLists

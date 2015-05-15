@@ -8,7 +8,7 @@ namespace SozialWeb.Service
 {
     public class PostImageService
     {
-        public void addImage(string imageUrl, string userId, string reciverId)
+        public void AddImage(string imageUrl, string userId, string reciverId)
         {
             ApplicationDbContext db = new ApplicationDbContext();
 
@@ -30,7 +30,7 @@ namespace SozialWeb.Service
 
         }
 
-        public List<PostImage> getImages(string userId)
+        public List<PostImage> GetImages(string userId)
         {
             ApplicationDbContext db = new ApplicationDbContext();
             var user = db.Users.Where(u => u.Id == userId).SingleOrDefault();
@@ -43,7 +43,7 @@ namespace SozialWeb.Service
 
         }
 
-        public void addGroupImage(string imageUrl, string userId, int groupId)
+        public void AddGroupImage(string imageUrl, string userId, int groupId)
         {
             ApplicationDbContext db = new ApplicationDbContext();
 
@@ -65,7 +65,7 @@ namespace SozialWeb.Service
 
         }
 
-        public List<GroupPostImage> getGroupImages(int groupId)
+        public List<GroupPostImage> GetGroupImages(int groupId)
         {
             ApplicationDbContext db = new ApplicationDbContext();
             var user = db.Groups.Where(g => g.ID == groupId).SingleOrDefault();

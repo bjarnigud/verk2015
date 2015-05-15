@@ -14,7 +14,7 @@ namespace SozialWeb.Controllers
         {
             var userId = User.Identity.GetUserId();
             PostService p = new PostService();
-            ViewBag.Posts = p.getNewestPosts(userId);
+            ViewBag.Posts = p.GetNewestPosts(userId);
             return View();
         }
 
@@ -23,7 +23,7 @@ namespace SozialWeb.Controllers
         {
             PostService s = new PostService();
             var userId = User.Identity.GetUserId();
-            s.addStatus(userId, status);
+            s.AddStatus(userId, status);
 
             return RedirectToAction("index");
         }
@@ -33,7 +33,7 @@ namespace SozialWeb.Controllers
             PostService s = new PostService();
             var userId = User.Identity.GetUserId();
             string status = "This is a status";
-            s.addStatus(userId, status);
+            s.AddStatus(userId, status);
             return View();
         }
 
@@ -41,7 +41,7 @@ namespace SozialWeb.Controllers
         {
             PostService p = new PostService();
             var userId = User.Identity.GetUserId();
-            var posts = p.getPosts(userId);
+            var posts = p.GetPosts(userId);
             return View(posts);
         }
  

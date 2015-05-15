@@ -28,15 +28,15 @@ namespace SozialWeb.Controllers
             ApplicationUser user = new ApplicationUser();
             FriendListService f = new FriendListService();
             PostService ps = new PostService();
-            user = p.getUser(id);
+            user = p.GetUser(id);
             var userId = User.Identity.GetUserId();
-            if(!f.alreadyFriends(id, userId) && userId != id)
+            if(!f.AlreadyFriends(id, userId) && userId != id)
             {
                 return RedirectToAction("TestError", "Test", new { errorMessage = "You can only view profiles of users that you are friends with" });
             }
-            var posts = ps.getPosts(id);
+            var posts = ps.GetPosts(id);
             ViewBag.Posts = posts;
-            ViewBag.Images = ps.getPics(id);
+            ViewBag.Images = ps.GetPics(id);
             return View(user);
         }
 
@@ -44,7 +44,7 @@ namespace SozialWeb.Controllers
         {
             PostService p = new PostService();
             var userId = User.Identity.GetUserId();
-            IEnumerable<Post> model = p.getPosts(userId);
+            IEnumerable<Post> model = p.GetPosts(userId);
 
             return View(model);
         }
@@ -71,7 +71,7 @@ namespace SozialWeb.Controllers
             {
                 PostService k = new PostService();
                 var userId = User.Identity.GetUserId();
-                k.addPic(userId, model.PicUrl);
+                k.AddPic(userId, model.PicUrl);
             }
             return View(model);
         }
@@ -86,7 +86,7 @@ namespace SozialWeb.Controllers
                 PostImageService p = new PostImageService();
                 var userId = User.Identity.GetUserId();
                 //k.addPic(userId, model.PicUrl);
-                p.addImage(url, userId, reciverId);
+                p.AddImage(url, userId, reciverId);
             //}
             //return View(model);
             return RedirectToAction("ProfileTestView", new { id = reciverId });

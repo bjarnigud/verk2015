@@ -41,7 +41,7 @@ namespace SozialWeb.Controllers
             var userId = User.Identity.GetUserId();
             FriendListService f = new FriendListService();
 
-            f.removeFriend(userId, user2);
+            f.RemoveFriend(userId, user2);
             return RedirectToAction(returnurl);                                 //notandi sendur aftur þaðan sem hann kom
 
         }
@@ -51,7 +51,7 @@ namespace SozialWeb.Controllers
             FriendListService f = new FriendListService();
             var senderId = User.Identity.GetUserId();
 
-            bool test = f.alreadyFriends(reciverId, senderId);          //Athugar hvort sé verið að senda vinabeiðni á vin sinn, ef svo fer á error síðu
+            bool test = f.AlreadyFriends(reciverId, senderId);          //Athugar hvort sé verið að senda vinabeiðni á vin sinn, ef svo fer á error síðu
             if (test == true)
             {
                 return RedirectToAction("TestError", "Test", new { errorMessage = "You are already friend with that user silly" });
@@ -62,13 +62,13 @@ namespace SozialWeb.Controllers
                 return RedirectToAction("TestError", "Test", new { errorMessage = "Can't send a friend request to yourself" });
             }
             bool already;
-            already = f.alreadyFriendRequest(senderId, reciverId);
-            if (f.alreadyFriendRequest(senderId, reciverId))
+            already = f.AlreadyFriendRequest(senderId, reciverId);
+            if (f.AlreadyFriendRequest(senderId, reciverId))
             {
                 return RedirectToAction("TestError", "Test", new { errorMessage = "Friend request already sent, be patient" });
             }
 
-            f.sendFriendRequest(senderId, reciverId);
+            f.SendFriendRequest(senderId, reciverId);
 
             return View();
         }
@@ -78,16 +78,16 @@ namespace SozialWeb.Controllers
             FriendListService fr = new FriendListService();
             List<FriendRequest> userRequests = new List<FriendRequest>();
             var userId = User.Identity.GetUserId();
-            userRequests = fr.getAllFriendRequestsReciver(userId);
+            userRequests = fr.GetAllFriendRequestsReciver(userId);
             return View(userRequests);
         }
 
         public ActionResult AcceptFriendRequest(int id)
         {
             FriendListService fr = new FriendListService();
-            FriendRequest f = fr.getFriendListById(id);
+            FriendRequest f = fr.GetFriendListById(id);
             fr.addFriend(f.requestReciver.Id, f.requestSender.Id);
-            fr.deleteFriendRequest(id);
+            fr.DeleteFriendRequest(id);
             return View();
         }
     }

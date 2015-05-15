@@ -8,7 +8,7 @@ namespace SozialWeb.Service
 {
     public class SearchService
     {
-        public List<ApplicationUser> getUsers(string userId)
+        public List<ApplicationUser> GetUsers(string userId)
         {
             List<ApplicationUser> allUserList = new List<ApplicationUser>();
             ApplicationDbContext db = new ApplicationDbContext();
@@ -24,7 +24,7 @@ namespace SozialWeb.Service
             return allUserList;
         }
 
-        public List<ApplicationUser> findUsers(string searchString)
+        public List<ApplicationUser> FindUsers(string searchString)
         {
             ApplicationDbContext db = new ApplicationDbContext();
             List<ApplicationUser> usersFound = new List<ApplicationUser>();
@@ -45,7 +45,7 @@ namespace SozialWeb.Service
         }
 
         // laga til nöfn á föllum
-        public ApplicationUser findUser(string id)
+        public ApplicationUser FindUser(string id)
         {
             ApplicationDbContext db = new ApplicationDbContext();
             ApplicationUser userReturned = new ApplicationUser();

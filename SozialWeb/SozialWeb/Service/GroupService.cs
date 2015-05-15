@@ -83,7 +83,7 @@ namespace SozialWeb.Service
             }
             return true;
         }
-        public List<Group> findGroups(string searchString)
+        public List<Group> FindGroups(string searchString)
         {
             ApplicationDbContext db = new ApplicationDbContext();
             List<Group> groupsFound = new List<Group>();
@@ -102,7 +102,7 @@ namespace SozialWeb.Service
             return groupsFound;
         }
 
-        public List<GroupPost> getGroupPosts(int id)
+        public List<GroupPost> GetGroupPosts(int id)
         {
             ApplicationDbContext db = new ApplicationDbContext();
 
@@ -112,7 +112,7 @@ namespace SozialWeb.Service
             return groupPosts;
         }
 
-        public List<ApplicationUser> getGroupMembers(int id)
+        public List<ApplicationUser> GetGroupMembers(int id)
         {
             ApplicationDbContext db = new ApplicationDbContext();
             List<ApplicationUser> gr = new List<ApplicationUser>();
@@ -131,7 +131,7 @@ namespace SozialWeb.Service
             return gr;
         }
 
-        public List<Group> getUserGroups(string userId)
+        public List<Group> GetUserGroups(string userId)
         {
             ApplicationDbContext db = new ApplicationDbContext();
             List<Group> groups = new List<Group>();
@@ -151,7 +151,7 @@ namespace SozialWeb.Service
             return groups;
         }
 
-        public bool addGroupPost(string status, int groupId, string userId)
+        public bool AddGroupPost(string status, int groupId, string userId)
         {
             ApplicationDbContext db = new ApplicationDbContext();
 
