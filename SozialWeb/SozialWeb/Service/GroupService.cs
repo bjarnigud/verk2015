@@ -49,10 +49,10 @@ namespace SozialWeb.Service
         public bool JoinGroup(string userId, int groupId)   
         {
             ApplicationDbContext db = new ApplicationDbContext();
-            var user = db.Users.Where(u => u.Id == userId).SingleOrDefault();
-            var groupToJoin = db.Groups.Where(g => g.ID == groupId).SingleOrDefault();
+            var user = db.Users.Where(u => u.Id == userId).SingleOrDefault();           //finding user
+            var groupToJoin = db.Groups.Where(g => g.ID == groupId).SingleOrDefault();  //finding group to join
 
-            var groupMember = new GroupMember{
+            var groupMember = new GroupMember{                                          //
                                   groupMember = user,
                                   group = groupToJoin
                               };
@@ -101,7 +101,11 @@ namespace SozialWeb.Service
 
             foreach (Group g in groups)
             {
+
+                          
+
                 groupsFound.Add(g);                 
+
             }
             return groupsFound;
         }

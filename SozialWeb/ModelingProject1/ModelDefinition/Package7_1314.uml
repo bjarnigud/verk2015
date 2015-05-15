@@ -1,0 +1,178 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="2e75b4af-ad1b-417d-b708-cfcc95e9c577"
+  name="Migrations"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="90bf9874-b207-470a-9d4c-0898e6a616f3"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DSystem.Data.Entity.Migrations"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="201ce1ba-5cb2-471a-87ac-80edc008808a"
+        name="DbMigrationsConfiguration&lt;ApplicationDbContext‎&gt;"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="37897634-50dd-435d-804d-b22152932e1d"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="71cdd66f-5734-4de3-9d32-4cf991e35227">
+                <propertyInstance
+                  Id="71e30d50-9c25-4810-87a9-d6e9ba34ff2a"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="672b1029-69f5-40df-83d8-e98156ff4293">
+                <propertyInstance
+                  Id="4d4874b4-7eb6-4e1d-a00f-9fde3a6eab78"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="e303d798-f5b9-4ba8-95e0-b96d8d4e23ff">
+                <propertyInstance
+                  Id="a3663422-e129-4ae8-844a-2d4e76aba57a"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="60e3ebea-526c-4c1d-9509-989f3009c306">
+                <propertyInstance
+                  Id="f793a640-192b-4595-998b-a8fb5fd08d12"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="00c8bbec-da8f-4674-af33-a96ce2c385c8">
+                <propertyInstance
+                  Id="9e885116-732b-4c5f-be0c-fdb04d0f39d8"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <signatures>
+          <templateBinding
+            Id="53b6cf4c-951a-4d38-8d6f-1420d87e118d">
+            <redefinableTemplateSignatureMoniker
+              Id="a877a94b-2ae5-4763-a19e-33e309ff81c8"
+              LastKnownLocation="Package7_1314.uml" />
+            <relationshipOwnedElementsInternal>
+              <templateBindingHasTemplateParameterSubstitution>
+                <templateParameterSubstitution
+                  Id="957d29f9-0730-48cb-ab80-063a7cc6c69a">
+                  <actuals>
+                    <classMoniker
+                      Id="86be815f-1b0d-470c-8264-9a14aad966d8"
+                      LastKnownName="ApplicationDbContext"
+                      LastKnownLocation="Package5_1254.uml" />
+                  </actuals>
+                  <formal>
+                    <classifierTemplateParameterMoniker
+                      Id="ec4f8ec4-5f80-4901-ba65-c3da5c16e1d7"
+                      LastKnownLocation="Package7_1314.uml" />
+                  </formal>
+                </templateParameterSubstitution>
+              </templateBindingHasTemplateParameterSubstitution>
+            </relationshipOwnedElementsInternal>
+          </templateBinding>
+        </signatures>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="69afba48-b94e-4a54-9822-92441ba3b205"
+        name="DbMigrationsConfiguration"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="860f764d-5a73-4a2d-bae4-906446063e94"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FLenovo%2Fverk2015%2FSozialWeb%2Fpackages%2FEntityFramework.6.1.3%2Flib%2Fnet45%2FEntityFramework.dll Namespace%3DSystem.Data.Entity.Migrations Type%3D(Name%3DDbMigrationsConfiguration GenericParameterCount%3D1)"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="87d06a7f-892a-4e29-b7e0-abac64b525ee"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="dbdfb250-b63d-4eb0-8f77-c9aea0c5f094">
+                <propertyInstance
+                  Id="000a641f-526b-47e5-83d6-d18fed9fbb70"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="65274b5b-6d14-4616-840c-a021333c20b8">
+                <propertyInstance
+                  Id="e8dc029d-c414-4ee8-bfbf-964389497b1b"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="f8c36795-4592-432e-86c2-606d06d0ae53">
+                <propertyInstance
+                  Id="823a4fbd-07ac-4f88-96e6-a16f9576f234"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="13ad09f6-9bd6-43d2-8607-bead3cbf62ff">
+                <propertyInstance
+                  Id="508d8d33-e295-40b8-b4f4-08e5a7004ff7"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="409e3153-0b27-4b55-a5b5-cfce6d30df20">
+                <propertyInstance
+                  Id="1c2122bf-1784-4cc8-87c5-dfc112ac49a8"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <ownedRedefinableTemplateSignatureInternal>
+          <redefinableTemplateSignature
+            Id="a877a94b-2ae5-4763-a19e-33e309ff81c8"
+            parameters=""
+            name="RedefinableTemplateSignature1"
+            isLeaf="false">
+            <ownedParameters>
+              <classifierTemplateParameter
+                Id="ec4f8ec4-5f80-4901-ba65-c3da5c16e1d7">
+                <referencesInternal>
+                  <reference
+                    Id="75e04764-56e2-4a2d-af9a-279a31a7cee0"
+                    handle="viewcode://./CodeSchema_GenericParameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FLenovo%2Fverk2015%2FSozialWeb%2Fpackages%2FEntityFramework.6.1.3%2Flib%2Fnet45%2FEntityFramework.dll Namespace%3DSystem.Data.Entity.Migrations Type%3D(Name%3DDbMigrationsConfiguration GenericParameterCount%3D1) ParameterIdentifier%3D0"
+                    tag="ViewCode" />
+                </referencesInternal>
+                <ownedParameterableElement>
+                  <class
+                    Id="bdabd758-7d06-49b7-815b-f38ffe843263"
+                    name="TContext"
+                    isAbstract="false"
+                    isLeaf="false"
+                    isActiveClass="false" />
+                </ownedParameterableElement>
+              </classifierTemplateParameter>
+            </ownedParameters>
+          </redefinableTemplateSignature>
+        </ownedRedefinableTemplateSignatureInternal>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

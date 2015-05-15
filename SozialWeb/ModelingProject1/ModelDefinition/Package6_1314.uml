@@ -1,0 +1,246 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="165fe98c-8470-4509-ae25-17722339246e"
+  name="Migrations"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="960c9470-a769-4ac8-b77f-4342ebeecad9"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DSozialWeb.Migrations"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="dd76e323-e381-424d-834d-c29234bce66a"
+        name="Configuration"
+        visibility="Package"
+        isAbstract="false"
+        isLeaf="true"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="01d18df4-e86d-4601-bcfe-c3fbe6ba6fdb"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FLenovo%2Fverk2015%2FSozialWeb%2FSozialWeb%2Fbin%2FSozialWeb.dll Namespace%3DSozialWeb.Migrations Type%3DConfiguration"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="68de81bf-a65b-41e0-b11c-0669910fc7dc"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="e2a3415a-dd2e-4b4b-88fa-fcd39f450032">
+                <propertyInstance
+                  Id="64579d50-e5f6-4ede-ab29-a30b973a4ea8"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="c945b35c-1455-4568-b176-4ac3c67cda5d">
+                <propertyInstance
+                  Id="24a869dc-4823-4aa2-ae8c-834db9f95523"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="df96ae16-7f4b-435f-a3bb-39141d398eb6">
+                <propertyInstance
+                  Id="77100cd9-a94c-4d9a-b480-eefb57c45c67"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="d107944e-7616-4e2f-93e9-4fee7980b2b6">
+                <propertyInstance
+                  Id="7c694df5-0488-480a-96f9-2844c52b2cb0"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="c875ad36-0a55-4a7b-a01f-996eb6971f08">
+                <propertyInstance
+                  Id="22808a3e-795b-4284-a39d-171eba3cbfd4"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <generalsInternal>
+          <generalization
+            Id="e8ffe0b3-089c-4d73-9f40-9d14deaabcbd"
+            isSubstitutable="false">
+            <classMoniker
+              Id="201ce1ba-5cb2-471a-87ac-80edc008808a"
+              LastKnownName="DbMigrationsConfiguration&lt;ApplicationDbContext‎&gt;"
+              LastKnownLocation="Package7_1314.uml" />
+          </generalization>
+          <generalization
+            Id="1af257b6-accd-4581-8ca8-437ea52d4c16"
+            isSubstitutable="false">
+            <classMoniker
+              Id="69afba48-b94e-4a54-9822-92441ba3b205"
+              LastKnownName="DbMigrationsConfiguration"
+              LastKnownLocation="Package7_1314.uml" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="70cd241a-ca6f-4b97-b30a-9af1571e72b3"
+            name="Configuration"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="2e26ab99-cf1b-4096-9b03-9474b68e178a"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FLenovo%2Fverk2015%2FSozialWeb%2FSozialWeb%2Fbin%2FSozialWeb.dll Namespace%3DSozialWeb.Migrations Type%3DConfiguration Member%3D.ctor"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="40d702d7-1615-4a02-97da-4faafe272622"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="fbd9e5a1-4e10-4a49-91e5-d3ea9e1dcf8e">
+                    <propertyInstance
+                      Id="656dcc8f-b8d1-4c01-99eb-d5938a4dd954"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1899537c-65c7-4f69-8325-bc971385d887">
+                    <propertyInstance
+                      Id="19746204-67c4-467f-8b3d-e7c6ceb33ca3"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5c77b099-5c4e-4124-abcb-55dcccab0a44">
+                    <propertyInstance
+                      Id="5dc5f0ef-b27f-4a93-9970-7bfc66ca838b"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="699a79ff-6d80-49c8-8301-437e2ec34ec4">
+                    <propertyInstance
+                      Id="5c74c05c-33dd-4aa4-88a3-5a0bf58af4d8"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1e07beb3-b078-4507-b55c-93a3b22c9e46">
+                    <propertyInstance
+                      Id="21552023-1342-4895-9208-ab7b2ea5167d"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ae5d2f5d-2b40-43e7-a70f-7b7827ceb190">
+                    <propertyInstance
+                      Id="8ac52291-b9b6-434b-ba9f-57c222ce7a2d"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="33f8d654-8928-417e-9c06-a73cbce9e25a"
+            name="Seed"
+            visibility="Protected"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="318dbad2-8745-47cc-a4ea-0c66b004436e"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FLenovo%2Fverk2015%2FSozialWeb%2FSozialWeb%2Fbin%2FSozialWeb.dll Namespace%3DSozialWeb.Migrations Type%3DConfiguration Member%3D(Name%3DSeed OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FLenovo%2Fverk2015%2FSozialWeb%2FSozialWeb%2Fbin%2FSozialWeb.dll Namespace%3DSozialWeb.Models Type%3DApplicationDbContext)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="7519224f-ff36-435a-a98e-17999a0c42fc"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e34cbd82-ad31-4228-847a-d6e0c7438b3e">
+                    <propertyInstance
+                      Id="2258bd1c-6e5b-4294-9ab7-2f75584a6ec2"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="80e4b74e-faa5-4091-be44-aa779d5f8f43">
+                    <propertyInstance
+                      Id="d00b5cb5-d9e0-4ed6-93d3-f2f0e0acf349"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="cb5d9c24-3973-4c3c-a9c7-efb853bde21b">
+                    <propertyInstance
+                      Id="0a380a49-7af1-42fa-a47b-4ce2b7cee894"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d3b442c9-0a75-4695-b937-3435e51cbf9b">
+                    <propertyInstance
+                      Id="a8689361-a3c9-4dfb-a205-aefe7e016b07"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="db4a4455-e664-435b-878d-f28fbc0764ff">
+                    <propertyInstance
+                      Id="a16f1347-254b-463c-a0f3-73bd0912b7f3"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a67bc6fe-6660-4e42-acdc-4f0f90305b0c">
+                    <propertyInstance
+                      Id="b06f0e39-8c8c-416e-a635-74b706174b41"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="5e91b555-915a-49e4-8cde-c25c0dfe8ac3"
+                  name="context"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="318665d9-2f9f-44f6-9c21-af49d030128e"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FLenovo%2Fverk2015%2FSozialWeb%2FSozialWeb%2Fbin%2FSozialWeb.dll Namespace%3DSozialWeb.Migrations Type%3DConfiguration Member%3D(Name%3DSeed OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FLenovo%2Fverk2015%2FSozialWeb%2FSozialWeb%2Fbin%2FSozialWeb.dll Namespace%3DSozialWeb.Models Type%3DApplicationDbContext)]) ParameterIdentifier%3Dcontext"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="86be815f-1b0d-470c-8264-9a14aad966d8"
+                      LastKnownName="ApplicationDbContext"
+                      LastKnownLocation="Package5_1254.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>
