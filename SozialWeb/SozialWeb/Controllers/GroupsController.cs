@@ -19,11 +19,11 @@ namespace SozialWeb.Controllers
             if(searchString == "")
             {
                 var groups = g.GetAllGroups();
-                return View(groups);                            //Shows allt the user if no search string is put it
+                return View(groups);                            //Shows all the user if no search string is put it
             }
-            var groups2 = g.FindGroups(searchString);           //Finds allt the groups that have string in their name
+            var groups2 = g.FindGroups(searchString);           //Finds all the groups that have string in their name
             var userId = User.Identity.GetUserId();
-            ViewBag.Groups = g.GetUserGroups(userId);           //Takes all the grouos that are sigends in and adds them to viewbag to show in the view
+            ViewBag.Groups = g.GetUserGroups(userId);           //Takes all the groups that are sigends in and adds them to viewbag to show in the view
         
             return View(groups2);
         }
